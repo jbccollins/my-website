@@ -1,0 +1,110 @@
+@import '~scss/_structure';
+@import '~scss/_animation';
+$quad-spacing: $spacing * 4;
+.PortfolioItem {
+	padding: $spacing;
+	margin: $spacing;
+	position: relative;;
+	max-width: calc(50% - #{$quad-spacing});
+	min-width: 400px;
+	transform: scale(1);
+	transition: transform $transition-time;
+	&:before {
+		content: '';
+		pointer-events: none;
+		border: 1px solid transparent;
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0px;
+		left: 0px;
+		opacity: 0.8;
+		transition: opacity $transition-time, height $transition-time, width $transition-time, top $transition-time, left $transition-time, border-color $transition-time, box-shadow $transition-time;
+		box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+		background-size: 100%;
+	}
+	// &.lapidary {
+	// 	&:before {
+	// 		border-color: blue;
+	// 	}
+	// }
+	&.react-interactive-canvas {
+		&:before {
+			background-image: url("../../../images/react-interactive-canvas-background.png");
+		}
+	}
+	&.lapidary {
+		&:before {
+			background-image: url("../../../images/trianglify_blue.png");
+		}
+	}
+	&.dc-metro-monitor {
+		&:before {
+			background-image: url("../../../images/dc-metro-monitor-background.png");
+		}
+	}
+	&.mouseover {
+		transform: scale(1.02);
+		&:before {
+			opacity: 1;
+			top: -13px;
+			left: -13px;
+			width: calc(100% + 26px);
+			height: calc(100% + 26px);
+			box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+		}
+	}
+	.content-wrapper {
+		position: relative;
+		background: white;
+		padding: $spacing-small;
+		box-shadow: 0 0 10px rgba(#ffffff, 0.5);
+	}
+	.header {
+		//padding-left: $spacing * 4;
+		display: flex;
+	    width: 100%;
+	    justify-content: space-between;
+	    position: relative;
+	}
+	.name {
+		font-weight: bold;
+		font-size: 18px;
+		line-height: 40px;
+	}
+	// &.expanded-item {
+	// 	.expandable-toggle-text {
+	// 		margin-top: $spacing-tiny;
+	// 	}
+	// }
+	.tags-container {
+		margin: $spacing-small 0px;
+		height: $spacing-large;
+		position: relative;
+	}
+	.tag {
+		margin-left: $spacing-tiny;
+		float: left;
+		font-size: 10px;
+		height: $spacing-large;
+		line-height: $spacing-large - 2;
+		padding: 0px $spacing-small;
+		border-radius: $spacing-small;
+		border: 1px solid;
+		display: inline-block;
+		&:first-child {
+			margin-left: 0px;
+		}
+		//font-weight: bold;
+		&.npm {
+			border-color: red;
+			color: red;
+			background: rgba(red, 0.1);
+		}
+		&.typescript {
+			border-color: blue;
+			color: blue;
+			background: rgba(blue, 0.1);
+		}
+	}
+}

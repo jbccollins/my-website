@@ -1,0 +1,72 @@
+$size: 10px;
+.LapidaryDiamond {
+	pointer-events: none;
+	.diamond {
+		position: absolute;
+		top: 16px;
+		left: 32px;
+		transform: translate(-50%, 50%) rotate(45deg);
+		span {
+			&:nth-child(1) {
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 0;
+				height: 0;
+				border-width: $size / 2;
+				border-style: solid;
+				border-color: transparent #1b74bb #1983d8 transparent;
+			}
+			&:nth-child(2) {
+				position: absolute;
+				top: 0;
+				left: $size;
+				width: 0;
+				height: 0;
+				border-width: $size / 2;
+				border-style: solid;
+				border-color: #2196f3 #1b74bb #1983d8 #38a1f5;
+				animation: animate 2s linear infinite;
+			}
+			&:nth-child(3) {
+				position: absolute;
+				top: $size;
+				left: 0;
+				width: 0;
+				height: 0;
+				border-width: $size / 2;
+				border-style: solid;
+				border-color: #2196f3 #1b74bb #1983d8 #38a1f5;
+				animation: animate 2s linear infinite;
+			}
+			&:nth-child(4) {
+				position: absolute;
+				top: $size;
+				left: $size;
+				width: 0;
+				height: 0;
+				border-width: $size / 2;
+				border-style: solid;
+				border-color: #2196f3 #1b74bb #1983d8 #38a1f5;
+				animation: animate 2s linear infinite;
+			}
+		}
+	}
+	@keyframes animate {
+		0% {
+			border-color: #2196f3 #1b74bb #1983d8 #38a1f5;
+		}
+		25% {
+			border-color: #38a1f5 #2196f3 #1b74bb #1983d8;
+		}
+		50% {
+			border-color: #1983d8 #38a1f5 #2196f3 #1b74bb;
+		}
+		75% {
+			border-color: #1b74bb #1983d8 #38a1f5 #2196f3;
+		}
+		100% {
+			border-color: #2196f3 #1b74bb #1983d8 #38a1f5;
+		}
+	}
+}
