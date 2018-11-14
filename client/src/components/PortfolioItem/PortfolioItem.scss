@@ -1,12 +1,14 @@
 @import '~scss/_structure';
 @import '~scss/_animation';
 $quad-spacing: $spacing * 4;
+$double-spacing: $spacing * 2;
 .PortfolioItem {
 	padding: $spacing;
 	margin: $spacing;
 	position: relative;;
 	max-width: calc(50% - #{$quad-spacing});
-	min-width: 400px;
+	//min-width: calc(50vw - #{$quad-spacing});
+	
 	transform: scale(1);
 	transition: transform $transition-time;
 	&:before {
@@ -22,6 +24,7 @@ $quad-spacing: $spacing * 4;
 		transition: opacity $transition-time, height $transition-time, width $transition-time, top $transition-time, left $transition-time, border-color $transition-time, box-shadow $transition-time;
 		box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 		background-size: 100%;
+		background-repeat: repeat;
 	}
 	// &.lapidary {
 	// 	&:before {
@@ -30,7 +33,7 @@ $quad-spacing: $spacing * 4;
 	// }
 	&.react-interactive-canvas {
 		&:before {
-			background-image: url("../../../images/react-interactive-canvas-background.png");
+			background-image: url("../../../images/react-interactive-canvas-background.jpg");
 		}
 	}
 	&.lapidary {
@@ -71,6 +74,9 @@ $quad-spacing: $spacing * 4;
 		font-weight: bold;
 		font-size: 18px;
 		line-height: 40px;
+		white-space: nowrap; 
+		overflow: hidden;
+		text-overflow: ellipsis;
 	}
 	// &.expanded-item {
 	// 	.expandable-toggle-text {
@@ -106,5 +112,11 @@ $quad-spacing: $spacing * 4;
 			color: blue;
 			background: rgba(blue, 0.1);
 		}
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.PortfolioItem {
+		min-width: calc(100vw - #{$quad-spacing * 2});
 	}
 }

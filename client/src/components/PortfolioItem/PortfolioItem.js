@@ -4,7 +4,6 @@ import "./PortfolioItem.scss";
 import ExpandableText from "components/ExpandableText";
 import Button from "@material-ui/core/Button";
 import { ExpandMore, ExpandLess } from "@material-ui/icons";
-import LapidaryDiamond from "components/LapidaryDiamond";
 
 export default class PortfolioItem extends React.Component {
   state = {
@@ -63,11 +62,7 @@ export default class PortfolioItem extends React.Component {
               );
             })}
           </div>
-          <ExpandableText
-            text={description}
-            expanded={expanded}
-            onExpandChange={this.handleExpandChange}
-          />
+          <ExpandableText text={description} expanded={expanded} />
         </div>
       </div>
     );

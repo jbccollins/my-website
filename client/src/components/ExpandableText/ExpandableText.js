@@ -4,12 +4,9 @@ import "./ExpandableText.scss";
 
 export default class ExpandableText extends React.Component {
   render() {
-    const { text, expanded, onExpandChange } = this.props;
+    const { text, expanded } = this.props;
     return (
-      <div
-        className={`ExpandableText${expanded ? " expanded" : ""}`}
-        onClick={onExpandChange}
-      >
+      <div className={`ExpandableText${expanded ? " expanded" : ""}`}>
         <div className="text-container">{text}</div>
       </div>
     );
@@ -18,6 +15,5 @@ export default class ExpandableText extends React.Component {
 
 ExpandableText.propTypes = {
   text: PropTypes.string.isRequired,
-  expanded: PropTypes.bool.isRequired,
-  onExpandChange: PropTypes.func.isRequired
+  expanded: PropTypes.bool.isRequired
 };
