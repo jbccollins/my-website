@@ -14,7 +14,7 @@ $double-spacing: $spacing * 2;
 	&:before {
 		content: '';
 		pointer-events: none;
-		border: 1px solid transparent;
+		//border: 1px solid transparent;
 		position: absolute;
 		width: 100%;
 		height: 100%;
@@ -46,8 +46,13 @@ $double-spacing: $spacing * 2;
 			background-image: url("../../../images/dc-metro-monitor-background.png");
 		}
 	}
-	&.mouseover {
-		transform: scale(1.02);
+	&.cornhole-simulator {
+		&:before {
+			background-image: url("../../../images/cornhole-simulator.jpg");
+		}
+	}
+	&.active {
+		//transform: scale(1.02);
 		&:before {
 			opacity: 1;
 			top: -13px;
@@ -83,10 +88,30 @@ $double-spacing: $spacing * 2;
 	// 		margin-top: $spacing-tiny;
 	// 	}
 	// }
+	.expand-toggle-wrapper {
+		display: flex;
+		margin-left: auto;
+		margin-right: auto;
+		justify-content: center;
+		> button {
+			width: 100%;
+		}
+	}
 	.tags-container {
 		margin: $spacing-small 0px;
 		height: $spacing-large;
 		position: relative;
+		> div {
+			font-size: 10px;
+			height: 16px;
+			float: left;
+			border-radius: 8px;
+			line-height: 16px;
+			margin-left: $spacing-tiny;
+			&:first-child {
+				margin-left: 0px;
+			}
+		}
 	}
 	.tag {
 		margin-left: $spacing-tiny;

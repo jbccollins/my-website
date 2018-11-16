@@ -6,6 +6,12 @@ const TYPESCRIPT = {
 	className: 'typescript',
 	text: 'TypeScript'
 }
+
+const C_SHARP = {
+	className: 'c-sharp',
+	text: 'C#'
+}
+
 const portfolioItems = [
 	{
 		name: 'Lapidary',
@@ -26,9 +32,9 @@ const portfolioItems = [
 		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum molestie enim mollis tempor. Curabitur tempor sem id justo gravida, eget molestie justo pretium. Etiam non turpis vitae lectus gravida molestie. Fusce nisi nisl, tincidunt quis purus in, finibus laoreet est. In eu sem ac massa vulputate tincidunt. Maecenas sed finibus sem, sed lobortis urna. Morbi et sapien nec lectus tempor accumsan. Nam ex elit, lacinia sit amet placerat a, suscipit sed ligula.'
 	},
 	{
-		name: 'Lapidary',
-		tags: [NPM, TYPESCRIPT],
-		id: 'lapidasgdfgary',
+		name: 'Cornhole Simulator',
+		tags: [C_SHARP],
+		id: 'cornhole-simulator',
 		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum molestie enim mollis tempor. Curabitur tempor sem id justo gravida, eget molestie justo pretium. Etiam non turpis vitae lectus gravida molestie. Fusce nisi nisl, tincidunt quis purus in, finibus laoreet est. In eu sem ac massa vulputate tincidunt. Maecenas sed finibus sem, sed lobortis urna. Morbi et sapien nec lectus tempor accumsan. Nam ex elit, lacinia sit amet placerat a, suscipit sed ligula.'
 	},
 	{

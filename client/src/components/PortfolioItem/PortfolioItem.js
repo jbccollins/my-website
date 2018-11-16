@@ -3,36 +3,38 @@ import PropTypes from "prop-types";
 import "./PortfolioItem.scss";
 import ExpandableText from "components/ExpandableText";
 import Button from "@material-ui/core/Button";
+import Chip from "@material-ui/core/Chip";
 import { ExpandMore, ExpandLess } from "@material-ui/icons";
 
 export default class PortfolioItem extends React.Component {
   state = {
-    mouseOver: false,
     expanded: false
   };
 
   handleMouseOver = () => {
-    this.setState({
-      mouseOver: true
-    });
+    const { id, onActivationChange } = this.props;
+    onActivationChange(id);
   };
 
   handleMouseLeave = () => {
-    this.setState({
-      mouseOver: false
-    });
+    const { onActivationChange } = this.props;
+    onActivationChange();
   };
 
   handleExpandChange = () => {
     this.setState({ expanded: !this.state.expanded });
   };
 
+  handleTagClick = () => {
+    console.log("tag clicked");
+  };
+
   render() {
-    const { name, tags, description, id } = this.props;
-    const { mouseOver, expanded } = this.state;
+    const { name, tags, description, id, active } = this.props;
+    const { expanded } = this.state;
     return (
       <div
-        className={`${id} PortfolioItem${mouseOver ? " mouseover" : ""}${
+        className={`${id} PortfolioItem${active ? " active" : ""}${
           expanded ? " expanded-item" : ""
         }`}
         onMouseOver={this.handleMouseOver}
@@ -44,6 +46,22 @@ export default class PortfolioItem extends React.Component {
           */}
           <div className="header">
             <div className="name">{name}</div>
+          </div>
+          <div className="tags-container">
+            {tags.map(({ className, text }) => {
+              return (
+                <Chip
+                  onClick={this.handleTagClick}
+                  color="primary"
+                  variant="outlined"
+                  key={text}
+                  label={text}
+                />
+              );
+            })}
+          </div>
+          <ExpandableText text={description} expanded={expanded} />
+          <div className="expand-toggle-wrapper">
             <Button
               mini
               className="expandable-toggle-text"
@@ -53,16 +71,6 @@ export default class PortfolioItem extends React.Component {
               {!expanded && <ExpandMore />}
             </Button>
           </div>
-          <div className="tags-container">
-            {tags.map(({ className, text }) => {
-              return (
-                <div key={text} className={`${className} tag`}>
-                  {text}
-                </div>
-              );
-            })}
-          </div>
-          <ExpandableText text={description} expanded={expanded} />
         </div>
       </div>
     );
@@ -73,5 +81,7 @@ PortfolioItem.propTypes = {
   name: PropTypes.string.isRequired,
   tags: PropTypes.array.isRequired,
   id: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired
+  description: PropTypes.string.isRequired,
+  onActivationChange: PropTypes.func.isRequired,
+  active: PropTypes.bool.isRequired
 };
