@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "./PortfolioItem.scss";
 import ExpandableText from "components/ExpandableText";
+import GithubButton from "components/GithubButton";
 import Button from "@material-ui/core/Button";
 import Chip from "@material-ui/core/Chip";
 import { ExpandMore, ExpandLess } from "@material-ui/icons";
@@ -21,12 +22,22 @@ export default class PortfolioItem extends React.Component {
     onActivationChange();
   };
 
+  handleMouseClick = () => {
+    const { id, onActivationChange } = this.props;
+    onActivationChange(id);
+  };
+
   handleExpandChange = () => {
     this.setState({ expanded: !this.state.expanded });
   };
 
   handleTagClick = () => {
     console.log("tag clicked");
+  };
+
+  handleGithubClick = () => {
+    const { id } = this.props;
+    window.open(`https://github.com/jbccollins/${id}`);
   };
 
   render() {
@@ -39,6 +50,7 @@ export default class PortfolioItem extends React.Component {
         }`}
         onMouseOver={this.handleMouseOver}
         onMouseLeave={this.handleMouseLeave}
+        onClick={this.handleMouseClick}
       >
         <div className="content-wrapper">
           {/*id === 'lapidary' &&
@@ -46,6 +58,7 @@ export default class PortfolioItem extends React.Component {
           */}
           <div className="header">
             <div className="name">{name}</div>
+            <GithubButton onClick={this.handleGithubClick} />
           </div>
           <div className="tags-container">
             {tags.map(({ className, text }) => {
