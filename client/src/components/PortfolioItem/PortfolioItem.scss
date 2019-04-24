@@ -4,17 +4,14 @@ $quad-spacing: $spacing * 4;
 $double-spacing: $spacing * 2;
 .PortfolioItem {
 	padding: $spacing;
-	margin: $spacing;
+	//margin: $spacing;
 	position: relative;;
-	max-width: calc(50% - #{$quad-spacing});
-	//min-width: calc(50vw - #{$quad-spacing});
 	
 	transform: scale(1);
 	transition: transform $transition-time;
 	&:before {
 		content: '';
 		pointer-events: none;
-		//border: 1px solid transparent;
 		position: absolute;
 		width: 100%;
 		height: 100%;
@@ -26,11 +23,11 @@ $double-spacing: $spacing * 2;
 		background-size: 100%;
 		background-repeat: repeat;
 	}
-	// &.lapidary {
-	// 	&:before {
-	// 		border-color: blue;
-	// 	}
-	// }
+	&.lapidary {
+		&:before {
+			border-color: blue;
+		}
+	}
 	&.react-interactive-canvas {
 		&:before {
 			background-image: url("../../../images/react-interactive-canvas-background.jpg");
@@ -38,7 +35,7 @@ $double-spacing: $spacing * 2;
 	}
 	&.lapidary {
 		&:before {
-			background-image: url("../../../images/trianglify_blue.png");
+			background-image: url("../../../images/lapidary-background.png");
 		}
 	}
 	&.metro-monitor {
@@ -48,7 +45,7 @@ $double-spacing: $spacing * 2;
 	}
 	&.cornhole-simulator {
 		&:before {
-			background-image: url("../../../images/cornhole-simulator.jpg");
+			background-image: url("../../../images/cornhole-simulator-background.jpg");
 		}
 	}
 	&.active {
@@ -140,8 +137,8 @@ $double-spacing: $spacing * 2;
 	}
 }
 
-@media screen and (max-width: 800px) {
-	.PortfolioItem {
-		min-width: calc(100vw - #{$quad-spacing * 2});
-	}
-}
+// @media screen and (max-width: 800px) {
+// 	.PortfolioItem {
+// 		min-width: calc(100vw - #{$quad-spacing * 2});
+// 	}
+// }

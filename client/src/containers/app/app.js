@@ -3,14 +3,14 @@ import Portfolio from "components/Portfolio";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 //import "../../../fonts/style.css";
+import Grid from '@material-ui/core/Grid';
 import "./app.scss";
-import { portfolioItems } from "common/constants/portfolioItems";
-import SwipeableViews from "react-swipeable-views";
-import AppBar from "@material-ui/core/AppBar";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
+import { portfolioItems } from "data/portfolioItems";
 import Typography from "@material-ui/core/Typography";
+import { withStyles } from "@material-ui/core/styles";
 import PropTypes from "prop-types";
+import Sidebar from "components/Sidebar";
+import GradientScroll from 'react-gradient-scroll-indicator'
 
 function TabContainer({ children, dir }) {
   return (
@@ -26,50 +26,43 @@ TabContainer.propTypes = {
 };
 
 const styles = {
+  '@global': {
+    '*::-webkit-scrollbar': {
+      width: '0.6em'
+    },
+    '*::-webkit-scrollbar-track': {
+      '-webkit-box-shadow': 'inset 0 0 6px rgba(0,0,0,0.00)'
+    },
+    '*::-webkit-scrollbar-thumb': {
+      borderRadius: '0.3em',
+      backgroundColor: 'rgba(0,0,0,.1)',
+      outline: '1px solid slategrey'
+    }
+  },
   root: {
     boxShadow: "inset 0 0 10px red"
   }
 };
 
 class App extends React.Component {
-  state = {
-    value: 0
-  };
-
-  handleChange = (event, value) => {
-    this.setState({ value });
-  };
-
-  handleChangeIndex = index => {
-    this.setState({ value: index });
-  };
-
   render() {
     return (
       <div>
         <main>
-          <AppBar position="static" color="default">
-            <Tabs
-              value={this.state.value}
-              onChange={this.handleChange}
-              indicatorColor="primary"
-              textColor="primary"
-              fullWidth
-            >
-              <Tab label="Stuff" />
-              <Tab label="Other Stuff" />
-            </Tabs>
-          </AppBar>
-          <SwipeableViews
-            axis="x"
-            index={this.state.value}
-            onChangeIndex={this.handleChangeIndex}
-          >
-            <TabContainer dir="ltr">
+          {/* <Grid container spacing={24}>
+            <Grid item xs={2}>
+              <Sidebar/>
+            </Grid>
+            <Grid item xs={10}>
               <Portfolio items={portfolioItems} />
-            </TabContainer>
-            <TabContainer dir="ltr">Item Two</TabContainer>
-          </SwipeableViews>
+            </Grid>
+          </Grid> */}
+          <Sidebar/>         
+          <div className="portfolio-wrapper">
+            <GradientScroll>
+              <Portfolio items={portfolioItems} />
+            </GradientScroll>
+          </div>
         </main>
       </div>
     );

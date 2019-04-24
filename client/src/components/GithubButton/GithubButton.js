@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 import { withStyles } from "@material-ui/core/styles";
 import Avatar from "@material-ui/core/Avatar";
-import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import Tooltip from "@material-ui/core/Tooltip";
 import "./GithubButton.scss";
@@ -20,7 +19,7 @@ function GithubButton(props) {
   return (
     <div className="GithubButton">
       <Tooltip title="View on Github" placement="bottom-end">
-        <IconButton onClick={onClick} mini>
+        <IconButton onClick={onClick}>
           <Avatar
             alt="github"
             src={`${process.env.PUBLIC_URL}/github-circle.png`}

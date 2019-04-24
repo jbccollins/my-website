@@ -1,35 +1,29 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./Portfolio.scss";
-import PortfolioItem from "components/PortfolioItem";
+import Grid from '@material-ui/core/Grid';
+import PortfolioCard from "components/PortfolioCard";
 
 export default class Portfolio extends React.Component {
-  state = {
-    activeItem: null
-  };
-
-  handleActiveItemChange = id => {
-    this.setState({ activeItem: id });
-  };
-
   render() {
     const { items } = this.props;
-    const { activeItem } = this.state;
     return (
       <div className="Portfolio">
-        {items.map(({ name, id, tags, description }) => {
-          return (
-            <PortfolioItem
-              active={id === activeItem}
-              onActivationChange={this.handleActiveItemChange}
-              key={id}
-              name={name}
-              id={id}
-              tags={tags}
-              description={description}
-            />
-          );
-        })}
+        <Grid container spacing={24}>
+          {items.map(({ name, image, id, tags, description }) => {
+            return (
+              <Grid item xs={12} sm={12} md={6} lg={6} key={id}>
+                <PortfolioCard
+                  name={name}
+                  image={image}
+                  id={id}
+                  tags={tags}
+                  description={description}
+                />
+              </Grid>
+            );
+          })}
+        </Grid>
       </div>
     );
   }

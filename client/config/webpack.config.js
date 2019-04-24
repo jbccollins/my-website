@@ -281,6 +281,8 @@ module.exports = function(webpackEnv) {
         assets: path.resolve(__dirname, "../src/assets/"),
         constants: path.resolve(__dirname, "../src/constants/"),
         utilities: path.resolve(__dirname, "../src/utilities/"),
+        scss: path.resolve(__dirname, "../src/scss/"),
+        data: path.resolve(__dirname, "../src/data/"),
         // Outside of src
         common: path.resolve(__dirname, "../../common/")
       },
