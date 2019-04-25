@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import ProfileAvatar from "components/ProfileAvatar";
 import SidebarItem from "components/SidebarItem";
+import Fade from 'react-reveal/Fade';
 import "./Sidebar.scss";
 
 const items = [
@@ -37,11 +38,13 @@ class Sidebar extends React.Component {
   render() {
     return (
       <div className="Sidebar">
-        <ProfileAvatar />
+        <Fade left>
+          <ProfileAvatar />
+        </Fade>
         <div className="sidebar-items">
           {
             items.map(({link, name}) => {
-              return (<SidebarItem key={link} onClick={this.handleItemClick} link={link} name={name} selected={link === this.state.selected}/>)
+              return (<Fade key={link} left><SidebarItem onClick={this.handleItemClick} link={link} name={name} selected={link === this.state.selected}/></Fade>)
             })
           }
         </div>
