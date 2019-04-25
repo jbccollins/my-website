@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import ProfileAvatar from "components/ProfileAvatar";
 import SidebarItem from "components/SidebarItem";
 import Fade from 'react-reveal/Fade';
+import SidebarInfo from "components/SidebarInfo";
 import "./Sidebar.scss";
 
 const items = [
@@ -40,6 +41,7 @@ class Sidebar extends React.Component {
       <div className="Sidebar">
         <Fade left>
           <ProfileAvatar />
+          <SidebarInfo />
         </Fade>
         <div className="sidebar-items">
           {
