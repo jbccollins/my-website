@@ -83,42 +83,6 @@ const portfolioItems = [
 		tags: [NPM, TYPESCRIPT],
 		id: 'postcss-twist-url-assets',
     description: 'A postcss plugin that will transform relative url paths into absolute url paths. Particularly useful when wrangling images from npm packages that use relative urls in their css.'
-	},
-	{
-		name: 'Lapidary',
-		tags: [NPM, TYPESCRIPT],
-		id: 'lapida1dsry',
-		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum molestie enim mollis tempor. Curabitur tempor sem id justo gravida, eget molestie justo pretium. Etiam non turpis vitae lectus gravida molestie. Fusce nisi nisl, tincidunt quis purus in, finibus laoreet est. In eu sem ac massa vulputate tincidunt. Maecenas sed finibus sem, sed lobortis urna. Morbi et sapien nec lectus tempor accumsan. Nam ex elit, lacinia sit amet placerat a, suscipit sed ligula.'
-	},
-	{
-		name: 'Lapidary',
-		tags: [NPM, TYPESCRIPT],
-		id: 'lapi2dary',
-		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum molestie enim mollis tempor. Curabitur tempor sem id justo gravida, eget molestie justo pretium. Etiam non turpis vitae lectus gravida molestie. Fusce nisi nisl, tincidunt quis purus in, finibus laoreet est. In eu sem ac massa vulputate tincidunt. Maecenas sed finibus sem, sed lobortis urna. Morbi et sapien nec lectus tempor accumsan. Nam ex elit, lacinia sit amet placerat a, suscipit sed ligula.'
-	},
-	{
-		name: 'Lapidary',
-		tags: [NPM, TYPESCRIPT],
-		id: 'lapid3ary',
-		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum molestie enim mollis tempor. Curabitur tempor sem id justo gravida, eget molestie justo pretium. Etiam non turpis vitae lectus gravida molestie. Fusce nisi nisl, tincidunt quis purus in, finibus laoreet est. In eu sem ac massa vulputate tincidunt. Maecenas sed finibus sem, sed lobortis urna. Morbi et sapien nec lectus tempor accumsan. Nam ex elit, lacinia sit amet placerat a, suscipit sed ligula.'
-	},
-	{
-		name: 'Lapidary',
-		tags: [NPM, TYPESCRIPT],
-		id: 'lapid4ary',
-		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum molestie enim mollis tempor. Curabitur tempor sem id justo gravida, eget molestie justo pretium. Etiam non turpis vitae lectus gravida molestie. Fusce nisi nisl, tincidunt quis purus in, finibus laoreet est. In eu sem ac massa vulputate tincidunt. Maecenas sed finibus sem, sed lobortis urna. Morbi et sapien nec lectus tempor accumsan. Nam ex elit, lacinia sit amet placerat a, suscipit sed ligula.'
-	},
-	{
-		name: 'Lapidary',
-		tags: [NPM, TYPESCRIPT],
-		id: 'lapida5ry',
-		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum molestie enim mollis tempor. Curabitur tempor sem id justo gravida, eget molestie justo pretium. Etiam non turpis vitae lectus gravida molestie. Fusce nisi nisl, tincidunt quis purus in, finibus laoreet est. In eu sem ac massa vulputate tincidunt. Maecenas sed finibus sem, sed lobortis urna. Morbi et sapien nec lectus tempor accumsan. Nam ex elit, lacinia sit amet placerat a, suscipit sed ligula.'
-	},
-	{
-		name: 'Lapidary',
-		tags: [NPM, TYPESCRIPT],
-		id: 'lapida6ry',
-		description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum ipsum molestie enim mollis tempor. Curabitur tempor sem id justo gravida, eget molestie justo pretium. Etiam non turpis vitae lectus gravida molestie. Fusce nisi nisl, tincidunt quis purus in, finibus laoreet est. In eu sem ac massa vulputate tincidunt. Maecenas sed finibus sem, sed lobortis urna. Morbi et sapien nec lectus tempor accumsan. Nam ex elit, lacinia sit amet placerat a, suscipit sed ligula.'
 	}
 ];
 

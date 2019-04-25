@@ -60,7 +60,7 @@ class PortfolioCard extends React.Component {
     const { classes, image, name, description, id } = this.props;
 
     return (
-      <Fade bottom>
+      <Fade right>
       <Card className={classes.card}>
         <CardHeader
           title={name}

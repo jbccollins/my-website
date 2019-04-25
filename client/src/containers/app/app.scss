@@ -12,7 +12,7 @@ main {
 	height: 100vh;
 	display: flex;
 }
-.portfolio-wrapper {
+.content-wrapper {
 	padding: 0px 40px 0px 40px;
 	margin: 40px 0px 40px 0px;
 	flex: 1;
@@ -24,3 +24,13 @@ main {
 		overflow-x: hidden;
 	}
 }
+.section {
+	padding: 0px 20px 0px 20px;
+    &:not(:first-of-type) {
+        margin-top: 80px;
+    }
+}
+
+// .SectionHeader {
+// 	margin-top: -60px;
+// }

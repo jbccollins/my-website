@@ -13,14 +13,14 @@
         cursor: pointer;
     }
    
-    a {
+    span {
         text-decoration: none;
         color: rgba(0,0,0,.4);
         z-index: 1;
         transition: .1s linear;
     }
       
-    a:before {
+    span:before {
         content: "";
         position: absolute;
         width: 100%;
@@ -33,20 +33,20 @@
         transform: scaleX(0);
         transition: .1s linear;
     }
-    &.selected a, a:hover, a:focus {
+    &.selected span, span:hover, span:focus {
         color: black;
     }
-    &.selected a:before {
+    &.selected span:before {
         background: red;
     }
-    &.selected a:before,
-    a:hover:before,
-    a:focus:before {
+    &.selected span:before,
+    span:hover:before,
+    span:focus:before {
         visibility: visible;
         transform: scaleX(1);
     }
 
-    &:hover > a:after {
+    &:hover > span:after {
         opacity: .15;
         transform: scalex(1);
     }

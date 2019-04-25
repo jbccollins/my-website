@@ -43,8 +43,8 @@ class Sidebar extends React.Component {
         </Fade>
         <div className="sidebar-items">
           {
-            items.map(({link, name}) => {
-              return (<Fade key={link} left><SidebarItem onClick={this.handleItemClick} link={link} name={name} selected={link === this.state.selected}/></Fade>)
+            items.map(({link, name}, i) => {
+              return (<Fade key={link} delay={(i + 1) * 200} left><SidebarItem onClick={this.handleItemClick} link={link} name={name} selected={link === this.state.selected}/></Fade>)
             })
           }
         </div>
