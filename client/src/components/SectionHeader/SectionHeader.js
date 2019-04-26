@@ -19,12 +19,12 @@ class SectionHeader extends React.Component {
     setTimeout(this.enableFade, 1000)
   }
   render() {
-    const { children, name } = this.props;
+    const { children, name, id } = this.props;
     const { fade } = this.state;
     return (
       <Element name={name}>
         <Fade when={fade} top>
-          <div className="SectionHeader">
+          <div className="SectionHeader" id={id}>
             {children}
           </div>	
         </Fade>
@@ -35,5 +35,6 @@ class SectionHeader extends React.Component {
  SectionHeader.propTypes = {	
   	children: PropTypes.node,
     name: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
 };	
  export default SectionHeader;

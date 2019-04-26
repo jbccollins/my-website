@@ -5,29 +5,36 @@ import SidebarItem from "components/SidebarItem";
 import Fade from 'react-reveal/Fade';
 import SidebarInfo from "components/SidebarInfo";
 import "./Sidebar.scss";
-
+/*
+using react-waypoint and onEnter and onLeave to create a push/pop stack we could use that to get the current thing that's inveiw
+*/
 const items = [
   {
     link: "projects",
-    name: "Projects",
+    name: "Portfolio",
   },
   {
     link: "about-me",
     name: "About Me",
   },
   {
-    link: "contact-me",
-    name: "Contact Me",
+    link: "skills",
+    name: "Skills",
   },
-  {
-    link: "blog",
-    name: "Blog",
-  },
+  // {
+  //   link: "contact-me",
+  //   name: "Contact Me",
+  // },
+  // {
+  //   link: "blog",
+  //   name: "Blog",
+  // },
 ];
 
 class Sidebar extends React.Component {
   state = {
-    selected: "projects"
+    selected: "projects",
+    rootEl: 'body',
   }
 
   handleItemClick = link => {
@@ -36,7 +43,12 @@ class Sidebar extends React.Component {
     });
   }
 
+  componentDidMount() {
+    this.setState({rootEl: '#gradient-scroll-id'})
+  }
+
   render() {
+    const { rootEl } = this.state;
     return (
       <div className="Sidebar">
         <Fade left>

@@ -6,6 +6,7 @@ import { connect } from "react-redux";
 import Grid from '@material-ui/core/Grid';
 import "./app.scss";
 import { portfolioItems } from "data/portfolioItems";
+import { logos } from "data/logos";
 import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
 import PropTypes from "prop-types";
@@ -13,6 +14,7 @@ import Sidebar from "components/Sidebar";
 import GradientScroll from 'react-gradient-scroll-indicator'
 import SectionHeader from "components/SectionHeader";
 import AboutMe from "components/AboutMe";
+import Skills from "components/Skills";
 //import{ Waypoint } from "react-waypoint";
 import Fade from 'react-reveal/Fade';
 
@@ -59,22 +61,28 @@ class App extends React.Component {
             <div className="sidebar-and-content-wrapper">
               <Sidebar/>
               <Fade bottom>
-                <div className="content-wrapper">
+                  <div className="content-wrapper">
                     <div id="sections">
                       <div className="section">
-                        <SectionHeader name="projects">Projects</SectionHeader>
+                        <SectionHeader id="projects" name="projects">Portfolio</SectionHeader>
                         <div className="section-content">
                           <Portfolio items={portfolioItems} />
                         </div>
                       </div>
                       <div className="section">
-                        <SectionHeader name="about-me">About Me</SectionHeader>
+                        <SectionHeader id="about-me" name="about-me">About Me</SectionHeader>
                         <div className="section-content">
                           <AboutMe/>
                         </div>
                       </div>
+                      <div className="section">
+                        <SectionHeader id="skills" name="skills">Skills</SectionHeader>
+                        <div className="section-content">
+                          <Skills items={logos} />
+                        </div>
+                      </div>
                     </div>
-                </div>
+                  </div>
               </Fade>
             </div>
           </GradientScroll>

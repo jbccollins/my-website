@@ -8,7 +8,7 @@ class SidebarItem extends React.Component {
     const { name, selected, onClick, link } = this.props;
     return (
       // -20 offset to ensure the gradient scroll fade container doesn't affect this
-      <Link to={link} containerId="gradient-scroll-id" smooth={true} offset={-20} duration={300}>
+      <Link href={link} to={link} containerId="gradient-scroll-id" offset={-20}>       
         <div className={`SidebarItem${selected ? " selected" : ""}`} onClick={() => onClick(link)}>
           <div className="item-content">
             <span>{name}</span>
