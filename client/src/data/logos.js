@@ -73,7 +73,7 @@ const logos = [
     color: "rgb(0, 42, 27)"
   },
   {
-    name: ".Net",
+    name: ".NET",
     image: dotNet,
     color: "rgb(0, 87, 148)"
   },
