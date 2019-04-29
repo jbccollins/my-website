@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import ProfileAvatar from "components/ProfileAvatar";
 import SidebarItem from "components/SidebarItem";
-import Fade from 'react-reveal/Fade';
+import ConditionalReveal from "components/ConditionalReveal";
 import SidebarInfo from "components/SidebarInfo";
 import {
   BrowserView,
@@ -41,16 +41,16 @@ class Sidebar extends React.Component {
   render() {
     return (
       <div className="Sidebar">
-        <BrowserView>
-          <Fade left>
+        <ConditionalReveal left>
+          <div className="sidebar-identity">        
             <ProfileAvatar />
             <SidebarInfo />
-          </Fade>
-        </BrowserView>
+          </div>
+        </ConditionalReveal>
         <div className="sidebar-items">
           {
             items.map(({link, name}, i) => {
-              return (<Fade key={link} delay={(i + 1) * 200} left><SidebarItem link={link} name={name}/></Fade>)
+              return (<ConditionalReveal key={link} delay={(i + 1) * 200} left><SidebarItem link={link} name={name}/></ConditionalReveal>)
             })
           }
         </div>

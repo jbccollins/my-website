@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Logo from "components/Logo";
 import Grid from '@material-ui/core/Grid';
-import Zoom from 'react-reveal/Zoom';
+import ConditionalReveal from "components/ConditionalReveal";
 
 import "./Skills.scss";	
 class Skills extends React.Component {
@@ -14,7 +14,7 @@ class Skills extends React.Component {
           {items.map(({name, image, color}) => {
             return (
               <Grid item xs={6} sm={6} md={3} lg={2} key={name}>
-                <Zoom><Logo name={name} image={image} color={color}/></Zoom>
+                <ConditionalReveal component="zoom"><Logo name={name} image={image} color={color}/></ConditionalReveal>
               </Grid>
             );
           })}

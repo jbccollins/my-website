@@ -15,7 +15,7 @@ import SectionHeader from "components/SectionHeader";
 import AboutMe from "components/AboutMe";
 import Skills from "components/Skills";
 //import{ Waypoint } from "react-waypoint";
-import Fade from 'react-reveal/Fade';
+import ConditionalReveal from "components/ConditionalReveal";
 import {
   isMobile,
 } from "react-device-detect";
@@ -33,7 +33,7 @@ TabContainer.propTypes = {
   dir: PropTypes.string.isRequired
 };
 
-const styles = {
+let styles = {
   '@global': {
     '*::-webkit-scrollbar': {
       width: '0.6em'
@@ -49,7 +49,9 @@ const styles = {
   }
 };
 
-
+if (isMobile) {
+  styles = {};
+}
 
 class App extends React.Component {
   render() {
@@ -58,7 +60,7 @@ class App extends React.Component {
         <main id="main">
           <div className="sidebar-and-content-wrapper">
             <Sidebar/>
-            <Fade bottom>
+            <ConditionalReveal right>
                 <div className="content-wrapper">
                   <div id="sections">
                     <div className="section" id="projects" name="projects">
@@ -81,7 +83,7 @@ class App extends React.Component {
                     </div>
                   </div>
                 </div>
-            </Fade>
+            </ConditionalReveal>
           </div>
         </main>
       </div>

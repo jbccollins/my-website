@@ -14,7 +14,7 @@ import red from '@material-ui/core/colors/red';
 import CodeIcon from '@material-ui/icons/Code';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Tooltip from "@material-ui/core/Tooltip";
-import Fade from 'react-reveal/Fade';
+import ConditionalReveal from "components/ConditionalReveal";
 
 import "./PortfolioCard.scss";
 
@@ -60,7 +60,7 @@ class PortfolioCard extends React.Component {
     const { classes, image, name, description, id } = this.props;
 
     return (
-      <Fade>
+      <ConditionalReveal>
         <Card className={classes.card}>
           <CardHeader
             title={name}
@@ -125,7 +125,7 @@ class PortfolioCard extends React.Component {
             </CardContent>
           </Collapse>
         </Card>
-      </Fade>
+      </ConditionalReveal>
     )
   }
 }

@@ -1,6 +1,6 @@
 import React from "react";	
 import PropTypes from "prop-types";
-import Fade from 'react-reveal/Fade';
+import ConditionalReveal from "components/ConditionalReveal";
 
 import "./SectionHeader.scss";
 
@@ -21,11 +21,11 @@ class SectionHeader extends React.Component {
     const { children } = this.props;
     const { fade } = this.state;
     return (
-      <Fade when={fade} top>
+      <ConditionalReveal when={fade} top>
         <div className="SectionHeader">
           {children}
         </div>	
-      </Fade>
+      </ConditionalReveal>
     );	
   }	
 }	
