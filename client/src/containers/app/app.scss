@@ -20,8 +20,12 @@ main {
 	margin: 40px 0px 40px 0px;
 	flex: 1;
 	height: calc(100vh - 80px);
+}
+
+.desktop .content-wrapper {
 	margin-left: 200px;
 }
+
 .section {
     &:not(:first-of-type) {
         margin-top: 80px;
@@ -39,4 +43,12 @@ main {
 .Sidebar {
 	position: fixed;
 	width: 200px;
+}
+
+.mobile {
+	main {
+		height: calc(100vh - 40px);
+		//border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+		//overflow: hidden;
+	}
 }

@@ -4,6 +4,12 @@ import ProfileAvatar from "components/ProfileAvatar";
 import SidebarItem from "components/SidebarItem";
 import Fade from 'react-reveal/Fade';
 import SidebarInfo from "components/SidebarInfo";
+import {
+  BrowserView,
+  // MobileView,
+  // isBrowser,
+  // isMobile
+} from "react-device-detect";
 import "./Sidebar.scss";
 /*
 using react-waypoint and onEnter and onLeave to create a push/pop stack we could use that to get the current thing that's inveiw
@@ -51,10 +57,12 @@ class Sidebar extends React.Component {
     const { rootEl } = this.state;
     return (
       <div className="Sidebar">
-        <Fade left>
-          <ProfileAvatar />
-          <SidebarInfo />
-        </Fade>
+        <BrowserView>
+          <Fade left>
+            <ProfileAvatar />
+            <SidebarInfo />
+          </Fade>
+        </BrowserView>
         <div className="sidebar-items">
           {
             items.map(({link, name}, i) => {

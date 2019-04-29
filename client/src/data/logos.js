@@ -53,11 +53,6 @@ const logos = [
     website: "https://babeljs.io/"
   },
   {
-    name: "Atlassian",
-    image: atlassian,
-    color: "rgb(0, 86, 199)"
-  },
-  {
     name: "C#",
     image: csharp,
     color: "rgb(105, 37, 119)"
@@ -207,7 +202,12 @@ const logos = [
     name: "Vanilla Web",
     image: vanillaweb,
     color: "rgb(231, 76, 49)"
-  }
+  },
+  {
+    name: "Atlassian",
+    image: atlassian,
+    color: "rgb(0, 86, 199)"
+  },
 ];
 
 export { logos };

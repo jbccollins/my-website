@@ -17,6 +17,9 @@ import AboutMe from "components/AboutMe";
 import Skills from "components/Skills";
 //import{ Waypoint } from "react-waypoint";
 import Fade from 'react-reveal/Fade';
+import {
+  isMobile,
+} from "react-device-detect";
 
 function TabContainer({ children, dir }) {
   return (
@@ -55,7 +58,7 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div>
+      <div className={isMobile ? "mobile" : "desktop"}>
         <main>
           <GradientScroll ref={r => this.gradientScroll = r}>
             <div className="sidebar-and-content-wrapper">

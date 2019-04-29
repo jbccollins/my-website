@@ -13,7 +13,7 @@ class Skills extends React.Component {
         <Grid container spacing={24}>
           {items.map(({name, image, color}) => {
             return (
-              <Grid item xs={12} sm={6} md={3} lg={2} key={name}>
+              <Grid item xs={6} sm={6} md={3} lg={2} key={name}>
                 <Zoom><Logo name={name} image={image} color={color}/></Zoom>
               </Grid>
             );

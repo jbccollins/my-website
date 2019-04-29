@@ -11,3 +11,20 @@
         margin-bottom: 20px;
     }
 }
+
+.mobile {
+    .Sidebar {
+        position: fixed;
+        bottom: 0px;
+        width: 100%;
+        margin-top: 0px;
+        padding-left: 0px;
+        height: 40px;
+        line-height: 40px;
+        .sidebar-items {
+            padding: 0px 20px;
+            justify-content: space-between;
+            flex-flow: row;
+        }
+    }
+}
