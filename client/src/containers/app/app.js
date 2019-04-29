@@ -63,16 +63,16 @@ class App extends React.Component {
             <ConditionalReveal right>
                 <div className="content-wrapper">
                   <div id="sections">
+                  <div className="section" id="about-me" name="about-me">
+                      <SectionHeader>About Me</SectionHeader>
+                      <div className="section-content">
+                        <AboutMe/>
+                      </div>
+                    </div>
                     <div className="section" id="projects" name="projects">
                       <SectionHeader>Portfolio</SectionHeader>
                       <div className="section-content">
                         <Portfolio items={portfolioItems} />
-                      </div>
-                    </div>
-                    <div className="section" id="about-me" name="about-me">
-                      <SectionHeader>About Me</SectionHeader>
-                      <div className="section-content">
-                        <AboutMe/>
                       </div>
                     </div>
                     <div className="section" id="skills" name="skills">

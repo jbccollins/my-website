@@ -16,12 +16,12 @@ using react-waypoint and onEnter and onLeave to create a push/pop stack we could
 */
 const items = [
   {
-    link: "projects",
-    name: "Portfolio",
-  },
-  {
     link: "about-me",
     name: "About Me",
+  },
+  {
+    link: "projects",
+    name: "Portfolio",
   },
   {
     link: "skills",
