@@ -78,7 +78,7 @@ class App extends React.Component {
                     <div className="section" id="skills" name="skills">
                       <SectionHeader>Skills</SectionHeader>
                       <div className="section-content">
-                        <Skills items={logos} />
+                        <Skills/>
                       </div>
                     </div>
                   </div>

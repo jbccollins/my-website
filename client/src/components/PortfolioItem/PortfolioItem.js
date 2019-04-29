@@ -52,7 +52,7 @@ export default class PortfolioItem extends React.Component {
         onMouseLeave={this.handleMouseLeave}
         onClick={this.handleMouseClick}
       >
-        <div className="content-wrapper">
+        <div className="portfolio-item-content-wrapper">
           {/*id === 'lapidary' &&
             <LapidaryDiamond/>
           */}

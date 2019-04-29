@@ -10,6 +10,10 @@
     .SidebarInfo {
         margin-top: 40px;
         margin-bottom: 20px;
+        .name {
+            font-size: 20px;
+            margin-bottom: 4px;
+        }
     }
 }
 
@@ -46,12 +50,14 @@
             position: fixed;
             top: 0px;
             height: 29px;
+            overflow: hidden;
             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
             line-height: 30px;
             display: flex;
             width: calc(100vw - 10px);
             .name {
                 margin-left: 10px;
+                margin-bottom: 0px;
             }
             .SidebarInfo {
                 margin: 0px;
