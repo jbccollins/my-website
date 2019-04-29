@@ -38,23 +38,7 @@ const items = [
 ];
 
 class Sidebar extends React.Component {
-  state = {
-    selected: "projects",
-    rootEl: 'body',
-  }
-
-  handleItemClick = link => {
-    this.setState({
-      selected: link,
-    });
-  }
-
-  componentDidMount() {
-    this.setState({rootEl: '#gradient-scroll-id'})
-  }
-
   render() {
-    const { rootEl } = this.state;
     return (
       <div className="Sidebar">
         <BrowserView>
@@ -66,7 +50,7 @@ class Sidebar extends React.Component {
         <div className="sidebar-items">
           {
             items.map(({link, name}, i) => {
-              return (<Fade key={link} delay={(i + 1) * 200} left><SidebarItem onClick={this.handleItemClick} link={link} name={name} selected={link === this.state.selected}/></Fade>)
+              return (<Fade key={link} delay={(i + 1) * 200} left><SidebarItem link={link} name={name}/></Fade>)
             })
           }
         </div>

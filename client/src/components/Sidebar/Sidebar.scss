@@ -1,6 +1,7 @@
 .Sidebar {
-    margin-top: 40px;
+    //margin-top: 40px;
     padding-left: 40px;
+    height: 100%;
     .sidebar-items {
         display: flex;
         flex-flow: column;
@@ -19,12 +20,16 @@
         width: 100%;
         margin-top: 0px;
         padding-left: 0px;
-        height: 40px;
+        height: 39px;
         line-height: 40px;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
         .sidebar-items {
             padding: 0px 20px;
-            justify-content: space-between;
+            justify-content: center;
             flex-flow: row;
+            .SidebarItem {
+                margin: 0px 20px;
+            }
         }
     }
 }

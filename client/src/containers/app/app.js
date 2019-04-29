@@ -11,7 +11,6 @@ import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
 import PropTypes from "prop-types";
 import Sidebar from "components/Sidebar";
-import GradientScroll from 'react-gradient-scroll-indicator'
 import SectionHeader from "components/SectionHeader";
 import AboutMe from "components/AboutMe";
 import Skills from "components/Skills";
@@ -53,42 +52,37 @@ const styles = {
 
 
 class App extends React.Component {
-  componentDidMount() {
-    this.gradientScroll.scrollableElement.id = "gradient-scroll-id";
-  }
   render() {
     return (
       <div className={isMobile ? "mobile" : "desktop"}>
-        <main>
-          <GradientScroll ref={r => this.gradientScroll = r}>
-            <div className="sidebar-and-content-wrapper">
-              <Sidebar/>
-              <Fade bottom>
-                  <div className="content-wrapper">
-                    <div id="sections">
-                      <div className="section">
-                        <SectionHeader id="projects" name="projects">Portfolio</SectionHeader>
-                        <div className="section-content">
-                          <Portfolio items={portfolioItems} />
-                        </div>
+        <main id="main">
+          <div className="sidebar-and-content-wrapper">
+            <Sidebar/>
+            <Fade bottom>
+                <div className="content-wrapper">
+                  <div id="sections">
+                    <div className="section" id="projects" name="projects">
+                      <SectionHeader>Portfolio</SectionHeader>
+                      <div className="section-content">
+                        <Portfolio items={portfolioItems} />
                       </div>
-                      <div className="section">
-                        <SectionHeader id="about-me" name="about-me">About Me</SectionHeader>
-                        <div className="section-content">
-                          <AboutMe/>
-                        </div>
+                    </div>
+                    <div className="section" id="about-me" name="about-me">
+                      <SectionHeader>About Me</SectionHeader>
+                      <div className="section-content">
+                        <AboutMe/>
                       </div>
-                      <div className="section">
-                        <SectionHeader id="skills" name="skills">Skills</SectionHeader>
-                        <div className="section-content">
-                          <Skills items={logos} />
-                        </div>
+                    </div>
+                    <div className="section" id="skills" name="skills">
+                      <SectionHeader>Skills</SectionHeader>
+                      <div className="section-content">
+                        <Skills items={logos} />
                       </div>
                     </div>
                   </div>
-              </Fade>
-            </div>
-          </GradientScroll>
+                </div>
+            </Fade>
+          </div>
         </main>
       </div>
     );

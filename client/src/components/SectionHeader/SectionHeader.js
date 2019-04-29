@@ -1,6 +1,5 @@
 import React from "react";	
 import PropTypes from "prop-types";
-import { Element } from 'react-scroll'
 import Fade from 'react-reveal/Fade';
 
 import "./SectionHeader.scss";
@@ -19,22 +18,18 @@ class SectionHeader extends React.Component {
     setTimeout(this.enableFade, 1000)
   }
   render() {
-    const { children, name, id } = this.props;
+    const { children } = this.props;
     const { fade } = this.state;
     return (
-      <Element name={name}>
-        <Fade when={fade} top>
-          <div className="SectionHeader" id={id}>
-            {children}
-          </div>	
-        </Fade>
-      </Element>
+      <Fade when={fade} top>
+        <div className="SectionHeader">
+          {children}
+        </div>	
+      </Fade>
     );	
   }	
 }	
  SectionHeader.propTypes = {	
   	children: PropTypes.node,
-    name: PropTypes.string.isRequired,
-    id: PropTypes.string.isRequired,
 };	
  export default SectionHeader;

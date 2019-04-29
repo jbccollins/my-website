@@ -41,8 +41,7 @@
         background: red;
     }
     &.selected span:before,
-    span:hover:before,
-    span:focus:before {
+    span:hover:before {
         visibility: visible;
         transform: scaleX(1);
     }
