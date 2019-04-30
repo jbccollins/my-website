@@ -6,22 +6,22 @@ import "./SectionHeader.scss";
 
 class SectionHeader extends React.Component {
   state = {
-    fade: false,
+    reveal: false,
   }
-  enableFade = () => {
+  enableReveal = () => {
     this.setState({
-      fade: true,
+      reveal: true,
     });
   }
   componentDidMount() {
-    // 1000 is the default fade time
-    setTimeout(this.enableFade, 1000)
+    // 1000 is the default reveal time
+    setTimeout(this.enableReveal, 1000)
   }
   render() {
     const { children } = this.props;
-    const { fade } = this.state;
+    const { reveal } = this.state;
     return (
-      <ConditionalReveal when={fade} top>
+      <ConditionalReveal when={reveal} top>
         <div className="SectionHeader">
           {children}
         </div>	

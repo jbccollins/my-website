@@ -1,3 +1,4 @@
+@import '~scss/_color';
 .SidebarItem {
     width: 100%;
     user-select: none;
@@ -28,7 +29,7 @@
         height: 3px;
         bottom: -6px;
         left: 0;
-        background: #9CF5A6;
+        background: $color-secondary;
         visibility: hidden;
         border-radius: 5px;
         transform: scaleX(0);
@@ -38,7 +39,7 @@
         color: black;
     }
     &.selected span:before {
-        background: red;
+        background: $color-primary;
     }
     &.selected span:before,
     span:hover:before {

@@ -66,7 +66,7 @@ const UNITY = "Unity";
 const JAVA = "Java";
 const R = "R";
 const VANILLAWEB = "Vanilla Web";
-const ATLASSIAN = "Atlassian";
+const ATLASSIAN = "Atlassian Suite";
 
 const logos = [
   {
@@ -123,7 +123,8 @@ const logos = [
   {
     name: GIT,
     image: git,
-    color: "rgb(243, 79, 60)"
+    color: "rgb(243, 79, 60)",
+    proficiency: 3,
   },
   {
     name: GITHUB,

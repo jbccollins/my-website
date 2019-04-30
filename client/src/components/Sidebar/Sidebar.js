@@ -1,15 +1,9 @@
 import React from "react";
-import PropTypes from "prop-types";
+//import PropTypes from "prop-types";
 import ProfileAvatar from "components/ProfileAvatar";
 import SidebarItem from "components/SidebarItem";
 import ConditionalReveal from "components/ConditionalReveal";
 import SidebarInfo from "components/SidebarInfo";
-import {
-  BrowserView,
-  // MobileView,
-  // isBrowser,
-  // isMobile
-} from "react-device-detect";
 import "./Sidebar.scss";
 /*
 using react-waypoint and onEnter and onLeave to create a push/pop stack we could use that to get the current thing that's inveiw

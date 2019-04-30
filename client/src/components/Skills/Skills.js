@@ -37,7 +37,6 @@ import {
   TRAVIS,
   TYPESCRIPT,
   VANILLAWEB,
-  VISUALSTUDIO,
   WEBPACK,
   YARN,
 } from "data/logos";
@@ -45,7 +44,7 @@ import "./Skills.scss";
 
 const LANGUAGES = [JAVASCRIPT, PYTHON, CSHARP, JAVA, TYPESCRIPT, POSTGRESQL, MSSQL, R];
 const FRAMEWORKS_AND_ECOSYSTEMS = [REACT, ANGULAR, DOTNET, DJANGO, VANILLAWEB, NODE];
-const POPULAR_LIBRARIES = [D3, MATERIALUI, REDUX, WEBPACK, BABEL, ESLINT, JEST, LEAFLET, SASS];
+const POPULAR_LIBRARIES = [REDUX, JQUERY, LEAFLET, MATERIALUI,  SASS, D3, WEBPACK, BABEL, ESLINT, JEST];
 const CODE_MANAGEMENT = [GIT, GITHUB, NPM, YARN, TRAVIS, ATLASSIAN, GOOGLE, HEROKU];
 
 const sections = [
@@ -88,13 +87,14 @@ class Skills extends React.Component {
                   <div className="skills-section-title">{title}</div>
                 </ConditionalReveal>
                 <Grid container spacing={24}>
-                  {items.map(({name, image, color}) => {
-                    console.log(name, image);
+                  {items.map(({name, image, color, proficiency}) => {
                     return (
                       <Grid item xs={6} sm={6} md={3} lg={2} key={name}>
                         <div className="skills-item-wrapper">
                           <div className="skills-item">
-                            <ConditionalReveal component="zoom"><Logo name={name} image={image} color={color}/></ConditionalReveal>
+                            <ConditionalReveal component="zoom">
+                              <Logo proficiency={proficiency} name={name} image={image} color={color}/>
+                            </ConditionalReveal>
                           </div>
                         </div>
                       </Grid>

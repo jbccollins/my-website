@@ -15,17 +15,25 @@ const styles = {
 };
 
 class SidebarInfo extends React.Component {	
-  render() {	
+  handleGithubClick = () => {
+    window.open('https://github.com/jbccollins');
+  }
+  handleLinkedInClick = () => {
+    window.open('https://www.linkedin.com/in/james-collins-41349124/');
+  }
+  render() {
     return (	
       <div className="SidebarInfo">	
         <div className="name">James Collins</div>
         <div className="social">
           <Avatar
+            onClick={this.handleGithubClick}
             className={this.props.classes.smallAvatar}
             alt="github"
             src={githubIcon}
           />
           <Avatar
+            onClick={this.handleLinkedInClick}
             className={this.props.classes.smallAvatar}
             alt="linkedin"
             src={linkedinIcon}

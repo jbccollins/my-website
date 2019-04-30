@@ -7,15 +7,19 @@ import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
+import CardActionArea from '@material-ui/core/CardActionArea';
 import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
-import red from '@material-ui/core/colors/red';
 import CodeIcon from '@material-ui/icons/Code';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Tooltip from "@material-ui/core/Tooltip";
+import Button from "@material-ui/core/Button";
+import OpenInNewIcon from '@material-ui/icons/OpenInNew';
+import PortfolioModal from "components/PortfolioModal";
 import ConditionalReveal from "components/ConditionalReveal";
-
+import Grid from '@material-ui/core/Grid';
+//console.log(derp)
 import "./PortfolioCard.scss";
 
 const styles = theme => ({
@@ -39,13 +43,20 @@ const styles = theme => ({
   expandOpen: {
     transform: 'rotate(180deg)',
   },
-  avatar: {
-    backgroundColor: red[500],
+  button: {
+    color: 'rgba(0, 0, 0, 0.4)',
+  },
+  rightIcon: {
+    marginLeft: theme.spacing.unit,
   },
 });
 
 class PortfolioCard extends React.Component {
-  state = { expanded: false };
+  state = {
+    expanded: false,
+    open: false,
+    showClickHint: false,
+  };
 
   handleExpandClick = () => {
     this.setState(state => ({ expanded: !state.expanded }));
@@ -56,76 +67,131 @@ class PortfolioCard extends React.Component {
     window.open(`https://github.com/jbccollins/${id}`);
   };
 
+  handleActionAreaMouseEnter = () => {
+    this.setState({
+      showClickHint: true
+    });
+  }
+
+  handleActionAreaMouseLeave = () => {
+    this.setState({
+      showClickHint: false
+    });
+  }
+
+  handleClickOpen = () => {
+    this.setState({ open: true });
+  };
+
+  handleClose = () => {
+    this.setState({ open: false });
+  };
+
+  generateActionArea = children => {
+    const { showClickHint } = this.state;
+    if (this.props.sections) {
+      return (
+        <CardActionArea onClick={this.handleClickOpen} onMouseEnter={this.handleActionAreaMouseEnter} onMouseLeave={this.handleActionAreaMouseLeave}>
+          <div className={`click-hint${showClickHint ? " visible" : ""}`}>
+            <div>
+              <Typography variant="h5" component="h2">
+                More Info
+              </Typography>
+            </div>
+          </div>
+          {children}
+        </CardActionArea>
+      );
+    }
+    return children;
+  }
+
   render() {
-    const { classes, image, name, description, id } = this.props;
+    const { classes, ...other } = this.props;
+    const { image, name, description, website, sections } = other;
+    const { open, showClickHint } = this.state;
 
     return (
-      <ConditionalReveal>
-        <Card className={classes.card}>
-          <CardHeader
-            title={name}
-            //subheader="September 14, 2016"
-          />
-          {image &&
-            <CardMedia
-              className={classes.media}
-              image={image}
-              title={name}
-            />
-          }
-          <CardContent>
-            <Typography className="description" component="p">
-              {description}
-            </Typography>
-          </CardContent>
-          <CardActions className={classes.actions} disableActionSpacing>
-            <Tooltip title="View on Github" placement="right">
-              <IconButton aria-label="Code" onClick={this.handleGithubClick}>
-                <CodeIcon />
-              </IconButton>
-            </Tooltip>
-            <Tooltip title="Show More" placement="left">
-              <IconButton
-                className={classnames(classes.expand, {
-                  [classes.expandOpen]: this.state.expanded,
-                })}
-                onClick={this.handleExpandClick}
-                aria-expanded={this.state.expanded}
-                aria-label="Show more"
-              >
-                <ExpandMoreIcon />
-              </IconButton>
-            </Tooltip>
-          </CardActions>
-          <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
+      <Grid item xs={12} sm={12} md={6} lg={6}>
+        <ConditionalReveal>
+          <Card className={classes.card}>
+            {this.generateActionArea(
+              <CardMedia
+                className={classes.media}
+                image={image}
+                title={name}
+              />
+            )}
             <CardContent>
-              <Typography paragraph>Method:</Typography>
-              <Typography paragraph>
-                Heat 1/2 cup of the broth in a pot until simmering, add saffron and set aside for 10
-                minutes.
+              <Typography gutterBottom variant="h5" component="h2">
+                {name}
               </Typography>
-              <Typography paragraph>
-                Heat oil in a (14- to 16-inch) paella pan or a large, deep skillet over medium-high
-                heat. Add chicken, shrimp and chorizo, and cook, stirring occasionally until lightly
-                browned, 6 to 8 minutes. Transfer shrimp to a large plate and set aside, leaving
-                chicken and chorizo in the pan. Add pimentón, bay leaves, garlic, tomatoes, onion,
-                salt and pepper, and cook, stirring often until thickened and fragrant, about 10
-                minutes. Add saffron broth and remaining 4 1/2 cups chicken broth; bring to a boil.
-              </Typography>
-              <Typography paragraph>
-                Add rice and stir very gently to distribute. Top with artichokes and peppers, and cook
-                without stirring, until most of the liquid is absorbed, 15 to 18 minutes. Reduce heat
-                to medium-low, add reserved shrimp and mussels, tucking them down into the rice, and
-                cook again without stirring, until mussels have opened and rice is just tender, 5 to 7
-                minutes more. (Discard any mussels that don’t open.)
-              </Typography>
-              <Typography>
-                Set aside off of the heat to let rest for 10 minutes, and then serve.
+              <Typography className="description" component="p">
+                {description}
               </Typography>
             </CardContent>
-          </Collapse>
-        </Card>
-      </ConditionalReveal>
+            <CardActions className={classes.actions} disableActionSpacing>
+              <Tooltip title="View on Github" placement="bottom">
+                <IconButton aria-label="Code" onClick={this.handleGithubClick}>
+                  <CodeIcon />
+                </IconButton>
+              </Tooltip>
+              {website &&
+                <Tooltip title={website.text} placement="bottom">
+                  <IconButton href={website.url} target="_blank" color="default">
+                    <OpenInNewIcon/>
+                  </IconButton>
+                </Tooltip>
+              }
+              {sections &&
+                [
+                  <Tooltip key="more-icon" title="More Info" placement="bottom">
+                    <IconButton
+                      className={classnames(classes.expand, {
+                        [classes.expandOpen]: this.state.expanded,
+                      })}
+                      //onClick={this.handleExpandClick}
+                      onClick={this.handleClickOpen}
+                      aria-expanded={this.state.expanded}
+                      aria-label="More Info"
+                    >
+                      <ExpandMoreIcon />
+                    </IconButton>
+                  </Tooltip>,
+                  <PortfolioModal
+                    key="more-modal"
+                    onClose={this.handleClose}
+                    open={open}
+                    {...other}
+                    />
+                ]
+              }
+            </CardActions>
+            {/* <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
+              <CardContent>
+                {motivation &&
+                  <div>
+                    <Typography component="h4">Motivation:</Typography>
+                    <Typography paragraph>{motivation}</Typography>
+                  </div>
+                }
+                {solution &&
+                  <p>
+                    <Typography paragraph>Solution:</Typography>
+                    <Typography paragraph>{solution}</Typography>
+                  </p>
+                }
+                {learned &&
+                  <p>
+                    <Typography paragraph>Learned:</Typography>
+                    <Typography paragraph>{learned}</Typography>
+                  </p>
+                }
+              </CardContent>
+            </Collapse> */}
+          </Card>
+        </ConditionalReveal>
+      </Grid>
     )
   }
 }
@@ -135,6 +201,8 @@ PortfolioCard.propTypes = {
   name: PropTypes.string.isRequired,
   tags: PropTypes.array.isRequired,
   id: PropTypes.string.isRequired,
+  website: PropTypes.object,
+  sections: PropTypes.array,
   description: PropTypes.string.isRequired,
 };
 

@@ -36,7 +36,7 @@ ${name}.propTypes = {
 export default ${name};
 `.trim();
 
- const cssString = `
+const cssString = `
 .${name} {
 }
 `.trim();

@@ -14,6 +14,7 @@ import myPersonalStarterReactSetupBackground from 'assets/my-personal-starter-re
 import reactGradientScrollBackground from 'assets/react-gradient-scroll-background.jpg';
 import thisWebsiteBackground from 'assets/my-website-background.jpg';
 import reactLeafletExtendableBackground from 'assets/react-leaflet-extendable-background.png';
+import React from 'react';
 
 const NPM = {
 	className: 'npm',
@@ -38,16 +39,52 @@ const portfolioItems = [
     image: dcMetroMonitorBackground,
 		tags: [REACT],
 		id: 'metro-monitor',
-		website: 'https://www.dcmetromonitor.com/?mapPosition=38.897174971889264%2C-77.02809381298722%2C18&stationCodes=A01%2CC01',
-    description: 'A live map of the DC Metro system.'
+		website: {
+      text: "Vist Website",
+      url: 'https://www.dcmetromonitor.com/?mapPosition=38.897174971889264%2C-77.02809381298722%2C18&stationCodes=A01%2CC01',
+    },
+    description: 'A live map of the DC Metro system.',
+    sections: [
+      {
+        name: "Motivation",
+        content: (
+          <div>
+            I first started working in Washington DC in April of 2018. I was taking the DC Metro system into work everyday
+            and became increasingly frustrated at the lack of any tool that could show me all the info I needed to prepare
+            for my commute while also letting me filter out information that I didn't need. And so I built such a tool myself.
+          </div>
+        ),
+      },
+      {
+        name: "Solution",
+        content: (
+          <div>
+            Metro Monitor is a React based website with a NodeJS backend. It features a fullscreen map powered by Leaflet
+            that displays all the rail line and station geometry as well as the live train positions. Clicking on a station
+            will bring up an overlay with the next few arrival time predictions for that station. There is also an alert
+            indicator which will display all active WMATA alerts. Using filters in the menu it is possible to turn off
+            any information that is irrelevant to the user. Don't care about the orange line? Switch it off and you won't see
+            that line geometry, any orange line trains or any orange line alerts!
+          </div>
+        )
+      },
+      {
+        name: "Learned",
+        content: (
+          <div>
+            This was the first React based website I made on my own from start to finish. As such I learned a lot about
+          </div>
+        )
+      }
+    ]
     //description: 'DC Metro Monitor is a website that provides a comprehensive snapshot of the DC Metro system at all times. It features a map with real-time train positions, arrival times and WMATA alerts all in once place! This was the first website that I ever built and deployed on my own. I had just started a new job in DC and I was taking the metro into work every day. At the time there was no single webpage I could visit that woudld give me all the information that I cared about for my commute on any given day. All that information was all out there but it was inconveniently scattered throughout WMATA\'s website which is very cluttered. This made it impossible to undestand at a glance what I should prepare for when leaving for work. The biggest challenge for this project was data wrangling. Getting a good base set of '
-	},
+  },
 	{
-		name: 'Spotify Hue Light Sync',
-    image: spotifyPhilipsHueAlbumSyncBackground,
-		tags: [NPM, TYPESCRIPT],
-		id: 'spotify-philips-hue-album-sync',
-    description: 'Sync your hue lights with your Spotify album art.'
+    name: 'Lapidary',
+    image: lapidaryBackground,
+		tags: [TYPESCRIPT],
+    id: 'lapidary',
+    description: 'Configurable faceted filtering.'
   },
 	{
 		name: 'My React Starter Kit',
@@ -57,19 +94,19 @@ const portfolioItems = [
     description: 'A ready-to-go website template that I use for most of my projects.'
   },
 	{
+		name: 'Spotify Hue Light Sync',
+    image: spotifyPhilipsHueAlbumSyncBackground,
+		tags: [NPM, TYPESCRIPT],
+		id: 'spotify-philips-hue-album-sync',
+    description: 'Sync your hue lights with your Spotify album art.'
+  },
+	{
 		name: 'This Website!',
     image: thisWebsiteBackground,
 		tags: [NPM, TYPESCRIPT],
 		id: 'my-website',
     description: 'The website that you are currently looking at :)'
 	},
-	{
-    name: 'Lapidary',
-    image: lapidaryBackground,
-		tags: [TYPESCRIPT],
-    id: 'lapidary',
-    description: 'Configurable faceted filtering.'
-  },
 	{
     name: 'React Gradient Scroll',
     image: reactGradientScrollBackground,
@@ -112,13 +149,7 @@ const portfolioItems = [
 		id: 'postcss-twist-url-assets',
     description: 'A plugin that will transform relative url paths into absolute url paths.'
 	},
-	{
-		name: 'Destiny Patch Notes Explorer',
-    image: destinyPatchNotesExplorerBackground,
-		tags: [NPM, TYPESCRIPT],
-		id: 'destiny-patch-notes-explorer',
-    description: 'Filter, subset and visualize patch notes for the video game "Destiny".'
-	},
+
 	{
 		name: 'Async Canvas To Blob',
     image: asyncCanvasToBlobBackground,
@@ -140,6 +171,13 @@ const portfolioItems = [
 		id: 'leaflet-tile-loading-progress-control',
     description: 'A leaflet control that indicates tile loading progress for a group of tile layers.'
   },
+	{
+		name: 'Destiny Patch Notes Explorer',
+    image: destinyPatchNotesExplorerBackground,
+		tags: [NPM, TYPESCRIPT],
+		id: 'destiny-patch-notes-explorer',
+    description: 'Filter, subset and visualize patch notes for the video game "Destiny".'
+	},
 	{
 		name: 'React Leaflet Extendable',
     image: reactLeafletExtendableBackground,

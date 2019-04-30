@@ -1,5 +1,13 @@
 .SidebarInfo {	
     .social {
         display: flex;
+        > div {
+            opacity: 0.5;
+            transition: .1s linear;
+            cursor: pointer;
+            &:hover {
+                opacity: 1;
+            }
+        }
     }
 }

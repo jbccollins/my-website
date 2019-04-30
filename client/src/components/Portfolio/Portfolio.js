@@ -10,17 +10,18 @@ export default class Portfolio extends React.Component {
     return (
       <div className="Portfolio">
         <Grid container spacing={24}>
-          {items.map(({ name, image, id, tags, description }) => {
-            return (
-              <Grid item xs={12} sm={12} md={6} lg={6} key={id}>
-                <PortfolioCard
-                  name={name}
-                  image={image}
-                  id={id}
-                  tags={tags}
-                  description={description}
-                />
-              </Grid>
+          {items.map(({ name, image, id, tags, description, website, sections }) => {
+            return (              
+              <PortfolioCard
+                key={id}
+                website={website}
+                sections={sections}
+                name={name}
+                image={image}
+                id={id}
+                tags={tags}
+                description={description}
+              />
             );
           })}
         </Grid>
