@@ -1,3 +1,7 @@
 @import '~scss/_structure';
 .Portfolio {
+    .show-more-button-wrapper {
+        display: flex;
+        justify-content: center;
+    }
 }

@@ -34,7 +34,7 @@ const styles = theme => ({
 
 class Logo extends React.Component {	
   render() {
-    const { name, image, color, proficiency } = this.props
+    const { name, image, color, proficiency, showStars } = this.props
     return (
       <div className="Logo" style={{border: `2px solid ${color}`}}>
         {/* <Card className={classes.card}>
@@ -56,19 +56,21 @@ class Logo extends React.Component {
             </Typography>
           </CardContent>
         </Card> */}
-        <div className="image-wrapper">
+        <div className={`${showStars ? 'show-stars ' : ''}image-wrapper`}>
           <span className="helper"/>
           <img alt="name" src={image}/>
         </div>
         <div className="image-name">{name}</div>
-        <StarRatings
-          rating={proficiency}
-          starDimension="14px"
-          starRatedColor="rgba(0, 0, 0, 0.8)"
-          numberOfStars={3}
-          starSpacing="1px"
-          name='rating'
-        />
+        {showStars &&
+          <StarRatings
+            rating={proficiency}
+            starDimension="14px"
+            starRatedColor="rgba(0, 0, 0, 0.8)"
+            numberOfStars={3}
+            starSpacing="1px"
+            name='rating'
+          />
+        }
       </div>
     );
   }
@@ -78,5 +80,6 @@ Logo.propTypes = {
   image: PropTypes.string.isRequired,
   color: PropTypes.string.isRequired,
   proficiency: PropTypes.number.isRequired,
+  showStars: PropTypes.bool,
 };	
  export default withStyles(styles)(Logo);

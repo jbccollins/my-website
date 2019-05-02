@@ -46,7 +46,7 @@ class SidebarInfo extends React.Component {
               />
             </div>
           </Tooltip>
-          <Tooltip title="Email" placement="bottom">
+          {/* <Tooltip title="Email" placement="bottom">
             <div style={{marginLeft: '8px'}} onClick={this.handleLinkedInClick}>
               <img
                 className={this.props.classes.smallAvatar}
@@ -54,7 +54,7 @@ class SidebarInfo extends React.Component {
                 src={gmailIcon}
               />
             </div>
-          </Tooltip>
+          </Tooltip> */}
         </div>
       </div>	
     );	

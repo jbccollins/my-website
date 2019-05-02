@@ -23,14 +23,16 @@
         }
     }
     .fireside-link {
-        background: -webkit-linear-gradient(45deg, #ef4048,  #222f61 80%);
-        //-webkit-background-clip: text;
-        //-webkit-text-fill-color: transparent;
-        color: white;
-        text-decoration: none;
-        padding: 2px 4px;
-        border-radius: 2px;
-        margin: 0px 4px;
+        // background: -webkit-linear-gradient(45deg, #ef4048,  #222f61 80%);
+        // //-webkit-background-clip: text;
+        // //-webkit-text-fill-color: transparent;
+        // color: white;
+        // text-decoration: none;
+        // padding: 2px 4px;
+        // border-radius: 2px;
+        // margin: 0px 4px;
+        color: black;
+        margin: 0px 5px;
     }
     .timeline-element-wrapper {
         padding: 20px;
@@ -58,6 +60,15 @@
     }
     .vertical-timeline-element-icon {
         box-shadow: 0 0 0 2px rgba(0,0,0,.1);
+    }
+    .about-me-text {
+        margin-top: 20px;
+        font-size: 16px;
+    }
+    .contact-me-button-wrapper {
+        margin-top: 20px;
+        display: flex;
+        justify-content: center;
     }
 }
 

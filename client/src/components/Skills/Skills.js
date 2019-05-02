@@ -4,6 +4,9 @@ import Logo from "components/Logo";
 import Grid from '@material-ui/core/Grid';
 import ConditionalReveal from "components/ConditionalReveal";
 import Paper from '@material-ui/core/Paper';
+import Button from "@material-ui/core/Button";
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import classnames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import {
   logos,
@@ -72,14 +75,55 @@ const styles = theme => ({
     paddingTop: theme.spacing.unit * 2,
     paddingBottom: theme.spacing.unit * 2,
   },
+  expand: {
+    transform: 'rotate(0deg)',
+    transition: theme.transitions.create('transform', {
+      duration: theme.transitions.duration.shortest,
+    }),
+  },
+  button: {
+    //marginTop: theme.spacing.unit * 3,
+    // marginLeft: 'auto',
+    // marginRight: 'auto',
+    // display: 'inline-block',
+    marginTop: '-58px',
+    float: 'right',
+  },
+  expandOpen: {
+    transform: 'rotate(180deg)',
+  },
+  rightIcon: {
+    marginLeft: theme.spacing.unit,
+  },
 });
 	
 class Skills extends React.Component {
+  state = {
+    expanded: false,
+  };
+
+  handleExpandClick = () => {
+    this.setState(state => ({ expanded: !state.expanded }));
+  };
   render() {
     const { classes } = this.props;
+    const { expanded } = this.state;
     return (
       <div className="Skills">
+        <Button color="secondary"
+          className={classes.button}
+          //onClick={this.handleExpandClick}
+          onClick={this.handleExpandClick}
+          aria-expanded={this.state.expanded}
+          aria-label="Toggle More Skills Items"
+        >
+          {expanded ? "Show Best Skills" : "Show All Skills"}
+          <ExpandMoreIcon className={classnames(classes.expand, classes.rightIcon, {
+                        [classes.expandOpen]: this.state.expanded,
+                      })}/>
+        </Button>
         {sections.map(({title, items}) => {
+          const itemsToRender = expanded ? items : items.filter(({proficiency}) => proficiency > 2);
           return (          
             <div key={title} className="skills-section">
               {/* <Paper className={classes.root} elevation={1}> */}
@@ -87,13 +131,13 @@ class Skills extends React.Component {
                   <div className="secondary-section-title">{title}</div>
                 </ConditionalReveal>
                 <Grid container spacing={24}>
-                  {items.map(({name, image, color, proficiency}) => {
+                  {itemsToRender.map(({name, image, color, proficiency}) => {
                     return (
                       <Grid item xs={6} sm={6} md={3} lg={2} key={name}>
                         <div className="skills-item-wrapper">
                           <div className="skills-item">
                             <ConditionalReveal component="zoom">
-                              <Logo proficiency={proficiency} name={name} image={image} color={color}/>
+                              <Logo proficiency={proficiency} name={name} image={image} color={color} showStars={expanded}/>
                             </ConditionalReveal>
                           </div>
                         </div>

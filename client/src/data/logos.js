@@ -190,7 +190,7 @@ const logos = [
     name: PYTHON,
     image: python,
     color: "rgb(49, 111, 153)",
-    proficiency: 2,
+    proficiency: 2.5,
   },
   {
     name: REDUX,

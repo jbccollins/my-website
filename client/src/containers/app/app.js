@@ -13,6 +13,7 @@ import SectionHeader from "components/SectionHeader";
 import AboutMe from "components/AboutMe";
 import Skills from "components/Skills";
 import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
+import theme from "utilities/theme";
 //import{ Waypoint } from "react-waypoint";
 import ConditionalReveal from "components/ConditionalReveal";
 import {
@@ -20,12 +21,12 @@ import {
   BrowserView,
 } from "react-device-detect";
 
-const theme = createMuiTheme({
-  typography: {
-    useNextVariants: true,
-    fontFamily: '"RTRaleway"',
-  },
-});
+// const theme = createMuiTheme({
+//   typography: {
+//     useNextVariants: true,
+//     fontFamily: '"RTRaleway"',
+//   },
+// });
 
 let styles = theme => ({
   '@global': {

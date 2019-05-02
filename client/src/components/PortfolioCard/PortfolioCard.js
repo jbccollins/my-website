@@ -40,11 +40,14 @@ const styles = theme => ({
       duration: theme.transitions.duration.shortest,
     }),
   },
+  moreButton: {
+    marginLeft: 'auto',
+  },
   expandOpen: {
     transform: 'rotate(180deg)',
   },
   button: {
-    color: 'rgba(0, 0, 0, 0.4)',
+    //color: 'rgba(0, 0, 0, 0.4)',
   },
   rightIcon: {
     marginLeft: theme.spacing.unit,
@@ -145,19 +148,16 @@ class PortfolioCard extends React.Component {
               }
               {sections &&
                 [
-                  <Tooltip key="more-icon" title="More Info" placement="bottom">
-                    <IconButton
-                      className={classnames(classes.expand, {
-                        [classes.expandOpen]: this.state.expanded,
-                      })}
-                      //onClick={this.handleExpandClick}
-                      onClick={this.handleClickOpen}
-                      aria-expanded={this.state.expanded}
-                      aria-label="More Info"
-                    >
-                      <InfoIcon />
-                    </IconButton>
-                  </Tooltip>,
+                  <Button key="more-button" color="secondary"
+                    className={classnames(classes.button, classes.moreButton)}
+                    //onClick={this.handleExpandClick}
+                    onClick={this.handleClickOpen}
+                    aria-expanded={this.state.expanded}
+                    aria-label="More Info"
+                  >
+                    More Info
+                    <InfoIcon className={classes.rightIcon}/>
+                  </Button>,
                   <PortfolioModal
                     key="more-modal"
                     onClose={this.handleClose}
