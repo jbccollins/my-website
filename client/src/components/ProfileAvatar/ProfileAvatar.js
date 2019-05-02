@@ -13,8 +13,8 @@ import "./ProfileAvatar.scss";
 const styles = {
   bigAvatar: {
     //margin: 10,
-    width: 100,
-    height: 100,
+    width: 120,
+    height: 120,
   },
   smallAvatar: {
     width: 30,
