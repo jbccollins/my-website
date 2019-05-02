@@ -64,7 +64,7 @@ class Logo extends React.Component {
         <StarRatings
           rating={proficiency}
           starDimension="14px"
-          starRatedColor="rgba(0, 0, 0, 0.4)"
+          starRatedColor="rgba(0, 0, 0, 0.8)"
           numberOfStars={3}
           starSpacing="1px"
           name='rating'

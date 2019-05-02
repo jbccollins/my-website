@@ -81,7 +81,7 @@ const logos = [
     image: angular,
     color: "rgb(224, 0, 54)",
     website: "https://angular.io/",
-    proficiency: 2,
+    proficiency: 1.5,
   },
   {
     name: BABEL,
@@ -100,7 +100,7 @@ const logos = [
     name: D3,
     image: d3,
     color: "rgb(245, 108, 93)",
-    proficiency: 1,
+    proficiency: 1.5,
   },
   {
     name: DJANGO,
@@ -142,7 +142,7 @@ const logos = [
     name: HEROKU,
     image: heroku,
     color: "rgb(126, 90, 189)",
-    proficiency: 1,
+    proficiency: 1.5,
   },
   {
     name: JAVASCRIPT,
@@ -166,31 +166,31 @@ const logos = [
     name: MATERIALUI,
     image: materialUi,
     color: "rgb(0, 178, 251)",
-    proficiency: 1,
+    proficiency: 1.5,
   },
   {
     name: NODE,
     image: node,
     color: "rgb(100, 158, 104)",
-    proficiency: 1,
+    proficiency: 1.5
   },
   {
     name: NPM,
     image: npm,
     color: "rgb(206, 55, 60)",
-    proficiency: 2,
+    proficiency: 2.5,
   },
   {
     name: POSTGRESQL,
     image: postgresql,
     color: "rgb(46, 104, 143)",
-    proficiency: 2,
+    proficiency: 1.5,
   },
   {
     name: PYTHON,
     image: python,
     color: "rgb(49, 111, 153)",
-    proficiency: 1,
+    proficiency: 2,
   },
   {
     name: REDUX,
@@ -244,7 +244,7 @@ const logos = [
     name: YARN,
     image: yarn,
     color: "rgb(31, 143, 184)",
-    proficiency: 2,
+    proficiency: 2.5,
   },
   {
     name: UNITY,
@@ -252,12 +252,11 @@ const logos = [
     color: "rgb(33, 44, 54)",
     proficiency: 1,
   },
-
   {
     name: JAVA,
     image: java,
     color: "rgb(234, 110, 36)",
-    proficiency: 2,
+    proficiency: 1.5,
   },
   {
     name: R,

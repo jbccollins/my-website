@@ -82,9 +82,9 @@ class Skills extends React.Component {
         {sections.map(({title, items}) => {
           return (          
             <div key={title} className="skills-section">
-              <Paper className={classes.root} elevation={1}>
+              {/* <Paper className={classes.root} elevation={1}> */}
                 <ConditionalReveal>
-                  <div className="skills-section-title">{title}</div>
+                  <div className="secondary-section-title">{title}</div>
                 </ConditionalReveal>
                 <Grid container spacing={24}>
                   {items.map(({name, image, color, proficiency}) => {
@@ -101,7 +101,7 @@ class Skills extends React.Component {
                     );
                   })}
                 </Grid>
-              </Paper>
+              {/* </Paper> */}
             </div>
           );
         })}

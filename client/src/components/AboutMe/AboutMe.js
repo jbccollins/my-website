@@ -32,7 +32,7 @@ class AboutMe extends React.Component {
       <div className="AboutMe">
         <ConditionalReveal right>
           <Grid container spacing={24}>
-            <Grid item xs={12} sm={12} md={5} lg={5}>
+            <Grid item xs={12} sm={12} md={6} lg={6}>
               <Typography variant="h5">
                 Hi, I'm James!
               </Typography>
@@ -46,12 +46,13 @@ class AboutMe extends React.Component {
                 building tools used by congressional staffers.
               </Typography>
             </Grid>
-            <Grid item xs={12} sm={12} md={7} lg={7}>
+            <Grid item xs={12} sm={12} md={6} lg={6}>
               {/* <ConditionalReveal component="zoom" delay={1000}>
                 <div className="image-wrapper">
                   <div className="image" style={{backgroundImage: `url(${profile})`}}></div>
                 </div>
               </ConditionalReveal> */}
+              <div className="secondary-section-title">Work and Education</div>
               <VerticalTimeline layout='1-column' animate={false}>
                 <ConditionalReveal when={reveal} component="zoom">
                   <VerticalTimelineElement
@@ -93,7 +94,7 @@ class AboutMe extends React.Component {
                       <div className="timeline-element-wrapper">
                         <h3 className="vertical-timeline-element-title">Bachelor's Degree in Computer Science</h3>
                         <h4 className="vertical-timeline-element-subtitle">University of Maryland College Park</h4>
-                        <p>September 2013 - May 2016</p>
+                        <p>September 2012 - May 2016</p>
                       </div>
                     </Paper>
                   </VerticalTimelineElement>

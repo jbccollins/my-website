@@ -1,5 +1,5 @@
 import React from "react";
-//import PropTypes from "prop-types";
+  import PropTypes from "prop-types";
 import ProfileAvatar from "components/ProfileAvatar";
 import SidebarItem from "components/SidebarItem";
 import ConditionalReveal from "components/ConditionalReveal";
@@ -44,7 +44,7 @@ class Sidebar extends React.Component {
         <div className="sidebar-items">
           {
             items.map(({link, name}, i) => {
-              return (<ConditionalReveal key={link} delay={(i + 1) * 200} left><SidebarItem link={link} name={name}/></ConditionalReveal>)
+              return (<ConditionalReveal key={link} delay={(i + 1) * 200} left><SidebarItem onClick={this.props.onNavigationClick} link={link} name={name}/></ConditionalReveal>)
             })
           }
         </div>
@@ -54,7 +54,7 @@ class Sidebar extends React.Component {
 }
 
 Sidebar.propTypes = {
-  //onClick: PropTypes.func.isRequired
+  onNavigationClick: PropTypes.func.isRequired
 };
 
 export default Sidebar;

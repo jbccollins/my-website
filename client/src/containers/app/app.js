@@ -50,15 +50,60 @@ if (isMobile) {
 const year = new Date().getFullYear();
 
 class App extends React.Component {
+  state = {
+    navigationClick: false,
+    overlayClasses: [],
+  }
+
+  componentDidMount() {
+    this.handleScroll();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.children !== this.props.children) {
+      this.handleScroll();
+    }
+  }
+
+  handleNavigationClick = () => {
+    this.setState({
+      navigationClick: true,
+      overlayClasses: ["top"]
+    });
+  }
+
+  handleScroll = () => {
+    const { navigationClick } = this.state;
+    if (navigationClick) {
+      // Clicking the navigation triggers a scroll but we don't want the gradient to hide section titles
+      this.setState({
+        navigationClick: false
+      });
+      return;
+    }
+    console.log('handlescroll');
+    const scrollableScrollTop = this.scrollableElement.scrollTop;
+    // const contentHeight = this.contentElement.clientHeight;
+    // const atBottom = this.scrollableElement.scrollHeight === contentHeight + scrollableScrollTop;
+    const overlayClasses = [];
+    if (scrollableScrollTop === 0) {
+      overlayClasses.push("top");
+    } 
+    // if (atBottom) {
+    //   overlayClasses.push("bottom");
+    // }
+    this.setState({overlayClasses});
+  }
   render() {
+    const { overlayClasses } = this.state;
     return (
       <MuiThemeProvider theme={theme}>
         <div className={isMobile ? "mobile" : "desktop"}>
-          <main id="main">
-            <div className="sidebar-and-content-wrapper">
-              <Sidebar/>
+          <main id="main" onScroll={this.handleScroll} ref={r => (this.scrollableElement = r)}>
+            <div className="sidebar-and-content-wrapper" >
+              <Sidebar onNavigationClick={this.handleNavigationClick}/>
               <ConditionalReveal right>
-                  <div className="content-wrapper">
+                  <div className={`content-wrapper ${overlayClasses.join(' ')}`} ref={r => (this.contentElement = r)}>
                     <div id="sections">
                     <div className="section" id="about-me" name="about-me">
                         <SectionHeader>About Me</SectionHeader>

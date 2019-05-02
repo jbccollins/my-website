@@ -12,7 +12,7 @@ import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import CodeIcon from '@material-ui/icons/Code';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import InfoIcon from '@material-ui/icons/Info';
 import Tooltip from "@material-ui/core/Tooltip";
 import Button from "@material-ui/core/Button";
 import OpenInNewIcon from '@material-ui/icons/OpenInNew';
@@ -155,7 +155,7 @@ class PortfolioCard extends React.Component {
                       aria-expanded={this.state.expanded}
                       aria-label="More Info"
                     >
-                      <ExpandMoreIcon />
+                      <InfoIcon />
                     </IconButton>
                   </Tooltip>,
                   <PortfolioModal
