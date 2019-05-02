@@ -32,14 +32,30 @@
         border-radius: 2px;
         margin: 0px 4px;
     }
-    $color: 'red';
+    .timeline-element-wrapper {
+        padding: 20px;
+    }
+    .vertical-timeline {
+        padding: 0px;
+        margin-bottom: -20px;
+        margin-top: 0px;
+    }
+    .vertical-timeline-element-content {
+        padding: 0px;
+        box-shadow: none;
+        &::before {
+            display: none;
+        }
+    }
     .vertical-timeline::before {
-        background: red !important;
-        height: calc(100% - 246px);
-        top: 76px;
+        background: rgba(0,0,0,.1) !important;
+        width: 2px;
+        left: 19px;
+        height: calc(100% - 20px);
+        //top: 76px;
     }
     .vertical-timeline-element-icon {
-        box-shadow: 0 0 0 4px red, inset 0 2px 0 rgba(0,0,0,.08), 0 3px 0 4px rgba(0,0,0,.05);
+        box-shadow: 0 0 0 2px rgba(0,0,0,.1);
     }
 }
 

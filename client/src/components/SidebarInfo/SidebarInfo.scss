@@ -2,12 +2,21 @@
     .social {
         display: flex;
         > div {
-            opacity: 0.5;
-            transition: .1s linear;
             cursor: pointer;
-            &:hover {
-                opacity: 1;
-            }
         }
     }
+}
+
+.desktop {
+    .SidebarInfo {	
+        .social {
+            > div {
+                opacity: 0.5;
+                transition: .1s linear;
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }  
 }

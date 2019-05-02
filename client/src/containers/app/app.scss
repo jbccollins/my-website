@@ -21,7 +21,7 @@ main {
 
 .section {
     &:not(:last-of-type) {
-        padding-bottom: 80px;
+        padding-bottom: 40px;
 	}
 	&:last-of-type {
 		padding-bottom: 2px;
