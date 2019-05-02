@@ -19,6 +19,10 @@ main {
 	margin-left: 200px;
 }
 
+.mobile .content-wrapper {
+	padding-top: 20px;
+}
+
 .section {
     &:not(:last-of-type) {
         padding-bottom: 40px;
