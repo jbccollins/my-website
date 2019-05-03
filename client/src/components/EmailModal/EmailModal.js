@@ -106,7 +106,7 @@ class EmailModal extends React.Component {
                   <TextField
                     required
                     id="standard-required"
-                    label="email"
+                    label="Your Email Address"
                     defaultValue=""
                     className={classes.textField}
                     margin="normal"
