@@ -4,33 +4,53 @@
   remove the import/usage of bindEndpoints from server.js :)
 */
 import bodyParser from 'body-parser';
+import nodemailer from 'nodemailer';
+import dotenv from 'dotenv';
+dotenv.config();
+
 import {
-  API_GET_DATA,
-  API_SET_DATA,
+  API_SEND_EMAIL
 } from './common/constants/urls';
 
-const useBodyParser = app => {
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.EMAIL_ADDRESS,
+    pass: process.env.EMAIL_PASSWORD,
+  }
+});
+
+const bindEndpoints = app => {
   app.use(bodyParser.urlencoded({
     extended: true
   }));
   app.use(bodyParser.json());
-};
 
-// For simplicity's sake I'm not building out a full database example here.
-// Check queries/queries.js for an example of how you would actually store data in a db.
-let APP_DATA = "A string of data";
+  app.post(API_SEND_EMAIL, (req, res) => {
+    const { FromAddress, FromName, Body } = req.body;
+    const message = `
+      <div>From Address: ${FromAddress}</div>
+      <div>From Name: ${FromName}</div>
+      <br/>
+      <div>${Body}</div>
+    `;
 
-const bindEndpoints = app => {
-  useBodyParser(app);
-
-  app.post(API_SET_DATA, (req, res) => {
-    const { Data } = req.body;
-    APP_DATA = Data;
-    res.send({status: "success"});
-  });
-
-  app.get(API_GET_DATA, (req, res) => {
-    res.send({data: APP_DATA});
+    const mailOptions = {
+      from: FromAddress, // sender address
+      to: process.env.EMAIL_ADDRESS, // list of receivers
+      subject: `My Website Email: ${FromName}`, // Subject line
+      html: message// plain text body
+    };
+    
+    transporter.sendMail(mailOptions, function (err, info) {
+      if(err) {
+        console.log(err)
+        res.send(err);
+      } else {
+        console.log(info);
+        res.send(info);
+      }
+    });
   });
 };
 

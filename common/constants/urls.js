@@ -1,8 +1,5 @@
-
-const API_GET_DATA = "/api/get-data";
-const API_SET_DATA = "/api/set-data";
+const API_SEND_EMAIL = "/api/send-email";
 
 export {
-  API_GET_DATA,
-  API_SET_DATA,
+  API_SEND_EMAIL
 };
