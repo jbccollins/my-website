@@ -1,6 +1,5 @@
 
 import fetch from "isomorphic-fetch";
-
 import {
 	API_SEND_EMAIL,
 } from "common/constants/urls";

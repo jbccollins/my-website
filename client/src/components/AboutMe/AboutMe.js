@@ -14,7 +14,7 @@ import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 import SendIcon from '@material-ui/icons/Send';
 import EmailModal from 'components/EmailModal';
-import differenceInYears from 'date-fns/difference_in_years'
+//import differenceInYears from 'date-fns/difference_in_years'
 import "./AboutMe.scss";	
 
 const styles = theme => ({
@@ -26,10 +26,10 @@ const styles = theme => ({
   },
 });
 
-const yearsOfExperience = differenceInYears(
-  new Date(),
-  new Date(2014, 6, 1)
-);
+// const yearsOfExperience = differenceInYears(
+//   new Date(),
+//   new Date(2014, 6, 1)
+// );
 
 class AboutMe extends React.Component {
   state = {

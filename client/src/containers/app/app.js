@@ -2,19 +2,15 @@ import React from "react";
 import Portfolio from "components/Portfolio";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-//import "../../../fonts/style.css";
 import "./app.scss";
 import { portfolioItems } from "data/portfolioItems";
-import Typography from "@material-ui/core/Typography";
 import { withStyles } from "@material-ui/core/styles";
-import PropTypes from "prop-types";
 import Sidebar from "components/Sidebar";
 import SectionHeader from "components/SectionHeader";
 import AboutMe from "components/AboutMe";
 import Skills from "components/Skills";
-import { createMuiTheme, MuiThemeProvider } from "@material-ui/core/styles";
+import { MuiThemeProvider } from "@material-ui/core/styles";
 import theme from "utilities/theme";
-//import{ Waypoint } from "react-waypoint";
 import ConditionalReveal from "components/ConditionalReveal";
 import {
   isMobile,
@@ -28,7 +24,7 @@ import {
 //   },
 // });
 
-let styles = theme => ({
+let styles = () => ({
   '@global': {
     '*::-webkit-scrollbar': {
       width: '0.6em'
@@ -82,7 +78,6 @@ class App extends React.Component {
       });
       return;
     }
-    console.log('handlescroll');
     const scrollableScrollTop = this.scrollableElement.scrollTop;
     // const contentHeight = this.contentElement.clientHeight;
     // const atBottom = this.scrollableElement.scrollHeight === contentHeight + scrollableScrollTop;
@@ -106,7 +101,13 @@ class App extends React.Component {
               <ConditionalReveal right>
                   <div className={`content-wrapper ${overlayClasses.join(' ')}`} ref={r => (this.contentElement = r)}>
                     <div id="sections">
-                    <div className="section" id="about-me" name="about-me">
+                      {/* <div className="section" id="blog" name="blog">
+                        <SectionHeader>Blog</SectionHeader>
+                        <div className="section-content">
+                          <Blog/>
+                        </div>
+                      </div> */}
+                      <div className="section" id="about-me" name="about-me">
                         <SectionHeader>About Me</SectionHeader>
                         <div className="section-content">
                           <AboutMe/>
@@ -140,7 +141,7 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = state => ({});
+const mapStateToProps = () => ({});
 
 const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
 

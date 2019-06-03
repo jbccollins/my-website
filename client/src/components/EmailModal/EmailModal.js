@@ -62,6 +62,7 @@ const initialInputState = {
 
 const REQUIRED_HELPER_TEXT = "Required Field Missing";
 const validateEmail = email => {
+  // eslint-disable-next-line
   const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
 }
@@ -141,7 +142,6 @@ class EmailModal extends React.Component {
       sendingError: res.messageId ? false : true,
       sendingSuccess: res.messageId ? true : false,
     })
-    console.log(res);
   }
   render() {
     const { classes, open } = this.props;
@@ -243,12 +243,12 @@ class EmailModal extends React.Component {
                 }
                 {sendingSuccess &&
                   <Typography color="inherit">
-                    Got it! I'll get back to you soon 😀
+                    Got it! I'll get back to you soon <span role="img" aria-label="smiley face">😀</span>
                   </Typography>
                 }
                 {sendingError &&
                   <Typography color="error">
-                    Hmmm... something went wrong when trying to send the email 😞
+                    Hmmm... something went wrong when trying to send the email <span role="img" aria-label="sad face">😞</span>
                   </Typography>
                 }
               </Grid>

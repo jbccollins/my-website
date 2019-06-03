@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 import Logo from "components/Logo";
 import Grid from '@material-ui/core/Grid';
 import ConditionalReveal from "components/ConditionalReveal";
-import Paper from '@material-ui/core/Paper';
 import Button from "@material-ui/core/Button";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import classnames from 'classnames';
@@ -126,26 +125,24 @@ class Skills extends React.Component {
           const itemsToRender = expanded ? items : items.filter(({proficiency}) => proficiency > 2);
           return (          
             <div key={title} className="skills-section">
-              {/* <Paper className={classes.root} elevation={1}> */}
-                <ConditionalReveal>
-                  <div className="secondary-section-title">{title}</div>
-                </ConditionalReveal>
-                <Grid container spacing={24}>
-                  {itemsToRender.map(({name, image, color, proficiency}) => {
-                    return (
-                      <Grid item xs={6} sm={6} md={3} lg={2} key={name}>
-                        <div className="skills-item-wrapper">
-                          <div className="skills-item">
-                            <ConditionalReveal component="zoom">
-                              <Logo proficiency={proficiency} name={name} image={image} color={color} showStars={expanded}/>
-                            </ConditionalReveal>
-                          </div>
+              <ConditionalReveal>
+                <div className="secondary-section-title">{title}</div>
+              </ConditionalReveal>
+              <Grid container spacing={24}>
+                {itemsToRender.map(({name, image, color, proficiency}) => {
+                  return (
+                    <Grid item xs={6} sm={6} md={3} lg={2} key={name}>
+                      <div className="skills-item-wrapper">
+                        <div className="skills-item">
+                          <ConditionalReveal component="zoom">
+                            <Logo proficiency={proficiency} name={name} image={image} color={color} showStars={expanded}/>
+                          </ConditionalReveal>
                         </div>
-                      </Grid>
-                    );
-                  })}
-                </Grid>
-              {/* </Paper> */}
+                      </div>
+                    </Grid>
+                  );
+                })}
+              </Grid>
             </div>
           );
         })}

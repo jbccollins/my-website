@@ -1,6 +1,5 @@
 import React from "react";	
 import PropTypes from "prop-types";
-import Divider from "@material-ui/core/Divider";
 import ConditionalReveal from "components/ConditionalReveal";
 
 import "./SectionHeader.scss";
@@ -25,7 +24,6 @@ class SectionHeader extends React.Component {
       <ConditionalReveal when={reveal} top>
         <div className="SectionHeader">
           {children}
-          {/* <Divider/> */}
         </div>	
       </ConditionalReveal>
     );	

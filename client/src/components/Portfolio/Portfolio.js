@@ -71,7 +71,10 @@ class Portfolio extends React.Component {
         </Grid>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
           <Grid className={classes.otherGrid} container spacing={24}>
-            {otherItems.map(({ name, image, id, tags, description, website, sections }) => {
+            {otherItems.map(({ name, image, id, tags, description, website, sections, disabled }) => {
+              if (disabled) {
+                return false;
+              }
               return (              
                 <PortfolioCard
                   key={id}

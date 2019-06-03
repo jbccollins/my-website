@@ -3,12 +3,10 @@ import PropTypes from "prop-types";
 import { withStyles } from '@material-ui/core/styles';
 import classnames from 'classnames';
 import Card from '@material-ui/core/Card';
-import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import CodeIcon from '@material-ui/icons/Code';
@@ -19,7 +17,6 @@ import OpenInNewIcon from '@material-ui/icons/OpenInNew';
 import PortfolioModal from "components/PortfolioModal";
 import ConditionalReveal from "components/ConditionalReveal";
 import Grid from '@material-ui/core/Grid';
-//console.log(derp)
 import "./PortfolioCard.scss";
 
 const styles = theme => ({
@@ -112,7 +109,7 @@ class PortfolioCard extends React.Component {
   render() {
     const { classes, ...other } = this.props;
     const { image, name, description, website, sections } = other;
-    const { open, showClickHint } = this.state;
+    const { open } = this.state;
 
     return (
       <Grid item xs={12} sm={12} md={6} lg={6}>

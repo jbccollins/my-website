@@ -1,9 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import linkedinIcon from "assets/linkedin-social.svg";
-import githubIcon from "assets/github-social.svg";
-import gmailIcon from "assets/gmail-social.svg";
-import Avatar from "@material-ui/core/Avatar";
+import linkedinIcon from "assets/social/linkedin-social.svg";
+import resumeIcon from "assets/resume/resume-icon-alt.png";
+import githubIcon from "assets/social/github-social.svg";
 import Tooltip from "@material-ui/core/Tooltip";
 import { withStyles } from '@material-ui/core/styles';
 import "./SidebarInfo.scss";
@@ -22,6 +21,9 @@ class SidebarInfo extends React.Component {
   }
   handleLinkedInClick = () => {
     window.open('https://www.linkedin.com/in/james-collins-41349124/');
+  }
+  handleResumeClick = () => {
+    console.log("resume click");
   }
   render() {
     return (	
@@ -43,6 +45,15 @@ class SidebarInfo extends React.Component {
                 className={this.props.classes.smallAvatar}
                 alt="linkedin"
                 src={linkedinIcon}
+              />
+            </div>
+          </Tooltip>
+          <Tooltip title="Resume" placement="bottom">
+            <div style={{marginLeft: '8px'}} onClick={this.handleResumeClick}>
+              <img
+                className={this.props.classes.smallAvatar}
+                alt="resume"
+                src={resumeIcon}
               />
             </div>
           </Tooltip>

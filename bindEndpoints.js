@@ -9,7 +9,8 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 import {
-  API_SEND_EMAIL
+  API_SEND_EMAIL,
+  RESUME_DOWNLOAD,
 } from './common/constants/urls';
 
 const transporter = nodemailer.createTransport({
@@ -52,6 +53,8 @@ const bindEndpoints = app => {
       }
     });
   });
+
+  app.get(RESUME_DOWNLOAD, (req, res) => res.download('./resume.png'))
 };
 
 export default bindEndpoints;

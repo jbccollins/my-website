@@ -1,19 +1,20 @@
-import lapidaryBackground from 'assets/lapidary-background.png';
-import dcMetroMonitorBackground from 'assets/dc-metro-monitor-background.png';
-import reactInteractiveCanvasBackground from 'assets/react-interactive-canvas-background.png';
-import cornholeSimulatorBackground from 'assets/cornhole-simulator-background.jpg';
-import usWeatherMonitorBackground from 'assets/us-weather-monitor-background.png';
-import spotifyPhilipsHueAlbumSyncBackground from 'assets/spotify-philips-hue-album-sync-background.png';
-import reactLeafletFlyInMarkerBackground from 'assets/react-leaflet-fly-in-marker-background.gif';
-import postcssTwistUrlAssetsBackground from 'assets/postcss-twist-url-assets-background.jpg';
-import destinyPatchNotesExplorerBackground from 'assets/destiny-patch-notes-explorer-background.jpg';
-import asyncCanvasToBlobBackground from 'assets/async-canvas-to-blob-background.jpg';
-import reactLavaLampMenuBackground from 'assets/react-lava-lamp-menu-background.jpg';
-import leafletTileLoadingProgressControl from 'assets/leaflet-tile-loading-progress-control-background.gif';
-import myPersonalStarterReactSetupBackground from 'assets/my-personal-starter-react-setup-background.png';
-import reactGradientScrollBackground from 'assets/react-gradient-scroll-background.jpg';
-import thisWebsiteBackground from 'assets/my-website-background.jpg';
-import reactLeafletExtendableBackground from 'assets/react-leaflet-extendable-background.png';
+import lapidaryBackground from 'assets/portfolio-items/lapidary-background.png';
+import dcMetroMonitorBackground from 'assets/portfolio-items/dc-metro-monitor-background.png';
+import reactInteractiveCanvasBackground from 'assets/portfolio-items/react-interactive-canvas-background.png';
+import cornholeSimulatorBackground from 'assets/portfolio-items/cornhole-simulator-background.jpg';
+import usWeatherMonitorBackground from 'assets/portfolio-items/us-weather-monitor-background.png';
+import spotifyPhilipsHueAlbumSyncBackground from 'assets/portfolio-items/spotify-philips-hue-album-sync-background.png';
+import reactLeafletFlyInMarkerBackground from 'assets/portfolio-items/react-leaflet-fly-in-marker-background.gif';
+import postcssTwistUrlAssetsBackground from 'assets/portfolio-items/postcss-twist-url-assets-background.jpg';
+import destinyPatchNotesExplorerBackground from 'assets/portfolio-items/destiny-patch-notes-explorer-background.jpg';
+import asyncCanvasToBlobBackground from 'assets/portfolio-items/async-canvas-to-blob-background.jpg';
+import reactLavaLampMenuBackground from 'assets/portfolio-items/react-lava-lamp-menu-background.jpg';
+import leafletTileLoadingProgressControl from 'assets/portfolio-items/leaflet-tile-loading-progress-control-background.gif';
+import myPersonalStarterReactSetupBackground from 'assets/portfolio-items/my-personal-starter-react-setup-background.png';
+import reactGradientScrollBackground from 'assets/portfolio-items/react-gradient-scroll-background.jpg';
+import thisWebsiteBackground from 'assets/portfolio-items/my-website-background.jpg';
+import reactLeafletExtendableBackground from 'assets/portfolio-items/react-leaflet-extendable-background.png';
+import marylandCensusDataExplorerBackground from 'assets/portfolio-items/maryland-census-data-explorer-background.jpg';
 import React from 'react';
 
 const NPM = {
@@ -77,7 +78,6 @@ const portfolioItems = [
         )
       }
     ]
-    //description: 'DC Metro Monitor is a website that provides a comprehensive snapshot of the DC Metro system at all times. It features a map with real-time train positions, arrival times and WMATA alerts all in once place! This was the first website that I ever built and deployed on my own. I had just started a new job in DC and I was taking the metro into work every day. At the time there was no single webpage I could visit that woudld give me all the information that I cared about for my commute on any given day. All that information was all out there but it was inconveniently scattered throughout WMATA\'s website which is very cluttered. This made it impossible to undestand at a glance what I should prepare for when leaving for work. The biggest challenge for this project was data wrangling. Getting a good base set of '
   },
 	{
     name: 'Lapidary',
@@ -101,11 +101,33 @@ const portfolioItems = [
     description: 'Sync your hue lights with your Spotify album art.'
   },
 	{
+    name: 'US Weather Monitor',
+    image: usWeatherMonitorBackground,
+		tags: [NPM, TYPESCRIPT],
+		id: 'weather-monitor',
+    description: 'A no frills realtime weather map.',
+		website: {
+      text: "Vist Website",
+      url: 'https://us-weather-monitor.herokuapp.com/',
+    },
+	},
+	{
 		name: 'This Website!',
     image: thisWebsiteBackground,
 		tags: [NPM, TYPESCRIPT],
 		id: 'my-website',
     description: 'The website that you are currently looking at :)'
+  },
+	{
+    name: 'Maryland Census Data Explorer',
+    image: marylandCensusDataExplorerBackground,
+		tags: [REACT],
+    id: 'maryland-census-data-explorer',
+    description: 'Visualize and predict income using data from Maryland\'s 2012 and 2013 census results.',
+		website: {
+      text: "Vist Website",
+      url: 'https://jbccollins.shinyapps.io/census-app/',
+    },
 	},
 	{
     name: 'React Gradient Scroll',
@@ -130,17 +152,11 @@ const portfolioItems = [
 	},
 	{
     name: 'Cornhole Simulator',
+    disabled: true,
     image: cornholeSimulatorBackground,
 		tags: [C_SHARP],
 		id: 'cornhole-simulator',
     description: 'A weather-proof way to waste time.'
-	},
-	{
-    name: 'US Weather Monitor',
-    image: usWeatherMonitorBackground,
-		tags: [NPM, TYPESCRIPT],
-		id: 'us-weather-monitor',
-    description: 'A no frills realtime weather map.'
 	},
 	{
 		name: 'Postcss Twist URL Assets',

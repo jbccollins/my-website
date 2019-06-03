@@ -1,9 +1,10 @@
 import React from "react";
-  import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import ProfileAvatar from "components/ProfileAvatar";
 import SidebarItem from "components/SidebarItem";
 import ConditionalReveal from "components/ConditionalReveal";
 import SidebarInfo from "components/SidebarInfo";
+import MyLogo from "components/KoalaSVG";
 import "./Sidebar.scss";
 /*
 using react-waypoint and onEnter and onLeave to create a push/pop stack we could use that to get the current thing that's inveiw
@@ -36,7 +37,10 @@ class Sidebar extends React.Component {
     return (
       <div className="Sidebar">
         <ConditionalReveal left>
-          <div className="sidebar-identity">        
+          <div className="sidebar-identity">
+            {false &&
+              <MyLogo />
+            }
             <ProfileAvatar />
             <SidebarInfo />
           </div>
