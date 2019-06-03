@@ -79,12 +79,14 @@ class App extends React.Component {
       return;
     }
     const scrollableScrollTop = this.scrollableElement.scrollTop;
-    // const contentHeight = this.contentElement.clientHeight;
-    // const atBottom = this.scrollableElement.scrollHeight === contentHeight + scrollableScrollTop;
     const overlayClasses = [];
     if (scrollableScrollTop === 0) {
       overlayClasses.push("top");
-    } 
+    }
+    if (this.scrollableElement.scrollTop >= (this.scrollableElement.scrollHeight - this.scrollableElement.offsetHeight)) {
+      console.log('at bottom');
+    }
+
     // if (atBottom) {
     //   overlayClasses.push("bottom");
     // }

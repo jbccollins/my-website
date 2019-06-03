@@ -4,7 +4,10 @@ import linkedinIcon from "assets/social/linkedin-social.svg";
 import resumeIcon from "assets/resume/resume-icon-alt.png";
 import githubIcon from "assets/social/github-social.svg";
 import Tooltip from "@material-ui/core/Tooltip";
+import fetch from "isomorphic-fetch";
+import { RESUME_DOWNLOAD } from "common/constants/urls";
 import { withStyles } from '@material-ui/core/styles';
+import { saveAs } from 'file-saver';
 import "./SidebarInfo.scss";
 
 const styles = {
@@ -22,8 +25,14 @@ class SidebarInfo extends React.Component {
   handleLinkedInClick = () => {
     window.open('https://www.linkedin.com/in/james-collins-41349124/');
   }
-  handleResumeClick = () => {
-    console.log("resume click");
+  handleResumeClick = async () => {
+    let res = await fetch(RESUME_DOWNLOAD, {
+      method: "GET",
+    });
+    res = await res.blob();
+    var fileBlob = new Blob([res], {type: "application/pdf"})
+    saveAs(fileBlob, "James-Collins-Resume.pdf");
+    
   }
   render() {
     return (	
