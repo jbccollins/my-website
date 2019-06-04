@@ -35,21 +35,62 @@
         transform: scaleX(0);
         transition: .1s linear;
     }
-    &.selected span, span:hover, span:focus {
+    &:not(.coerce-spy) {
+        &.active span {
+            color: black;
+        }
+        &.active span:before {
+            background: $color-primary;
+        }
+        &.active span:before {
+            visibility: visible;
+            transform: scaleX(1);
+        }
+    }
+
+    &.selected span {
         color: black;
     }
     &.selected span:before {
         background: $color-primary;
     }
-    &.selected span:before,
-    span:hover:before {
+    &.selected span:before {
         visibility: visible;
         transform: scaleX(1);
     }
+}
 
-    &:hover > span:after {
-        opacity: .15;
-        transform: scalex(1);
+.desktop {
+    .SidebarItem {
+        &:not(.coerce-spy) {
+            &.active span, span:hover, span:focus {
+                color: black;
+            }
+            &.active span:before {
+                background: $color-primary;
+            }
+            &.active span:before,
+            span:hover:before {
+                visibility: visible;
+                transform: scaleX(1);
+            }
+        }
+    
+        &.selected span, span:hover, span:focus {
+            color: black;
+        }
+        &.selected span:before {
+            background: $color-primary;
+        }
+        &.selected span:before,
+        span:hover:before {
+            visibility: visible;
+            transform: scaleX(1);
+        }
+        &:hover > span:after {
+            opacity: .15;
+            transform: scalex(1);
+        }
     }
 }
 

@@ -1,5 +1,6 @@
 import React from "react";
 import Portfolio from "components/Portfolio";
+import { setSelectedSidebarItem } from "actions/controls";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import "./app.scss";
@@ -46,6 +47,21 @@ if (isMobile) {
 
 const year = new Date().getFullYear();
 
+const sidebarItems = [
+  {
+    link: "about-me",
+    name: "About Me",
+  },
+  {
+    link: "projects",
+    name: "Portfolio",
+  },
+  {
+    link: "skills",
+    name: "Skills",
+  },
+];
+
 class App extends React.Component {
   state = {
     navigationClick: false,
@@ -62,14 +78,16 @@ class App extends React.Component {
     }
   }
 
-  handleNavigationClick = () => {
+  handleNavigationClick = link => {
     this.setState({
       navigationClick: true,
       overlayClasses: ["top"]
     });
+    this.props.setSelectedSidebarItem(link);
   }
 
   handleScroll = () => {
+    const { setSelectedSidebarItem } = this.props;
     const { navigationClick } = this.state;
     if (navigationClick) {
       // Clicking the navigation triggers a scroll but we don't want the gradient to hide section titles
@@ -78,28 +96,27 @@ class App extends React.Component {
       });
       return;
     }
+    setSelectedSidebarItem(null);
     const scrollableScrollTop = this.scrollableElement.scrollTop;
     const overlayClasses = [];
     if (scrollableScrollTop === 0) {
       overlayClasses.push("top");
     }
+    // If at bottom enforce last sidebar menu item
     if (this.scrollableElement.scrollTop >= (this.scrollableElement.scrollHeight - this.scrollableElement.offsetHeight)) {
-      console.log('at bottom');
+      this.handleNavigationClick(sidebarItems[sidebarItems.length - 1]["link"]);
     }
-
-    // if (atBottom) {
-    //   overlayClasses.push("bottom");
-    // }
     this.setState({overlayClasses});
   }
   render() {
     const { overlayClasses } = this.state;
+    const { selectedSidebarItem } = this.props;
     return (
       <MuiThemeProvider theme={theme}>
         <div className={isMobile ? "mobile" : "desktop"}>
           <main id="main" onScroll={this.handleScroll} ref={r => (this.scrollableElement = r)}>
             <div className="sidebar-and-content-wrapper" >
-              <Sidebar onNavigationClick={this.handleNavigationClick}/>
+              <Sidebar onNavigationClick={this.handleNavigationClick} sidebarItems={sidebarItems} selectedSidebarItem={selectedSidebarItem}/>
               <ConditionalReveal right>
                   <div className={`content-wrapper ${overlayClasses.join(' ')}`} ref={r => (this.contentElement = r)}>
                     <div id="sections">
@@ -143,9 +160,13 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = () => ({});
+const mapStateToProps = state => ({
+  selectedSidebarItem: state.selectedSidebarItem,
+});
 
-const mapDispatchToProps = dispatch => bindActionCreators({}, dispatch);
+const mapDispatchToProps = dispatch => bindActionCreators({
+  setSelectedSidebarItem,
+}, dispatch);
 
 export default connect(
   mapStateToProps,

@@ -6,34 +6,11 @@ import ConditionalReveal from "components/ConditionalReveal";
 import SidebarInfo from "components/SidebarInfo";
 import MyLogo from "components/KoalaSVG";
 import "./Sidebar.scss";
-/*
-using react-waypoint and onEnter and onLeave to create a push/pop stack we could use that to get the current thing that's inveiw
-*/
-const items = [
-  {
-    link: "about-me",
-    name: "About Me",
-  },
-  {
-    link: "projects",
-    name: "Portfolio",
-  },
-  {
-    link: "skills",
-    name: "Skills",
-  },
-  // {
-  //   link: "contact-me",
-  //   name: "Contact Me",
-  // },
-  // {
-  //   link: "blog",
-  //   name: "Blog",
-  // },
-];
 
 class Sidebar extends React.Component {
   render() {
+    const { selectedSidebarItem, sidebarItems } = this.props;
+    const coerceSelectedSidebarItem = selectedSidebarItem !== null;
     return (
       <div className="Sidebar">
         <ConditionalReveal left>
@@ -47,8 +24,12 @@ class Sidebar extends React.Component {
         </ConditionalReveal>
         <div className="sidebar-items">
           {
-            items.map(({link, name}, i) => {
-              return (<ConditionalReveal key={link} delay={(i + 1) * 200} left><SidebarItem onClick={this.props.onNavigationClick} link={link} name={name}/></ConditionalReveal>)
+            sidebarItems.map(({link, name}, i) => {
+              return (
+                <ConditionalReveal key={link} delay={(i + 1) * 200} left>
+                  <SidebarItem coerceSpy={coerceSelectedSidebarItem} selected={link === selectedSidebarItem} onClick={this.props.onNavigationClick} link={link} name={name}/>
+                </ConditionalReveal>
+              )
             })
           }
         </div>
@@ -58,7 +39,9 @@ class Sidebar extends React.Component {
 }
 
 Sidebar.propTypes = {
-  onNavigationClick: PropTypes.func.isRequired
+  onNavigationClick: PropTypes.func.isRequired,
+  selectedSidebarItem: PropTypes.string,
+  sidebarItems: PropTypes.array.isRequired,
 };
 
 export default Sidebar;
