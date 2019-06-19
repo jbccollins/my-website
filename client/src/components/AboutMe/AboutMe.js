@@ -102,14 +102,15 @@ class AboutMe extends React.Component {
                 <ConditionalReveal when={reveal} component="zoom">
                   <VerticalTimelineElement
                     className="vertical-timeline-element--work"
-                    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                    iconStyle={{ background: '#007082', color: '#fff' }}
                     icon={<WorkIcon />}
                   >
                     <Paper>
                       <div className="timeline-element-wrapper">
                         <h3 className="vertical-timeline-element-title">Software Engineer</h3>
-                        <h4 className="vertical-timeline-element-subtitle">Fireside</h4>
-                        <h4 className="vertical-timeline-element-subtitle">Washington, DC</h4>
+                        <h4 className="vertical-timeline-element-subtitle">
+                          <a href="https://www.fireside21.com/" target="_blank" rel="noopener noreferrer">Fireside</a>
+                        </h4>
                         <p>April 2018 - present</p>
                       </div>
                     </Paper>
@@ -118,14 +119,13 @@ class AboutMe extends React.Component {
                 <ConditionalReveal when={reveal} component="zoom">
                   <VerticalTimelineElement
                     className="vertical-timeline-element--work"
-                    iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
+                    iconStyle={{ background: '#007082', color: '#fff' }}
                     icon={<WorkIcon />}
                   >
                     <Paper>
                       <div className="timeline-element-wrapper">
                         <h3 className="vertical-timeline-element-title">Software Developer</h3>
                         <h4 className="vertical-timeline-element-subtitle">Center for Advanced Transportation Technology</h4>
-                        <h4 className="vertical-timeline-element-subtitle">College Park, MD</h4>
                         <p>June 2014 - April 2018</p>
                       </div>
                     </Paper>
@@ -134,7 +134,7 @@ class AboutMe extends React.Component {
                 <ConditionalReveal when={reveal} component="zoom">
                   <VerticalTimelineElement
                     className="vertical-timeline-element--education"
-                    iconStyle={{ background: 'rgb(233, 30, 99)', color: '#fff' }}
+                    iconStyle={{ background: '#007082', color: '#fff' }}
                     icon={<SchoolIcon />}
                   >
                     <Paper>

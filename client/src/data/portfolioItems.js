@@ -41,7 +41,7 @@ const portfolioItems = [
 		tags: [REACT],
 		id: 'metro-monitor',
 		website: {
-      text: "Vist Website",
+      text: "Website",
       url: 'https://www.dcmetromonitor.com/?mapPosition=38.897174971889264%2C-77.02809381298722%2C18&stationCodes=A01%2CC01',
     },
     description: 'A live map of the DC Metro system.',
@@ -107,7 +107,7 @@ const portfolioItems = [
 		id: 'weather-monitor',
     description: 'A no frills realtime weather map.',
 		website: {
-      text: "Vist Website",
+      text: "Website",
       url: 'https://us-weather-monitor.herokuapp.com/',
     },
 	},
@@ -125,7 +125,7 @@ const portfolioItems = [
     id: 'maryland-census-data-explorer',
     description: 'Visualize and predict income using data from Maryland\'s 2012 and 2013 census results.',
 		website: {
-      text: "Vist Website",
+      text: "Website",
       url: 'https://jbccollins.shinyapps.io/census-app/',
     },
 	},

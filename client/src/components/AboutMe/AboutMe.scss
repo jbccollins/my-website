@@ -43,12 +43,21 @@
         margin-top: 0px;
         margin-left: 0px;
         margin-right: 0px;
+        a {
+            color: black;
+        }
+    }
+    .vertical-timeline-element-subtitle {
+        margin-top: 10px;
     }
     .vertical-timeline-element-content {
         padding: 0px;
         box-shadow: none;
         &::before {
             display: none;
+        }
+        p {
+            margin-top: 10px;
         }
     }
     .vertical-timeline::before {

@@ -109,7 +109,8 @@ class Skills extends React.Component {
     const { expanded } = this.state;
     return (
       <div className="Skills">
-        <Button color="secondary"
+        {/* <Button color="secondary"
+          variant="outlined"
           className={classes.button}
           //onClick={this.handleExpandClick}
           onClick={this.handleExpandClick}
@@ -120,9 +121,9 @@ class Skills extends React.Component {
           <ExpandMoreIcon className={classnames(classes.expand, classes.rightIcon, {
                         [classes.expandOpen]: this.state.expanded,
                       })}/>
-        </Button>
+        </Button> */}
         {sections.map(({title, items}) => {
-          const itemsToRender = expanded ? items : items.filter(({proficiency}) => proficiency > 2);
+          const itemsToRender = items;//expanded ? items : items.filter(({proficiency}) => proficiency > 2);
           return (          
             <div key={title} className="skills-section">
               <ConditionalReveal>
@@ -135,7 +136,7 @@ class Skills extends React.Component {
                       <div className="skills-item-wrapper">
                         <div className="skills-item">
                           <ConditionalReveal component="zoom">
-                            <Logo proficiency={proficiency} name={name} image={image} color={color} showStars={expanded}/>
+                            <Logo proficiency={proficiency} name={name} image={image} color={color} showStars={expanded && false}/>
                           </ConditionalReveal>
                         </div>
                       </div>

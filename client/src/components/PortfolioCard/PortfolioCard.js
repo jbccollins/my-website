@@ -46,6 +46,10 @@ const styles = theme => ({
   button: {
     //color: 'rgba(0, 0, 0, 0.4)',
   },
+  buttonNotFirst: {
+    marginLeft: theme.spacing.unit,
+    marginRight: theme.spacing.unit,
+  },
   rightIcon: {
     marginLeft: theme.spacing.unit,
   },
@@ -132,27 +136,33 @@ class PortfolioCard extends React.Component {
             </CardContent>
             <CardActions className={classes.actions} disableActionSpacing>
               <Tooltip title="View on Github" placement="bottom">
-                <IconButton aria-label="Code" onClick={this.handleGithubClick}>
-                  <CodeIcon />
-                </IconButton>
+                {/* <IconButton aria-label="Code" onClick={this.handleGithubClick}>
+                  View Code <CodeIcon />
+                </IconButton> */}
+                <Button variant="outlined" color="secondary" className={classes.button} onClick={this.handleGithubClick}>
+                  Code <CodeIcon className={classes.rightIcon}/>
+                </Button>
               </Tooltip>
               {website &&
                 <Tooltip title={website.text} placement="bottom">
-                  <IconButton href={website.url} target="_blank" color="default">
+                  {/* <IconButton href={website.url} target="_blank" color="default">
                     <OpenInNewIcon/>
-                  </IconButton>
+                  </IconButton> */}
+                  <Button href={website.url} target="_blank" variant="outlined" color="secondary" className={classes.buttonNotFirst} onClick={this.handleGithubClick}>
+                    {website.text} <OpenInNewIcon className={classes.rightIcon}/>
+                  </Button>
                 </Tooltip>
               }
               {sections &&
                 [
-                  <Button key="more-button" color="secondary"
+                  <Button key="more-button" color="secondary" variant="outlined"
                     className={classnames(classes.button, classes.moreButton)}
                     //onClick={this.handleExpandClick}
                     onClick={this.handleClickOpen}
                     aria-expanded={this.state.expanded}
                     aria-label="More Info"
                   >
-                    More Info
+                    More
                     <InfoIcon className={classes.rightIcon}/>
                   </Button>,
                   <PortfolioModal

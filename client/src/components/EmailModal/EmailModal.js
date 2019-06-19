@@ -122,7 +122,13 @@ class EmailModal extends React.Component {
   }
 
   handleClose = () => {
-    this.resetDialog();
+    const { sendingSuccess, sendingError, sending } = this.state;
+    // Prevent a visually jarring UI change while the close animation occurs
+    if (sendingSuccess || sendingError || sending) {
+      setTimeout(this.resetDialog, 1000);
+    } else {
+      this.resetDialog();
+    }
     this.props.onClose();
   };
   handleSubmit = async () => {

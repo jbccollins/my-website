@@ -92,6 +92,7 @@ class Portfolio extends React.Component {
         </Collapse>
         <div className="show-more-button-wrapper">
           <Button color="secondary"
+            variant="outlined"
             className={classes.button}
             //onClick={this.handleExpandClick}
             onClick={this.handleExpandClick}
