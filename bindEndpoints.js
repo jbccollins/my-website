@@ -13,13 +13,25 @@ import {
   RESUME_DOWNLOAD,
 } from './common/constants/urls';
 
+// Find your credentials here: https://app.mailgun.com/app/sending/domains
 const transporter = nodemailer.createTransport({
-  service: 'gmail',
+  host: "smtp.mailgun.org",
+  port: 587,
+  secure: false, // true for 465, false for other ports
   auth: {
-    user: process.env.EMAIL_ADDRESS,
-    pass: process.env.EMAIL_PASSWORD,
+    user: process.env.MAILGUN_USERNAME,
+    pass: process.env.MAILGUN_PASSWORD,
   }
 });
+
+// Gmail is obnoxious about this: https://community.nodemailer.com/using-gmail/
+// const transporter = nodemailer.createTransport({
+//   service: 'gmail',
+//   auth: {
+//     user: process.env.EMAIL_ADDRESS,
+//     pass: process.env.EMAIL_PASSWORD,
+//   }
+// });
 
 const bindEndpoints = app => {
   app.use(bodyParser.urlencoded({

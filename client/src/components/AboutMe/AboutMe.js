@@ -107,7 +107,8 @@ class AboutMe extends React.Component {
                   >
                     <Paper>
                       <div className="timeline-element-wrapper">
-                        <h3 className="vertical-timeline-element-title">Software Engineer at Fireside</h3>
+                        <h3 className="vertical-timeline-element-title">Software Engineer</h3>
+                        <h4 className="vertical-timeline-element-subtitle">Fireside</h4>
                         <h4 className="vertical-timeline-element-subtitle">Washington, DC</h4>
                         <p>April 2018 - present</p>
                       </div>
@@ -122,7 +123,8 @@ class AboutMe extends React.Component {
                   >
                     <Paper>
                       <div className="timeline-element-wrapper">
-                        <h3 className="vertical-timeline-element-title">Software Developer at CATT</h3>
+                        <h3 className="vertical-timeline-element-title">Software Developer</h3>
+                        <h4 className="vertical-timeline-element-subtitle">Center for Advanced Transportation Technology</h4>
                         <h4 className="vertical-timeline-element-subtitle">College Park, MD</h4>
                         <p>June 2014 - April 2018</p>
                       </div>

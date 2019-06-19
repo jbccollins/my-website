@@ -60,6 +60,13 @@ const initialInputState = {
   fromEmailErrorInvalid: false,
 };
 
+const initialModalState = {
+  sending: false,
+  sendingError: false,
+  sendingSuccess: false,
+  ...initialInputState,
+}
+
 const REQUIRED_HELPER_TEXT = "Required Field Missing";
 const validateEmail = email => {
   // eslint-disable-next-line
@@ -69,10 +76,7 @@ const validateEmail = email => {
 
 class EmailModal extends React.Component {
   state = {
-    sending: false,
-    sendingError: false,
-    sendingSuccess: false,
-    ...initialInputState,
+    ...initialModalState
   }
 
   inputChangeHandler = key => {
@@ -113,12 +117,12 @@ class EmailModal extends React.Component {
     }
   }
 
-  clearInputs = () => {
-    this.setState({...initialInputState});
+  resetDialog = () => {
+    this.setState({...initialModalState});
   }
 
   handleClose = () => {
-    this.clearInputs();
+    this.resetDialog();
     this.props.onClose();
   };
   handleSubmit = async () => {
