@@ -17,7 +17,11 @@ import OpenInNewIcon from '@material-ui/icons/OpenInNew';
 import PortfolioModal from "components/PortfolioModal";
 import ConditionalReveal from "components/ConditionalReveal";
 import Grid from '@material-ui/core/Grid';
+import {
+  isMobile,
+} from "react-device-detect";
 import "./PortfolioCard.scss";
+import { FormHelperText } from "@material-ui/core";
 
 const styles = theme => ({
   card: {
@@ -37,18 +41,14 @@ const styles = theme => ({
       duration: theme.transitions.duration.shortest,
     }),
   },
-  moreButton: {
-    marginLeft: 'auto',
-  },
   expandOpen: {
     transform: 'rotate(180deg)',
   },
   button: {
-    //color: 'rgba(0, 0, 0, 0.4)',
-  },
-  buttonNotFirst: {
     marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit,
+  },
+  buttonContainer: {
+    display: "flex",
   },
   rightIcon: {
     marginLeft: theme.spacing.unit,
@@ -135,44 +135,76 @@ class PortfolioCard extends React.Component {
               </Typography>
             </CardContent>
             <CardActions className={classes.actions} disableActionSpacing>
-              <Tooltip title="View on Github" placement="bottom">
-                {/* <IconButton aria-label="Code" onClick={this.handleGithubClick}>
-                  View Code <CodeIcon />
-                </IconButton> */}
-                <Button variant="outlined" color="secondary" className={classes.button} onClick={this.handleGithubClick}>
-                  Code <CodeIcon className={classes.rightIcon}/>
-                </Button>
-              </Tooltip>
-              {website &&
-                <Tooltip title={website.text} placement="bottom">
-                  {/* <IconButton href={website.url} target="_blank" color="default">
-                    <OpenInNewIcon/>
-                  </IconButton> */}
-                  <Button href={website.url} target="_blank" variant="outlined" color="secondary" className={classes.buttonNotFirst} onClick={this.handleGithubClick}>
-                    {website.text} <OpenInNewIcon className={classes.rightIcon}/>
-                  </Button>
+              <div className={classes.buttonContainer}>
+                <Tooltip title="View on Github" placement="bottom">
+                  <div>
+                    {isMobile &&
+                      <IconButton aria-label="Code" color="secondary" onClick={this.handleGithubClick}>
+                        <CodeIcon />
+                      </IconButton>
+                    }
+                    {!isMobile &&
+                      <Button variant="outlined" color="secondary" className={classes.button} onClick={this.handleGithubClick}>
+                        Code <CodeIcon className={classes.rightIcon}/>
+                      </Button>
+                    }
+                  </div>
                 </Tooltip>
-              }
-              {sections &&
-                [
-                  <Button key="more-button" color="secondary" variant="outlined"
-                    className={classnames(classes.button, classes.moreButton)}
-                    //onClick={this.handleExpandClick}
-                    onClick={this.handleClickOpen}
-                    aria-expanded={this.state.expanded}
-                    aria-label="More Info"
-                  >
-                    More
-                    <InfoIcon className={classes.rightIcon}/>
-                  </Button>,
+                {website &&
+                  <Tooltip title={website.text} placement="bottom">
+                    <div>
+                      {isMobile &&
+                        <IconButton href={website.url} target="_blank" color="secondary">
+                          <OpenInNewIcon/>
+                        </IconButton>
+                      }
+                      {!isMobile &&
+                        <Button href={website.url} target="_blank" variant="outlined" color="secondary" className={classes.button} onClick={this.handleGithubClick}>
+                          {website.text} <OpenInNewIcon className={classes.rightIcon}/>
+                        </Button>
+                      }
+                    </div>
+                  </Tooltip>
+                }
+                {sections &&
+                  [<div key="more-button">
+                      {isMobile &&
+                        <IconButton color="secondary" onClick={this.handleClickOpen}>
+                          <InfoIcon/>
+                        </IconButton>
+                      }
+                      {!isMobile &&
+                        <Button
+                          variant="outlined"
+                          color="secondary"
+                          aria-expanded={this.state.expanded}
+                          aria-label="More Info"
+                          className={classes.button}
+                          onClick={this.handleClickOpen}>
+                          More
+                          <InfoIcon className={classes.rightIcon}/>
+                        </Button>
+                      }
+                    {/* <Button  color="secondary" variant="outlined"
+                      className={classnames(classes.button)}
+                      //onClick={this.handleExpandClick}
+                      onClick={this.handleClickOpen}
+                      aria-expanded={this.state.expanded}
+                      aria-label="More Info"
+                    >
+                      More
+                      <InfoIcon className={classes.rightIcon}/>
+                    </Button> */}
+                  </div>,
                   <PortfolioModal
                     key="more-modal"
                     onClose={this.handleClose}
                     open={open}
                     {...other}
                     />
-                ]
-              }
+                  ]
+                }
+              </div>
             </CardActions>
             {/* <Collapse in={this.state.expanded} timeout="auto" unmountOnExit>
               <CardContent>

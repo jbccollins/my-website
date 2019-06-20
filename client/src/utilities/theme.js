@@ -21,10 +21,15 @@ const rawTheme = createMuiTheme({
     //   main: '#ce0d6a',
     //   dark: '#970040',
     // },
+    // primary: {
+    //   light: '#4a9fb2',
+    //   main: '#007082',
+    //   dark: '#004455',
+    // },
     primary: {
-      light: '#4a9fb2',
-      main: '#007082',
-      dark: '#004455',
+      light: '#45909e',
+      main: '#006270',
+      dark: '#003845',
     },
     warning: {
       main: '#ffc071',
