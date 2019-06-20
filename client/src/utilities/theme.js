@@ -6,31 +6,22 @@ import red from '@material-ui/core/colors/red';
 
 const rawTheme = createMuiTheme({
   palette: {
-    // primary: {
-    //   light: '#69696a',
-    //   main: '#28282a',
-    //   dark: '#1e1e1f',
-    // },
+    primary: {
+      light: '#45909e',
+      main: '#006270',
+      dark: '#003845',
+    },
+    // OG Pink
     secondary: {
       light: '#fff5f8',
       main: '#ff3366',
       dark: '#e62958',
     },
     // secondary: {
-    //   light: '#ff5598',
-    //   main: '#ce0d6a',
-    //   dark: '#970040',
+    //   light: '#ed54be',
+    //   main: '#b7128e',
+    //   dark: '#830060',
     // },
-    // primary: {
-    //   light: '#4a9fb2',
-    //   main: '#007082',
-    //   dark: '#004455',
-    // },
-    primary: {
-      light: '#45909e',
-      main: '#006270',
-      dark: '#003845',
-    },
     warning: {
       main: '#ffc071',
       dark: '#ffb25e',
