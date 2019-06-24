@@ -117,36 +117,38 @@ class App extends React.Component {
           <main id="main" onScroll={this.handleScroll} ref={r => (this.scrollableElement = r)}>
             <div className="sidebar-and-content-wrapper" >
               <Sidebar onNavigationClick={this.handleNavigationClick} sidebarItems={sidebarItems} selectedSidebarItem={selectedSidebarItem}/>
-              <ConditionalReveal right>
-                  <div className={`content-wrapper ${overlayClasses.join(' ')}`} ref={r => (this.contentElement = r)}>
-                    <div id="sections">
-                      {/* <div className="section" id="blog" name="blog">
-                        <SectionHeader>Blog</SectionHeader>
-                        <div className="section-content">
-                          <Blog/>
+              <div className="not-sidebar">
+                <ConditionalReveal right>
+                    <div className={`content-wrapper ${overlayClasses.join(' ')}`} ref={r => (this.contentElement = r)}>
+                      <div id="sections">
+                        {/* <div className="section" id="blog" name="blog">
+                          <SectionHeader>Blog</SectionHeader>
+                          <div className="section-content">
+                            <Blog/>
+                          </div>
+                        </div> */}
+                        <div className="section" id="about-me" name="about-me">
+                          <SectionHeader>About Me</SectionHeader>
+                          <div className="section-content">
+                            <AboutMe/>
+                          </div>
                         </div>
-                      </div> */}
-                      <div className="section" id="about-me" name="about-me">
-                        <SectionHeader>About Me</SectionHeader>
-                        <div className="section-content">
-                          <AboutMe/>
+                        <div className="section" id="projects" name="projects">
+                          <SectionHeader>Portfolio</SectionHeader>
+                          <div className="section-content">
+                            <Portfolio items={portfolioItems} />
+                          </div>
                         </div>
-                      </div>
-                      <div className="section" id="projects" name="projects">
-                        <SectionHeader>Portfolio</SectionHeader>
-                        <div className="section-content">
-                          <Portfolio items={portfolioItems} />
-                        </div>
-                      </div>
-                      <div className="section" id="skills" name="skills">
-                        <SectionHeader>Skills</SectionHeader>
-                        <div className="section-content">
-                          <Skills/>
+                        <div className="section" id="skills" name="skills">
+                          <SectionHeader>Skills</SectionHeader>
+                          <div className="section-content">
+                            <Skills/>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-              </ConditionalReveal>
+                </ConditionalReveal>
+              </div>
             </div>
             <BrowserView>
               <div className="footer">
