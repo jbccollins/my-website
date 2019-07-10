@@ -2,7 +2,7 @@ import lapidaryBackground from 'assets/portfolio-items/lapidary-background.png';
 import dcMetroMonitorBackground from 'assets/portfolio-items/dc-metro-monitor-background.png';
 import reactInteractiveCanvasBackground from 'assets/portfolio-items/react-interactive-canvas-background.png';
 import cornholeSimulatorBackground from 'assets/portfolio-items/cornhole-simulator-background.jpg';
-import usWeatherMonitorBackground from 'assets/portfolio-items/us-weather-monitor-background.png';
+import usWeatherMonitorBackground from 'assets/portfolio-items/us-weather-monitor-background.gif';
 import spotifyPhilipsHueAlbumSyncBackground from 'assets/portfolio-items/spotify-philips-hue-album-sync-background.png';
 import reactLeafletFlyInMarkerBackground from 'assets/portfolio-items/react-leaflet-fly-in-marker-background.gif';
 import postcssTwistUrlAssetsBackground from 'assets/portfolio-items/postcss-twist-url-assets-background.jpg';

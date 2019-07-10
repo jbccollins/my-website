@@ -159,7 +159,7 @@ class PortfolioCard extends React.Component {
                         </IconButton>
                       }
                       {!isMobile &&
-                        <Button href={website.url} target="_blank" variant="outlined" color="secondary" className={classes.button} onClick={this.handleGithubClick}>
+                        <Button href={website.url} target="_blank" variant="outlined" color="secondary" className={classes.button}>
                           {website.text} <OpenInNewIcon className={classes.rightIcon}/>
                         </Button>
                       }
