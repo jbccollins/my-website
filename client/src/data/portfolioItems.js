@@ -186,7 +186,11 @@ const portfolioItems = [
     image: reactLavaLampMenuBackground,
 		tags: [NPM, TYPESCRIPT],
 		id: 'react-lava-lamp-menu',
-    description: 'A menu component with a gooey transition effect.'
+    description: 'A menu component with a gooey transition effect.',
+    website: {
+      text: "Demo",
+      url: "https://jbccollins.github.io/react-lava-lamp-menu/",
+    },
   },
 	{
 		name: 'Leaflet Tile Loading Progress',
