@@ -8,7 +8,7 @@ import reactLeafletFlyInMarkerBackground from 'assets/portfolio-items/react-leaf
 import postcssTwistUrlAssetsBackground from 'assets/portfolio-items/postcss-twist-url-assets-background.jpg';
 import destinyPatchNotesExplorerBackground from 'assets/portfolio-items/destiny-patch-notes-explorer-background.jpg';
 import asyncCanvasToBlobBackground from 'assets/portfolio-items/async-canvas-to-blob-background.jpg';
-import reactLavaLampMenuBackground from 'assets/portfolio-items/react-lava-lamp-menu-background.jpg';
+import reactLavaLampMenuBackground from 'assets/portfolio-items/react-lava-lamp-menu-background.gif';
 import leafletTileLoadingProgressControl from 'assets/portfolio-items/leaflet-tile-loading-progress-control-background.gif';
 import myPersonalStarterReactSetupBackground from 'assets/portfolio-items/my-personal-starter-react-setup-background.png';
 import reactGradientScrollBackground from 'assets/portfolio-items/react-gradient-scroll-background.jpg';
