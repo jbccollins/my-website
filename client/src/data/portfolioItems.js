@@ -124,7 +124,7 @@ const portfolioItems = [
     image: thisWebsiteBackground,
 		tags: [NPM, TYPESCRIPT],
 		id: 'my-website',
-    description: 'The website that you are currently looking at :)'
+    description: 'The website that you are currently looking at 🙂 👨🏻‍💻'
   },
 	{
     name: 'Maryland Census Data Explorer',
