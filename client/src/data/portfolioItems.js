@@ -84,7 +84,11 @@ const portfolioItems = [
     image: lapidaryBackground,
 		tags: [TYPESCRIPT],
     id: 'lapidary',
-    description: 'Configurable faceted filtering.'
+    description: 'Configurable faceted filtering written in TypeScript.',
+    website: {
+      text: "Demo",
+      url: "https://lapidary-demo.herokuapp.com/",
+    },
   },
 	{
 		name: 'My React Starter Kit',
