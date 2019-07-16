@@ -1,3 +1,4 @@
+@import '~scss/_color';
 .AboutMe {
     .image-wrapper {
         max-height: 300px;
@@ -31,8 +32,8 @@
         // padding: 2px 4px;
         // border-radius: 2px;
         // margin: 0px 4px;
-        color: black;
-        margin: 0px 5px;
+        color: $color-primary;
+        //margin: 0px 5px;
     }
     .timeline-element-wrapper {
         padding: 20px;
@@ -49,6 +50,9 @@
     }
     .vertical-timeline-element-subtitle {
         margin-top: 10px;
+        a {
+            color: $color-primary;
+        }
     }
     .vertical-timeline-element-content {
         padding: 0px;

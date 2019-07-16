@@ -7,6 +7,7 @@ import Button from "@material-ui/core/Button";
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import Collapse from '@material-ui/core/Collapse';
 import classnames from 'classnames';
+import ConditionalReveal from "components/ConditionalReveal";
 import { withStyles } from '@material-ui/core/styles';
 
 const styles = theme => ({
@@ -91,19 +92,21 @@ class Portfolio extends React.Component {
           </Grid>
         </Collapse>
         <div className="show-more-button-wrapper">
-          <Button color="secondary"
-            variant="outlined"
-            className={classes.button}
-            //onClick={this.handleExpandClick}
-            onClick={this.handleExpandClick}
-            aria-expanded={this.state.expanded}
-            aria-label="Toggle More Portfolio Items"
-          >
-            {expanded ? "Show Fewer Items" : "Show More Items"}
-            <ExpandMoreIcon className={classnames(classes.expand, classes.rightIcon, {
-                          [classes.expandOpen]: this.state.expanded,
-                        })}/>
-          </Button>
+          <ConditionalReveal component="pulse" delay={500}>
+            <Button color="secondary"
+              variant="outlined"
+              className={classes.button}
+              //onClick={this.handleExpandClick}
+              onClick={this.handleExpandClick}
+              aria-expanded={this.state.expanded}
+              aria-label="Toggle More Portfolio Items"
+            >
+              {expanded ? "Show Fewer Items" : "Show More Items"}
+              <ExpandMoreIcon className={classnames(classes.expand, classes.rightIcon, {
+                            [classes.expandOpen]: this.state.expanded,
+                          })}/>
+            </Button>
+          </ConditionalReveal>
         </div>
       </div>
     );

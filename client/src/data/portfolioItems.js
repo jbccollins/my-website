@@ -91,7 +91,11 @@ const portfolioItems = [
     image: myPersonalStarterReactSetupBackground,
 		tags: [NPM, TYPESCRIPT],
 		id: 'my-personal-starter-react-setup',
-    description: 'A ready-to-go website template that I use for most of my projects.'
+    description: 'A ready-to-go website scaffold that I use for most of my projects.',
+    website: {
+      text: "Demo",
+      url: "https://my-personal-react-setup.herokuapp.com/",
+    },
   },
 	{
 		name: 'Spotify Hue Light Sync',
@@ -123,7 +127,7 @@ const portfolioItems = [
     image: marylandCensusDataExplorerBackground,
 		tags: [REACT],
     id: 'maryland-census-data-explorer',
-    description: 'Visualize and predict income using data from Maryland\'s 2012 and 2013 census results.',
+    description: 'Explore income patterns using Maryland\'s 2012 - 2013 census data.',
 		website: {
       text: "Website",
       url: 'https://jbccollins.shinyapps.io/census-app/',
@@ -148,7 +152,11 @@ const portfolioItems = [
     image: reactInteractiveCanvasBackground,
 		tags: [REACT],
     id: 'react-interactive-canvas',
-    description: 'Declarative canvas components that support mouse events.'
+    description: 'Declarative canvas components that support mouse events.',
+    website: {
+      text: "Demo",
+      url: "https://react-interactive-canvas-demo.herokuapp.com/"
+    },
 	},
 	{
     name: 'Cornhole Simulator',
@@ -185,21 +193,25 @@ const portfolioItems = [
     image: leafletTileLoadingProgressControl,
 		tags: [NPM, TYPESCRIPT],
 		id: 'leaflet-tile-loading-progress-control',
-    description: 'A leaflet control that indicates tile loading progress for a group of tile layers.'
+    description: 'A leaflet control that indicates tile loading progress.'
   },
 	{
 		name: 'Destiny Patch Notes Explorer',
     image: destinyPatchNotesExplorerBackground,
 		tags: [NPM, TYPESCRIPT],
 		id: 'destiny-patch-notes-explorer',
-    description: 'Filter, subset and visualize patch notes for the video game "Destiny".'
+    description: 'Filter, subset and visualize patch notes for the video game "Destiny".',
+    website: {
+      text: "Website",
+      url: "https://jbccollins.shinyapps.io/destinypatchnotesexplorer/",
+    },
 	},
 	{
 		name: 'React Leaflet Extendable',
     image: reactLeafletExtendableBackground,
 		tags: [NPM, TYPESCRIPT],
 		id: 'react-leaflet-extendable',
-    description: 'A fork of react-leaflet that adds the ability to directly extend all components.'
+    description: 'A fork of react-leaflet with extendable components.'
 	},
 ];
 

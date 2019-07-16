@@ -2,11 +2,29 @@ import React from "react";
 import PropTypes from "prop-types";
 import Fade from 'react-reveal/Fade';
 import Zoom from 'react-reveal/Zoom';
+import Bounce from 'react-reveal/Bounce';
+import Pulse from 'react-reveal/Pulse';
 
 import "./ConditionalReveal.scss";
 import {
   isMobile,
 } from "react-device-detect";
+
+const getRevealComponent = key => {
+  switch (key) {
+    case "zoom":
+      return Zoom;
+    case "fade":
+      return Fade;
+    case "bounce":
+      return Bounce;
+    case "pulse":
+      return Pulse;
+    default:
+      return Fade;
+  }
+}
+
 class ConditionalReveal extends React.Component {
   render() {
     const { children, component, ...rest } = this.props;
@@ -17,7 +35,7 @@ class ConditionalReveal extends React.Component {
         </div>
       );
     }
-    const Reveal = component === "zoom" ? Zoom : Fade;
+    const Reveal = getRevealComponent(component);
     return (
       <Reveal {...rest}>
         {children}

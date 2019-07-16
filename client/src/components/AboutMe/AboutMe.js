@@ -72,9 +72,8 @@ class AboutMe extends React.Component {
               </Typography>
               <Typography className="about-me-text" component="p">
                 I nerd out over geospatial data, fun visualizations and intuitive user interfaces.
-                I currently work for
-                <a className="fireside-link" href="https://www.fireside21.com/" rel="noopener noreferrer" target="_blank">Fireside</a>
-                building tools used by congressional staffers.
+                I currently work for <a className="fireside-link" href="https://www.fireside21.com/" rel="noopener noreferrer" target="_blank">Fireside</a>, building
+                tools used by congressional staffers.
               </Typography>
               {/* <Typography className="about-me-text" component="p">
                 I have over {yearsOfExperience} years of experience building websites.
@@ -125,7 +124,11 @@ class AboutMe extends React.Component {
                     <Paper>
                       <div className="timeline-element-wrapper">
                         <h3 className="vertical-timeline-element-title">Software Developer</h3>
-                        <h4 className="vertical-timeline-element-subtitle">Center for Advanced Transportation Technology</h4>
+                        <h4 className="vertical-timeline-element-subtitle">
+                          <a href="https://www.cattlab.umd.edu/" target="_blank" rel="noopener noreferrer">
+                            Center for Advanced Transportation Technology
+                          </a>
+                        </h4>
                         <p>June 2014 - April 2018</p>
                       </div>
                     </Paper>
@@ -140,7 +143,11 @@ class AboutMe extends React.Component {
                     <Paper>
                       <div className="timeline-element-wrapper">
                         <h3 className="vertical-timeline-element-title">Bachelor's Degree in Computer Science</h3>
-                        <h4 className="vertical-timeline-element-subtitle">University of Maryland College Park</h4>
+                        <h4 className="vertical-timeline-element-subtitle">
+                          <a href="https://www.umd.edu/" target="blank" rel="noopener noreferrer">
+                            University of Maryland College Park
+                          </a>  
+                        </h4>
                         <p>September 2012 - May 2016</p>
                       </div>
                     </Paper>
