@@ -127,7 +127,7 @@ class Skills extends React.Component {
           return (          
             <div key={title} className="skills-section">
               <ConditionalReveal>
-                <div className="secondary-section-title">{title}</div>
+                <div className="secondary-section-title"><span>{title}</span></div>
               </ConditionalReveal>
               <Grid container spacing={3}>
                 {itemsToRender.map(({name, image, color, proficiency}) => {

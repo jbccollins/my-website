@@ -5,11 +5,20 @@ import SidebarItem from "components/SidebarItem";
 import ConditionalReveal from "components/ConditionalReveal";
 import SidebarInfo from "components/SidebarInfo";
 import MyLogo from "components/KoalaSVG";
+import { DARK, LIGHT } from "common/constants/theme";
+import Switch from '@material-ui/core/Switch';
+import FormControlLabel from '@material-ui/core/FormControlLabel';
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import DisplayModeToggleIcon from '@material-ui/icons/InvertColors';
+import {
+  isMobile,
+} from "react-device-detect";
 import "./Sidebar.scss";
 
 class Sidebar extends React.Component {
   render() {
-    const { selectedSidebarItem, sidebarItems } = this.props;
+    const { selectedSidebarItem, sidebarItems, onDisplayModeChange, displayMode } = this.props;
     const coerceSelectedSidebarItem = selectedSidebarItem !== null;
     return (
       <div className="Sidebar">
@@ -33,6 +42,23 @@ class Sidebar extends React.Component {
             })
           }
         </div>
+        {!isMobile &&
+          <div className="display-mode-toggle-wrapper">
+            
+            <FormControlLabel
+              control={
+                <Switch
+                color="primary"
+                checked={displayMode === DARK}
+                onChange={onDisplayModeChange}
+                //value="checkedA"
+                inputProps={{ 'aria-label': 'display-mode-toggle' }}
+              />
+              }
+              label={`${displayMode} mode`}
+            />
+          </div>
+        }
       </div>
     );
   }
@@ -42,6 +68,17 @@ Sidebar.propTypes = {
   onNavigationClick: PropTypes.func.isRequired,
   selectedSidebarItem: PropTypes.string,
   sidebarItems: PropTypes.array.isRequired,
+  displayMode: PropTypes.oneOf([DARK, LIGHT]).isRequired,
 };
 
-export default Sidebar;
+const mapStateToProps = state => ({
+  displayMode: state.displayMode,
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+}, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Sidebar);

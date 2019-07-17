@@ -21,7 +21,6 @@ import {
   isMobile,
 } from "react-device-detect";
 import "./PortfolioCard.scss";
-import { FormHelperText } from "@material-ui/core";
 
 const styles = theme => ({
   card: {
@@ -111,7 +110,7 @@ class PortfolioCard extends React.Component {
   }
 
   render() {
-    const { classes, ...other } = this.props;
+    const { classes, buttonColor, ...other } = this.props;
     const { image, name, description, website, sections } = other;
     const { open } = this.state;
 
@@ -139,12 +138,12 @@ class PortfolioCard extends React.Component {
                 <Tooltip title="View on Github" placement="bottom">
                   <div>
                     {isMobile &&
-                      <IconButton aria-label="Code" color="secondary" onClick={this.handleGithubClick}>
+                      <IconButton aria-label="Code" color={buttonColor}  onClick={this.handleGithubClick}>
                         <CodeIcon />
                       </IconButton>
                     }
                     {!isMobile &&
-                      <Button variant="outlined" color="secondary" className={classes.button} onClick={this.handleGithubClick}>
+                      <Button variant="outlined" color={buttonColor} className={classes.button} onClick={this.handleGithubClick}>
                         Code <CodeIcon className={classes.rightIcon}/>
                       </Button>
                     }
@@ -154,12 +153,12 @@ class PortfolioCard extends React.Component {
                   <Tooltip title={website.text} placement="bottom">
                     <div>
                       {isMobile &&
-                        <IconButton href={website.url} target="_blank" color="secondary">
+                        <IconButton href={website.url} target="_blank" color={buttonColor} >
                           <OpenInNewIcon/>
                         </IconButton>
                       }
                       {!isMobile &&
-                        <Button href={website.url} target="_blank" variant="outlined" color="secondary" className={classes.button}>
+                        <Button href={website.url} target="_blank" variant="outlined" color={buttonColor}  className={classes.button}>
                           {website.text} <OpenInNewIcon className={classes.rightIcon}/>
                         </Button>
                       }
@@ -169,7 +168,7 @@ class PortfolioCard extends React.Component {
                 {sections &&
                   [<div key="more-button">
                       {isMobile &&
-                        <IconButton color="secondary" onClick={this.handleClickOpen}>
+                        <IconButton color={buttonColor}  onClick={this.handleClickOpen}>
                           <InfoIcon/>
                         </IconButton>
                       }

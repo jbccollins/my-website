@@ -16,6 +16,14 @@
             margin-bottom: 4px;
         }
     }
+    .display-mode-toggle-wrapper {
+        position: fixed;
+        //margin-top: 40px;
+        top: 0px;
+        right: 0px;
+        transform: scale(0.8);
+        text-transform: capitalize;
+    }
 }
 
 .mobile {
@@ -47,16 +55,17 @@
             }
         }
         .sidebar-identity {
-            padding: 5px;
-            background: white;
+            padding: 0px 5px;
+            padding-top: 4px;
+            //background: white;
             position: fixed;
             top: 0px;
-            height: 29px;
+            height: 39px;
             overflow: hidden;
             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
             line-height: 30px;
             display: flex;
-            width: calc(100vw - 10px);
+            width: 100vw;//calc(100vw - 10px);
             .name {
                 margin-left: 10px;
                 margin-bottom: 0px;
@@ -66,6 +75,9 @@
                 display: flex;
                 justify-content: space-between;
                 width: 100%;
+                .social {
+                    margin-top: 2px;
+                }
             }
         }
     }

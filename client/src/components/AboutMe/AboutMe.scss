@@ -32,7 +32,7 @@
         // padding: 2px 4px;
         // border-radius: 2px;
         // margin: 0px 4px;
-        color: $color-primary;
+        color: $color-secondary;
         //margin: 0px 5px;
     }
     .timeline-element-wrapper {
@@ -45,23 +45,31 @@
         margin-left: 0px;
         margin-right: 0px;
         a {
-            color: black;
+            //color: black;
         }
     }
     .vertical-timeline-element-subtitle {
         margin-top: 10px;
         a {
-            color: $color-primary;
+            color: $color-secondary;
         }
+    }
+    .vertical-timeline-element-date {
+        color: inherit;
+        position: relative;
+        bottom: 0px;
+        right: 10px;
+        font-size: 10px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        margin-top: 15px;
     }
     .vertical-timeline-element-content {
         padding: 0px;
         box-shadow: none;
+        background: transparent;
         &::before {
             display: none;
-        }
-        p {
-            margin-top: 10px;
         }
     }
     .vertical-timeline::before {
@@ -73,6 +81,7 @@
     }
     .vertical-timeline-element-icon {
         box-shadow: 0 0 0 2px rgba(0,0,0,.1);
+        background: $color-primary;
     }
     .about-me-text {
         margin-top: 20px;

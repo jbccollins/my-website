@@ -1,6 +1,6 @@
 import React from "react";
 import Portfolio from "components/Portfolio";
-import { setSelectedSidebarItem } from "actions/controls";
+import { setSelectedSidebarItem, setDisplayMode } from "actions/controls";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import "./app.scss";
@@ -11,8 +11,10 @@ import SectionHeader from "components/SectionHeader";
 import AboutMe from "components/AboutMe";
 import Skills from "components/Skills";
 import { MuiThemeProvider } from "@material-ui/core/styles";
+import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from "utilities/theme";
 import ConditionalReveal from "components/ConditionalReveal";
+import { DARK, LIGHT } from "common/constants/theme";
 import {
   isMobile,
   BrowserView,
@@ -63,20 +65,38 @@ const sidebarItems = [
 ];
 
 class App extends React.Component {
-  state = {
-    navigationClick: false,
-    overlayClasses: [],
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentTheme: theme(props.displayMode),
+      navigationClick: false,
+      overlayClasses: [],
+    }
   }
 
   componentDidMount() {
     this.handleScroll();
+    this.handleDisplayModeChange();
   }
+
 
   componentDidUpdate(prevProps) {
     if (prevProps.children !== this.props.children) {
       this.handleScroll();
     }
+    if (prevProps.displayMode !== this.props.displayMode) {
+      this.setState({currentTheme: theme(this.props.displayMode)});
+    }
   }
+
+  handleDisplayModeChange = () => {
+    const { displayMode, setDisplayMode } = this.props;
+    const oppositeDisplayMode = displayMode === LIGHT ? DARK : LIGHT;
+    setDisplayMode(oppositeDisplayMode);
+    document.querySelector('body').classList.add(`${oppositeDisplayMode}-mode`);
+    document.querySelector('body').classList.remove(`${displayMode}-mode`);
+  };
 
   handleNavigationClick = link => {
     this.setState({
@@ -109,14 +129,15 @@ class App extends React.Component {
     this.setState({overlayClasses});
   }
   render() {
-    const { overlayClasses } = this.state;
-    const { selectedSidebarItem } = this.props;
+    const { overlayClasses, currentTheme } = this.state;
+    const { selectedSidebarItem, displayMode } = this.props;
     return (
-      <MuiThemeProvider theme={theme}>
-        <div className={isMobile ? "mobile" : "desktop"}>
+      <MuiThemeProvider theme={currentTheme}>
+        <CssBaseline />
+        <div className={`${isMobile ? "mobile" : "desktop"}`}>
           <main id="main" onScroll={this.handleScroll} ref={r => (this.scrollableElement = r)}>
             <div className="sidebar-and-content-wrapper" >
-              <Sidebar onNavigationClick={this.handleNavigationClick} sidebarItems={sidebarItems} selectedSidebarItem={selectedSidebarItem}/>
+              <Sidebar onDisplayModeChange={this.handleDisplayModeChange} onNavigationClick={this.handleNavigationClick} sidebarItems={sidebarItems} selectedSidebarItem={selectedSidebarItem}/>
               <div className="not-sidebar">
                 <ConditionalReveal right>
                     <div className={`content-wrapper ${overlayClasses.join(' ')}`} ref={r => (this.contentElement = r)}>
@@ -164,10 +185,12 @@ class App extends React.Component {
 
 const mapStateToProps = state => ({
   selectedSidebarItem: state.selectedSidebarItem,
+  displayMode: state.displayMode,
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   setSelectedSidebarItem,
+  setDisplayMode,
 }, dispatch);
 
 export default connect(

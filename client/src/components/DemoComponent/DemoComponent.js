@@ -29,7 +29,7 @@ const styles = theme => ({
   },
   data: {
     marginTop: theme.spacing(3),
-    padding: theme.spacing(1),,
+    padding: theme.spacing(1),
     borderRadius: "4px",
     background: "lightgrey",
     minHeight: "20px",

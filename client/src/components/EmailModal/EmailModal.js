@@ -244,13 +244,13 @@ class EmailModal extends React.Component {
               ]}
               <Grid item xs={12} sm={12} md={12} lg={12}>
                 {!sending && !sendingSuccess &&
-                  <Button variant="contained" color="secondary" className={classes.button} onClick={this.handleSubmit}>
+                  <Button variant="contained" color="primary" className={classes.button} onClick={this.handleSubmit}>
                     Send
                     <SendIcon className={classes.rightIcon}/>
                   </Button>
                 }
                 {sending &&
-                  <CircularProgress color="secondary" className={classes.progress} />
+                  <CircularProgress color="primary" className={classes.progress} />
                 }
                 {sendingSuccess &&
                   <Typography color="inherit">

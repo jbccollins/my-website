@@ -1,6 +1,7 @@
 import React from "react";	
 import PropTypes from "prop-types";
 import ConditionalReveal from "components/ConditionalReveal";
+import Typography from "@material-ui/core/Typography";
 
 import "./SectionHeader.scss";
 
@@ -23,7 +24,9 @@ class SectionHeader extends React.Component {
     return (
       <ConditionalReveal when={reveal} top>
         <div className="SectionHeader">
-          {children}
+          <Typography variant="h4" component="p">
+            {children}
+          </Typography>
         </div>	
       </ConditionalReveal>
     );	

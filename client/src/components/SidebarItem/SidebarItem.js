@@ -25,7 +25,7 @@ class SidebarItem extends React.Component {
         containerId="main"
         offset={isMobile ? -60 : -40}
         activeClass="active"
-        spy>       
+        spy>
         <div className="item-content">
           <span>{name}</span>
         </div>

@@ -1,3 +1,11 @@
+@import '~scss/_color';
+.dark-mode {
+	background: $color-dark-background !important;
+	main, .Sidebar {
+		background: $color-dark-background !important;
+	}
+}
+
 body {
 	overflow-y: hidden;
 }
@@ -15,7 +23,16 @@ main {
 	display: inline-block;
 	overflow: hidden;
 }
-
+.dark-mode {
+	.desktop .content-wrapper {
+		&:before {
+			background-image: linear-gradient(rgba($color-dark-background, 1), rgba($color-dark-background, 0.75), rgba($color-dark-background, 0.5), rgba($color-dark-background, 0));
+		}
+		&:after {
+			background-image: linear-gradient(rgba($color-dark-background, 0), rgba($color-dark-background, 0.5), rgba($color-dark-background, 0.75), rgba($color-dark-background, 1));
+		}
+	}
+}
 .desktop .content-wrapper {
 	margin-left: 200px;
 	&:before, &:after {
@@ -66,14 +83,16 @@ main {
 	position: fixed;
 	width: 200px;
 	z-index: 100;
-	background: white;
 }
 .not-sidebar {
 	z-index: 99;
 }
 
 .secondary-section-title {
-	color: rgba(0,0,0,.4);
+	//color: rgba(0,0,0,.4);
+	span {
+		opacity: 0.6;
+	}
 	margin: 0px 0px 30px 0px;
 	font-size: 20px;
 }
@@ -83,7 +102,7 @@ main {
 	bottom: 10px;
 	right: 20px;
 	font-size: 10px;
-	color: rgba(0, 0, 0, 0.4);
+	opacity: 0.6;
 }
 
 .mobile {

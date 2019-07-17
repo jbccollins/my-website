@@ -63,7 +63,7 @@ class AboutMe extends React.Component {
         <ConditionalReveal right>
           <Grid container spacing={3}>
             <Grid item xs={12} sm={12} md={6} lg={6}>
-              <div className="secondary-section-title">Introduction</div>
+              <div className="secondary-section-title"><span>Introduction</span></div>
               <Typography className="about-me-text" variant="h5">
                 Hi, I'm James!
               </Typography>
@@ -82,7 +82,7 @@ class AboutMe extends React.Component {
                 Have fun exploring my website and feel free to shoot me an email if you are so inclined.
               </Typography>
               <div className="contact-me-button-wrapper">
-                <Button variant="contained" color="secondary" className={classes.button} onClick={this.handleOpenEmailModal}>
+                <Button variant="contained" color="primary" className={classes.button} onClick={this.handleOpenEmailModal}>
                   Email Me
                   {/* This Button uses a Font Icon, see the installation instructions in the docs. */}
                   <SendIcon className={classes.rightIcon}/>
@@ -96,12 +96,12 @@ class AboutMe extends React.Component {
                   <div className="image" style={{backgroundImage: `url(${profile})`}}></div>
                 </div>
               </ConditionalReveal> */}
-              <div className="secondary-section-title">Work and Education</div>
+              <div className="secondary-section-title"><span>Work and Education</span></div>
               <VerticalTimeline layout='1-column' animate={false}>
                 <ConditionalReveal when={reveal} component="zoom">
                   <VerticalTimelineElement
                     className="vertical-timeline-element--work"
-                    iconStyle={{ background: '#007082', color: '#fff' }}
+                    iconStyle={{ color: '#fff' }}
                     icon={<WorkIcon />}
                   >
                     <Paper>
@@ -110,7 +110,7 @@ class AboutMe extends React.Component {
                         <h4 className="vertical-timeline-element-subtitle">
                           <a href="https://www.fireside21.com/" target="_blank" rel="noopener noreferrer">Fireside</a>
                         </h4>
-                        <p>April 2018 - present</p>
+                        <p className="vertical-timeline-element-date">April 2018 - present</p>
                       </div>
                     </Paper>
                   </VerticalTimelineElement>
@@ -118,7 +118,7 @@ class AboutMe extends React.Component {
                 <ConditionalReveal when={reveal} component="zoom">
                   <VerticalTimelineElement
                     className="vertical-timeline-element--work"
-                    iconStyle={{ background: '#007082', color: '#fff' }}
+                    iconStyle={{ color: '#fff' }}
                     icon={<WorkIcon />}
                   >
                     <Paper>
@@ -129,7 +129,7 @@ class AboutMe extends React.Component {
                             Center for Advanced Transportation Technology
                           </a>
                         </h4>
-                        <p>June 2014 - April 2018</p>
+                        <p className="vertical-timeline-element-date">June 2014 - April 2018</p>
                       </div>
                     </Paper>
                   </VerticalTimelineElement>
@@ -137,7 +137,7 @@ class AboutMe extends React.Component {
                 <ConditionalReveal when={reveal} component="zoom">
                   <VerticalTimelineElement
                     className="vertical-timeline-element--education"
-                    iconStyle={{ background: '#007082', color: '#fff' }}
+                    iconStyle={{ color: '#fff' }}
                     icon={<SchoolIcon />}
                   >
                     <Paper>
@@ -148,7 +148,7 @@ class AboutMe extends React.Component {
                             University of Maryland College Park
                           </a>  
                         </h4>
-                        <p>September 2012 - May 2016</p>
+                        <p className="vertical-timeline-element-date">September 2012 - May 2016</p>
                       </div>
                     </Paper>
                   </VerticalTimelineElement>

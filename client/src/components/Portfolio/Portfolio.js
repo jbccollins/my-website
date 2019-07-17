@@ -9,6 +9,9 @@ import Collapse from '@material-ui/core/Collapse';
 import classnames from 'classnames';
 import ConditionalReveal from "components/ConditionalReveal";
 import { withStyles } from '@material-ui/core/styles';
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import { DARK } from "common/constants/theme";
 
 const styles = theme => ({
   expand: {
@@ -42,22 +45,20 @@ class Portfolio extends React.Component {
   handleExpandClick = () => {
     this.setState(state => ({ expanded: !state.expanded }));
   };
-/*
-                      className={classnames(classes.expand, {
-                        [classes.expandOpen]: this.state.expanded,
-                      })}
- */
+
   render() {
-    const { items, classes } = this.props;
+    const { items, classes, displayMode } = this.props;
     const { expanded } = this.state;
     const firstFourItems = items.slice(0, 4);
     const otherItems = items.slice(4);
+    const buttonColor = displayMode === DARK ? "secondary" : "primary";
     return (
       <div className="Portfolio">
         <Grid container spacing={3}>
           {firstFourItems.map(({ name, image, id, tags, description, website, sections }) => {
             return (              
               <PortfolioCard
+                buttonColor={buttonColor}
                 key={id}
                 website={website}
                 sections={sections}
@@ -78,6 +79,7 @@ class Portfolio extends React.Component {
               }
               return (              
                 <PortfolioCard
+                  buttonColor={buttonColor}
                   key={id}
                   website={website}
                   sections={sections}
@@ -93,7 +95,7 @@ class Portfolio extends React.Component {
         </Collapse>
         <div className="show-more-button-wrapper">
           <ConditionalReveal component="pulse" delay={500}>
-            <Button color="secondary"
+            <Button color={buttonColor}
               variant="outlined"
               className={classes.button}
               //onClick={this.handleExpandClick}
@@ -118,4 +120,14 @@ Portfolio.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(Portfolio);
+const mapStateToProps = state => ({
+  displayMode: state.displayMode,
+});
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+}, dispatch);
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(withStyles(styles)(Portfolio));

@@ -2,9 +2,9 @@ import {
   SET_DISPLAY_MODE,
   SET_SELECTED_SIDEBAR_ITEM,
 } from "actions/controls";
-import { DARK } from "common/constants/theme";
+import { LIGHT } from "common/constants/theme";
 
-const displayMode = (state = DARK, action) => {
+const displayMode = (state = LIGHT, action) => {
   switch (action.type) {
     case SET_DISPLAY_MODE:
       return action.payload.displayMode;

@@ -66,7 +66,7 @@ const UNITY = "Unity";
 const JAVA = "Java";
 const R = "R";
 const VANILLAWEB = "Vanilla Web";
-const ATLASSIAN = "Atlassian Suite";
+const ATLASSIAN = "Atlassian";
 
 const logos = [
   {
