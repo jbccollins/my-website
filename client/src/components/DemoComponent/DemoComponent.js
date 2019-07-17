@@ -5,32 +5,39 @@ import TextField from "@material-ui/core/TextField";
 import Divider from "@material-ui/core/Divider";
 import Paper from "@material-ui/core/Paper";
 import Typography from "@material-ui/core/Typography";
-import { withStyles } from "@material-ui/core/styles";
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { MuiThemeProvider, createMuiTheme, withStyles } from '@material-ui/core/styles';
 import "./DemoComponent.scss";
+
+const muiTheme = createMuiTheme({
+  palette: {
+    type: 'dark',
+  },
+});
 
 const styles = theme => ({
   button: {
-    margin: theme.spacing.unit
+    margin: theme.spacing(1)
   },
   textField: {
-    margin: theme.spacing.unit,
+    margin: theme.spacing(1),
     width: "400px",
   },
   divider: {
-    marginTop: theme.spacing.unit * 4,
-    marginBottom: theme.spacing.unit * 4,
+    marginTop: theme.spacing(4),
+    marginBottom: theme.spacing(4),
   },
   data: {
-    marginTop: theme.spacing.unit * 3,
-    padding: theme.spacing.unit,
+    marginTop: theme.spacing(3),
+    padding: theme.spacing(1),
     borderRadius: "4px",
     background: "lightgrey",
     minHeight: "20px",
   },
   paper: {
     ...theme.mixins.gutters(),
-    paddingTop: theme.spacing.unit * 2,
-    paddingBottom: theme.spacing.unit * 2,
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(2),
   },
 });
 
@@ -107,4 +114,13 @@ DemoComponent.propTypes = {
   data: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(DemoComponent);
+const themedDemoComponent = props => {
+  return (
+    <MuiThemeProvider theme={muiTheme}>
+      <CssBaseline />
+      <DemoComponent {...props}/>
+    </MuiThemeProvider>
+  );
+}
+
+export default withStyles(styles)(themedDemoComponent);
