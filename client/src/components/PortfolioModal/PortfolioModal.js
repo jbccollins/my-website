@@ -18,8 +18,8 @@ import {
 const styles = theme => ({
   paper: {
     ...theme.mixins.gutters(),
-    paddingTop: theme.spacing.unit * 2,
-    paddingBottom: theme.spacing.unit * 2,
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(2),
   },
   appBar: {
     position: isMobile ? 'fixed' : 'sticky',
@@ -29,9 +29,9 @@ const styles = theme => ({
   },
 });
 
-function Transition(props) {
-  return <Slide direction="up" {...props} />;
-}
+const Transition = React.forwardRef((props, ref) => (
+  <Slide direction="up" {...props} ref={ref} />
+));
 
 class PortfolioModal extends React.Component {
   handleClose = () => {
@@ -59,7 +59,7 @@ class PortfolioModal extends React.Component {
             </Toolbar>
           </AppBar>
           <div className="modal-content">
-            <Grid container spacing={24}>
+            <Grid container spacing={3}>
               {sections.map(({ name, content }) => {
                 return (
                   <Grid item xs={12} sm={12} md={12} lg={12} key={name}>

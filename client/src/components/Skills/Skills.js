@@ -71,8 +71,8 @@ const sections = [
 const styles = theme => ({
   root: {
     ...theme.mixins.gutters(),
-    paddingTop: theme.spacing.unit * 2,
-    paddingBottom: theme.spacing.unit * 2,
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(2),
   },
   expand: {
     transform: 'rotate(0deg)',
@@ -81,7 +81,7 @@ const styles = theme => ({
     }),
   },
   button: {
-    //marginTop: theme.spacing.unit * 3,
+    //marginTop: theme.spacing(3),
     // marginLeft: 'auto',
     // marginRight: 'auto',
     // display: 'inline-block',
@@ -92,7 +92,7 @@ const styles = theme => ({
     transform: 'rotate(180deg)',
   },
   rightIcon: {
-    marginLeft: theme.spacing.unit,
+    marginLeft: theme.spacing(1),
   },
 });
 	
@@ -129,7 +129,7 @@ class Skills extends React.Component {
               <ConditionalReveal>
                 <div className="secondary-section-title">{title}</div>
               </ConditionalReveal>
-              <Grid container spacing={24}>
+              <Grid container spacing={3}>
                 {itemsToRender.map(({name, image, color, proficiency}) => {
                   return (
                     <Grid item xs={6} sm={6} md={3} lg={2} key={name}>

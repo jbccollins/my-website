@@ -22,11 +22,11 @@ import {
 const styles = theme => ({
   paper: {
     ...theme.mixins.gutters(),
-    paddingTop: theme.spacing.unit * 2,
-    paddingBottom: theme.spacing.unit * 2,
+    paddingTop: theme.spacing(2),
+    paddingBottom: theme.spacing(2),
   },
   progress: {
-    margin: theme.spacing.unit,
+    margin: theme.spacing(1),
   },
   appBar: {
     position: isMobile ? 'fixed' : 'sticky',
@@ -35,21 +35,22 @@ const styles = theme => ({
     flex: 1,
   },
   button: {
-    margin: theme.spacing.unit,
+    margin: theme.spacing(1),
   },
   rightIcon: {
-    marginLeft: theme.spacing.unit,
+    marginLeft: theme.spacing(1),
   },
   textField: {
-    marginLeft: theme.spacing.unit,
-    marginRight: theme.spacing.unit,
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
     width: '100%',
   },
 });
 
-function Transition(props) {
-  return <Slide direction="up" {...props} />;
-}
+const Transition = React.forwardRef((props, ref) => (
+  <Slide direction="up" {...props} ref={ref} />
+));
+
 const initialInputState = {
   fromName: "",
   fromEmail: "",
@@ -187,7 +188,7 @@ class EmailModal extends React.Component {
             </Toolbar>
           </AppBar>
           <div className="modal-content">
-            <Grid container spacing={24}>
+            <Grid container spacing={3}>
               {!sendingSuccess && [
                 <Grid key="name-input" item xs={12} sm={12} md={6} lg={6}>
                   <TextField

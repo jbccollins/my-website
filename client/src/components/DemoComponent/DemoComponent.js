@@ -17,10 +17,10 @@ const muiTheme = createMuiTheme({
 
 const styles = theme => ({
   button: {
-    margin: theme.spacing(1)
+    margin: theme.spacing(1),
   },
   textField: {
-    margin: theme.spacing(1),
+    margin: theme.spacing(1),,
     width: "400px",
   },
   divider: {
@@ -29,7 +29,7 @@ const styles = theme => ({
   },
   data: {
     marginTop: theme.spacing(3),
-    padding: theme.spacing(1),
+    padding: theme.spacing(1),,
     borderRadius: "4px",
     background: "lightgrey",
     minHeight: "20px",

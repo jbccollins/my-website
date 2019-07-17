@@ -45,13 +45,13 @@ const styles = theme => ({
     transform: 'rotate(180deg)',
   },
   button: {
-    marginLeft: theme.spacing.unit,
+    marginLeft: theme.spacing(1),
   },
   buttonContainer: {
     display: "flex",
   },
   rightIcon: {
-    marginLeft: theme.spacing.unit,
+    marginLeft: theme.spacing(1),
   },
 });
 
@@ -134,7 +134,7 @@ class PortfolioCard extends React.Component {
                 {description}
               </Typography>
             </CardContent>
-            <CardActions className={classes.actions} disableActionSpacing>
+            <CardActions className={classes.actions} disableSpacing>
               <div className={classes.buttonContainer}>
                 <Tooltip title="View on Github" placement="bottom">
                   <div>

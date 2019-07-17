@@ -19,10 +19,10 @@ import "./AboutMe.scss";
 
 const styles = theme => ({
   button: {
-    margin: theme.spacing.unit,
+    margin: theme.spacing(1),
   },
   rightIcon: {
-    marginLeft: theme.spacing.unit,
+    marginLeft: theme.spacing(1),
   },
 });
 
@@ -61,7 +61,7 @@ class AboutMe extends React.Component {
     return (
       <div className="AboutMe">
         <ConditionalReveal right>
-          <Grid container spacing={24}>
+          <Grid container spacing={3}>
             <Grid item xs={12} sm={12} md={6} lg={6}>
               <div className="secondary-section-title">Introduction</div>
               <Typography className="about-me-text" variant="h5">

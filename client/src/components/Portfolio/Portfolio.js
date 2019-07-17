@@ -18,10 +18,10 @@ const styles = theme => ({
     }),
   },
   otherGrid: {
-    marginTop: theme.spacing.unit * 2,
+    marginTop: theme.spacing(2),
   },
   button: {
-    marginTop: theme.spacing.unit * 3,
+    marginTop: theme.spacing(3),
     // marginLeft: 'auto',
     // marginRight: 'auto',
     // display: 'inline-block',
@@ -30,7 +30,7 @@ const styles = theme => ({
     transform: 'rotate(180deg)',
   },
   rightIcon: {
-    marginLeft: theme.spacing.unit,
+    marginLeft: theme.spacing(1),
   },
 });
 
@@ -54,7 +54,7 @@ class Portfolio extends React.Component {
     const otherItems = items.slice(4);
     return (
       <div className="Portfolio">
-        <Grid container spacing={24}>
+        <Grid container spacing={3}>
           {firstFourItems.map(({ name, image, id, tags, description, website, sections }) => {
             return (              
               <PortfolioCard
@@ -71,7 +71,7 @@ class Portfolio extends React.Component {
           })}
         </Grid>
         <Collapse in={expanded} timeout="auto" unmountOnExit>
-          <Grid className={classes.otherGrid} container spacing={24}>
+          <Grid className={classes.otherGrid} container spacing={3}>
             {otherItems.map(({ name, image, id, tags, description, website, sections, disabled }) => {
               if (disabled) {
                 return false;
