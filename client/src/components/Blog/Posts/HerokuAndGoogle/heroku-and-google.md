@@ -4,19 +4,19 @@
 | WARNING: This is gonna cost money. As of writing this a domain from google will probably cost you about \$12 per year. The cheapest paid tier for heroku costs \$7 / month. |
 | --- |
 
-### First create a new Heroku app
+###1. Create a new Heroku app
 https://dashboard.heroku.com/new-app
 
 <img src="create-new-heroku-app.png" alt="create-new-heroku-app">
 
-### Add a buildpack to your Heroku app
+###2. Add a buildpack to your Heroku app
 https://dashboard.heroku.com/apps/examples-are-fun/settings
 
 <img src="add-a-buildpack.png" alt="add-a-buildpack">
 
 For the purposes of this walkthrough I picked python. You may not need to pick a buildpack if your app is set up in such a way that Heroku is able to infer what buildpack(s) you need. For example if Heroku sees that you have a `package.json` file it will infer that you need the `node` buildpack. If it sees a `requirements.txt` file it will infer that you need the `python` buildpack. In any case Heroku must know about at least one buildpack or any attempt to deploy will fail.
 
-### Deploy your app to Heroku
+###3. Deploy your app to Heroku
 Heroku requires a paid tier to allow for automated certificate management. But before we can upgrade to a paid tier we need to deploy something to heroku.
 
 We will be using the command line to deploy our app to Heroku. If you haven't already installed the Heroku CLI (link) then first do that.
@@ -62,23 +62,23 @@ https://dashboard.heroku.com/apps/examples-are-fun/logs
 
 If the logs look ok then congratulations you've successfully deployed an app to Heroku!
 
-### Purchase a domain from Google
+###4. Purchase a domain from Google
 https://domains.google.com/m/registrar/search
 
 I used `examplesarefun.com`
 
 <img src="buy-domain.png" alt="buy-domain">
 
-### Add your Google domain to Heroku
+###5. Add your Google domain to Heroku
 https://dashboard.heroku.com/apps/examples-are-fun/settings
 
 <img src="add-heroku-domain.png" alt="add-heroku-domain">
 
 Heroku will generate a DNS target for you. Copy that DNS target to your clipboard. We're going to use that in our Google domain management dashboard in a minute.
-WAIT TO DO THIS UNTIL HEROKU’s ACM STATUS IS OK (requires HOBBY TIER)
+WAIT TO DO THIS UNTIL HEROKU’s ACM STATUS IS OK (requires at least HOBBY TIER)
 
-### Configure Google DNS Settings
-https://domains.google.com/m/registrar/jamesbcollins.dev/dns
+###6. Configure Google DNS Settings
+https://domains.google.com/m/registrar/examplesarefun.com/dns
 
 <img src="google-custom-resource-records.png" alt="google-custom-resource-records">
 
@@ -88,9 +88,14 @@ In theory this could take up to 48hrs before that redirect happens but in my exp
 host www.examplesarefun.com
 ```
 
+###7. Optional Stuff
+#####7.1 Naked URL
 If you care about supporting a "naked" URL
 `examplesarefun.com` vs `www.examplesarefun.com`
 You can do so now by adding a `Synthetic Record`
 <img src="naked-google-url.png" alt="naked-google-url">
 
-7. Add email forwarding here: https://domains.google.com/m/registrar/jamesbcollins.dev/email?hl=en
+
+#####7.2 Email Forwarding
+If you would like an email address to be associated with your custom domain (e.g. yourname@examplesarefun.com) You can add email forwarding here: https://domains.google.com/m/registrar/examplesarefun.com/email?hl=en
+<img src="email-forwarding.png" alt="email-forwarding">
