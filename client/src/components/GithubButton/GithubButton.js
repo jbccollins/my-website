@@ -18,7 +18,7 @@ function GithubButton(props) {
   const { classes, onClick } = props;
   return (
     <div className="GithubButton">
-      <Tooltip title="View on Github" placement="bottom-end">
+      <Tooltip title="View on GitHub" placement="bottom-end">
         <IconButton onClick={onClick}>
           <Avatar
             alt="github"

@@ -135,7 +135,7 @@ class PortfolioCard extends React.Component {
             </CardContent>
             <CardActions className={classes.actions} disableSpacing>
               <div className={classes.buttonContainer}>
-                <Tooltip title="View on Github" placement="bottom">
+                <Tooltip title="View on GitHub" placement="bottom">
                   <div>
                     {isMobile &&
                       <IconButton aria-label="Code" color={buttonColor}  onClick={this.handleGithubClick}>

@@ -94,7 +94,7 @@ class Portfolio extends React.Component {
           </Grid>
         </Collapse>
         <div className="show-more-button-wrapper">
-          <ConditionalReveal component="pulse" delay={500}>
+          <ConditionalReveal component="pulse" delay={1000}>
             <Button color={buttonColor}
               variant="outlined"
               className={classes.button}

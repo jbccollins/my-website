@@ -39,7 +39,7 @@ class SidebarInfo extends React.Component {
       <div className="SidebarInfo">	
         <div className="name">James Collins</div>
         <div className="social">
-          <Tooltip title="Github" placement="bottom">
+          <Tooltip title="GitHub" placement="bottom">
             <div onClick={this.handleGithubClick}>
               <img
                 className={this.props.classes.smallAvatar}
@@ -48,7 +48,7 @@ class SidebarInfo extends React.Component {
               />             
             </div>
           </Tooltip>
-          <Tooltip title="Linkedin" placement="bottom">
+          <Tooltip title="LinkedIn" placement="bottom">
             <div style={{marginLeft: '8px'}} onClick={this.handleLinkedInClick}>
               <img
                 className={this.props.classes.smallAvatar}
@@ -57,7 +57,7 @@ class SidebarInfo extends React.Component {
               />
             </div>
           </Tooltip>
-          <Tooltip title="Resume" placement="bottom">
+          <Tooltip title="Résumé" placement="bottom">
             <div style={{marginLeft: '8px'}} onClick={this.handleResumeClick}>
               <img
                 className={this.props.classes.smallAvatar}
