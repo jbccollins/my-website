@@ -1,5 +1,5 @@
 import lapidaryBackground from 'assets/portfolio-items/lapidary-background.png';
-import dcMetroMonitorBackground from 'assets/portfolio-items/dc-metro-monitor-background.png';
+import dcMetroMonitorBackground from 'assets/portfolio-items/dc-metro-monitor-background.gif';
 import reactInteractiveCanvasBackground from 'assets/portfolio-items/react-interactive-canvas-background.png';
 import cornholeSimulatorBackground from 'assets/portfolio-items/cornhole-simulator-background.jpg';
 import usWeatherMonitorBackground from 'assets/portfolio-items/us-weather-monitor-background.gif';

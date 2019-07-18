@@ -4,7 +4,7 @@ import babel from "assets/logos/babel.png";
 import atlassian from "assets/logos/atlassian.png";
 import csharp from "assets/logos/csharp.png";
 import d3 from "assets/logos/d3.png";
-import django from "assets/logos/django-alt.png";
+import django from "assets/logos/django.png";
 import dotNet from "assets/logos/dot-net.png";
 import eslint from "assets/logos/eslint.png";
 import git from "assets/logos/git.png";
@@ -105,7 +105,7 @@ const logos = [
   {
     name: DJANGO,
     image: django,
-    color: "rgb(0, 42, 27)",
+    color: "rgb(51, 102, 68)",
     proficiency: 2,
   },
   {
