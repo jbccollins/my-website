@@ -1,5 +1,5 @@
 import lapidaryBackground from 'assets/portfolio-items/lapidary-background.png';
-import dcMetroMonitorBackground from 'assets/portfolio-items/dc-metro-monitor-background.gif';
+import dcMetroMonitorBackground from 'assets/portfolio-items/dc-metro-monitor-background.png';
 import reactInteractiveCanvasBackground from 'assets/portfolio-items/react-interactive-canvas-background.png';
 import cornholeSimulatorBackground from 'assets/portfolio-items/cornhole-simulator-background.jpg';
 import usWeatherMonitorBackground from 'assets/portfolio-items/us-weather-monitor-background.gif';
@@ -45,6 +45,7 @@ const portfolioItems = [
       url: 'https://www.dcmetromonitor.com/?mapPosition=38.897174971889264%2C-77.02809381298722%2C18&stationCodes=A01%2CC01',
     },
     description: 'A live map of the DC Metro system.',
+    /*
     sections: [
       {
         name: "Motivation",
@@ -78,6 +79,7 @@ const portfolioItems = [
         )
       }
     ]
+    */
   },
 	{
     name: 'Lapidary',

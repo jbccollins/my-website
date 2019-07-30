@@ -1,3 +1,9 @@
+@import '~scss/_color';
+.dark-mode {
+    .Logo {
+        //background-color: $color-dark-background-paper;
+    }
+}
 .Logo {
     width: 100px;
     height: 100px;
