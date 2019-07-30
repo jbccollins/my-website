@@ -1,4 +1,14 @@
 @import '~scss/_color';
+.dark-mode {
+    .AboutMe {
+        .vertical-timeline::before {
+            background: $color-dark-accent !important;
+        }
+        .vertical-timeline-element-icon {
+            box-shadow: 0 0 0 2px $color-dark-accent;
+        }
+    }
+}
 .AboutMe {
     .image-wrapper {
         max-height: 300px;
@@ -73,14 +83,14 @@
         }
     }
     .vertical-timeline::before {
-        background: rgba(0,0,0,.1) !important;
+        background: $color-light-accent !important;
         width: 2px;
         left: 19px;
         height: calc(100% - 20px);
         //top: 76px;
     }
     .vertical-timeline-element-icon {
-        box-shadow: 0 0 0 2px rgba(0,0,0,.1);
+        box-shadow: 0 0 0 2px $color-light-accent;
         background: $color-primary;
     }
     .about-me-text {

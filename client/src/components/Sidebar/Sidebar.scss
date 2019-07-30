@@ -37,7 +37,7 @@
         padding-left: 0px;
         height: 39px;
         line-height: 40px;
-        border-top: 1px solid $color-dark-background-paper;
+        border-top: 1px solid $color-dark-accent;
         // &:before {
         //     content: "";
         //     width: 100%;
@@ -63,7 +63,7 @@
             top: 0px;
             height: 39px;
             overflow: hidden;
-            border-bottom: 1px solid $color-dark-background-paper;
+            border-bottom: 1px solid $color-dark-accent;
             line-height: 30px;
             display: flex;
             width: 100vw;//calc(100vw - 10px);
