@@ -1,3 +1,4 @@
+@import '~scss/_color';
 .Sidebar {
     //margin-top: 40px;
     padding-left: 40px;
@@ -36,7 +37,7 @@
         padding-left: 0px;
         height: 39px;
         line-height: 40px;
-        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-top: 1px solid $color-dark-background-paper;
         // &:before {
         //     content: "";
         //     width: 100%;
@@ -57,12 +58,12 @@
         .sidebar-identity {
             padding: 0px 5px;
             padding-top: 4px;
-            //background: white;
+            background: $color-dark-background;
             position: fixed;
             top: 0px;
             height: 39px;
             overflow: hidden;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            border-bottom: 1px solid $color-dark-background-paper;
             line-height: 30px;
             display: flex;
             width: 100vw;//calc(100vw - 10px);
