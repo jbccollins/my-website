@@ -41,7 +41,7 @@ class SidebarInfo extends React.Component {
             <div style={{marginLeft: '8px'}} onClick={this.handleLinkedInClick}>
               <img
                 className={this.props.classes.smallAvatar}
-                alt="linkedin"
+                alt="LinkedIn"
                 src={linkedinIcon}
               />
             </div>
@@ -50,7 +50,7 @@ class SidebarInfo extends React.Component {
             <div style={{marginLeft: '8px'}} onClick={this.props.handleResumeClick}>
               <img
                 className={this.props.classes.smallAvatar}
-                alt="resume"
+                alt="Résumé"
                 src={resumeIcon}
               />
             </div>

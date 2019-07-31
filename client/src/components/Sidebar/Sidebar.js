@@ -47,7 +47,7 @@ class Sidebar extends React.Component {
             <FormControlLabel
               control={
                 <Switch
-                color="primary"
+                color="secondary"
                 checked={displayMode === DARK}
                 onChange={onDisplayModeChange}
                 //value="checkedA"

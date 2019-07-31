@@ -2,13 +2,13 @@ import react from "assets/logos/react.png";
 import angular from "assets/logos/angular-official.png";
 import babel from "assets/logos/babel.png";
 import atlassian from "assets/logos/atlassian.png";
-import csharp from "assets/logos/csharp.png";
+import csharp from "assets/logos/csharp-alt.png";
 import d3 from "assets/logos/d3.png";
 import django from "assets/logos/django.png";
 import dotNet from "assets/logos/dot-net.png";
 import eslint from "assets/logos/eslint.png";
 import git from "assets/logos/git.png";
-import github from "assets/logos/github.png";
+import github from "assets/logos/github-alt.png";
 import google from "assets/logos/google.png";
 import heroku from "assets/logos/heroku.png";
 import javascript from "assets/logos/javascript.png";
@@ -93,7 +93,7 @@ const logos = [
   {
     name: CSHARP,
     image: csharp,
-    color: "rgb(105, 37, 119)",
+    color: "rgb(157, 118, 217)",
     proficiency: 2,
   },
   {
@@ -129,8 +129,12 @@ const logos = [
   {
     name: GITHUB,
     image: github,
-    color: "rgb(23, 21, 22)",
+    color: "rgb(156, 218, 240)",
     proficiency: 3,
+    style: {
+      borderRadius: "12px",
+      background: "white",
+    }
   },
   {
     name: GOOGLE,
@@ -171,7 +175,7 @@ const logos = [
   {
     name: NODE,
     image: node,
-    color: "rgb(100, 158, 104)",
+    color: "rgb(141, 210, 46)",
     proficiency: 1.5
   },
   {

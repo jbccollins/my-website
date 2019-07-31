@@ -12,6 +12,7 @@ import { withStyles } from '@material-ui/core/styles';
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import { DARK } from "common/constants/theme";
+import Typography from '@material-ui/core/Typography';
 
 const styles = theme => ({
   expand: {
@@ -54,6 +55,30 @@ class Portfolio extends React.Component {
     const buttonColor = displayMode === DARK ? "secondary" : "primary";
     return (
       <div className="Portfolio">
+        {/* <div className="secondary-section-title"><span>Work Projects</span></div>
+        <Grid container spacing={3}>
+          {firstFourItems.map(({ name, image, id, tags, description, website, sections }) => {
+            return (              
+              <PortfolioCard
+                buttonColor={buttonColor}
+                key={id}
+                website={website}
+                sections={sections}
+                name={name}
+                image={image}
+                id={id}
+                tags={tags}
+                description={description}
+              />
+            );
+          })}
+        </Grid>
+        <div className="secondary-section-title"><span>Personal Projects</span></div>
+        */}
+        <Typography component="p" className="section-text">
+          I have worked on a number of personal projects over the past few years and this is a space to showcase a few of them.
+          For more information about projects I have worked on professionally please check out my résumé.
+        </Typography>
         <Grid container spacing={3}>
           {firstFourItems.map(({ name, image, id, tags, description, website, sections }) => {
             return (              
@@ -95,8 +120,8 @@ class Portfolio extends React.Component {
         </Collapse>
         <div className="show-more-button-wrapper">
           <ConditionalReveal component="pulse" delay={1000}>
-            <Button color={buttonColor}
-              variant="outlined"
+            <Button color="primary"
+              variant="contained"
               className={classes.button}
               //onClick={this.handleExpandClick}
               onClick={this.handleExpandClick}

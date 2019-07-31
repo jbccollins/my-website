@@ -57,7 +57,7 @@ const sidebarItems = [
   },
   {
     link: "projects",
-    name: "Portfolio",
+    name: "Projects",
   },
   {
     link: "skills",
@@ -162,11 +162,11 @@ class App extends React.Component {
                         <div className="section" id="about-me" name="about-me">
                           <SectionHeader>About Me</SectionHeader>
                           <div className="section-content">
-                            <AboutMe/>
+                            <AboutMe handleResumeClick={this.handleResumeOpenClick}/>
                           </div>
                         </div>
                         <div className="section" id="projects" name="projects">
-                          <SectionHeader>Portfolio</SectionHeader>
+                          <SectionHeader>Personal Projects</SectionHeader>
                           <div className="section-content">
                             <Portfolio items={portfolioItems} />
                           </div>

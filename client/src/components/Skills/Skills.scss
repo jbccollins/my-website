@@ -10,4 +10,29 @@
     .skills-item {
         display: inline-block;
     }
+    .favorite-stack {
+        display: flex;
+        margin-bottom: 20px;
+        width: 100%;
+        flex-wrap: wrap;
+        margin-top: -8px;
+        > * {
+            margin-top: 8px;
+        }
+    }
+    // .skills-item-wrapper {
+    //     transform: scale(0.7);
+    // }
+    .plus, .equals {
+        line-height: 100px;
+        margin: 8px 8px;
+        font-size: 40px;
+    }
+    .heart {
+        margin-top: 30px;
+        margin-left: 4px;
+    }
+    .hidden {
+        display: none;
+    }
 }

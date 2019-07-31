@@ -10,11 +10,12 @@ import { VerticalTimeline, VerticalTimelineElement }  from 'react-vertical-timel
 import 'react-vertical-timeline-component/style.min.css';
 import WorkIcon from '@material-ui/icons/Work';
 import SchoolIcon from '@material-ui/icons/School';
+import PersonIcon from '@material-ui/icons/Person';
 import Button from '@material-ui/core/Button';
 import { withStyles } from '@material-ui/core/styles';
 import SendIcon from '@material-ui/icons/Send';
 import EmailModal from 'components/EmailModal';
-//import differenceInYears from 'date-fns/difference_in_years'
+import differenceInYears from 'date-fns/difference_in_years'
 import "./AboutMe.scss";	
 
 const styles = theme => ({
@@ -26,10 +27,10 @@ const styles = theme => ({
   },
 });
 
-// const yearsOfExperience = differenceInYears(
-//   new Date(),
-//   new Date(2014, 6, 1)
-// );
+const yearsOfExperience = differenceInYears(
+  new Date(),
+  new Date(2014, 6, 1)
+);
 
 class AboutMe extends React.Component {
   state = {
@@ -56,7 +57,7 @@ class AboutMe extends React.Component {
     setTimeout(this.enableReveal, 1000)
   }
   render() {
-    const { classes } = this.props;
+    const { classes, handleResumeClick } = this.props;
     const { reveal, emailModalOpen } = this.state;
     return (
       <div className="AboutMe">
@@ -68,24 +69,29 @@ class AboutMe extends React.Component {
                 Hi, I'm James!
               </Typography>
               <Typography className="about-me-text" component="p">
-                I am a software developer based out of Washington DC.
+                I am a Full Stack Software Engineer with over {yearsOfExperience} years
+                of experience building web based applications and services.
               </Typography>
               <Typography className="about-me-text" component="p">
-                I nerd out over geospatial data, fun visualizations and intuitive user interfaces.
-                I currently work for <a className="fireside-link" href="https://www.fireside21.com/" rel="noopener noreferrer" target="_blank">Fireside</a>, building
-                tools used by congressional staffers.
+                I nerd out over geospatial data, fun visualizations and slick user interfaces.
               </Typography>
-              {/* <Typography className="about-me-text" component="p">
-                I have over {yearsOfExperience} years of experience building websites.
-              </Typography> */}
               <Typography className="about-me-text" component="p">
-                Have fun exploring my website and feel free to shoot me an email if you are so inclined.
+                I currently work in Washington D.C. for <a className="fireside-link" href="https://www.fireside21.com/" rel="noopener noreferrer" target="_blank">Fireside</a>, building
+                CRM tools used by congressional staffers.
+              </Typography>
+              <Typography className="about-me-text" component="p">
+                Have fun exploring my website and feel free to shoot me an email or check out my resume if you are so inclined.
               </Typography>
               <div className="contact-me-button-wrapper">
                 <Button variant="contained" color="primary" className={classes.button} onClick={this.handleOpenEmailModal}>
                   Email Me
                   {/* This Button uses a Font Icon, see the installation instructions in the docs. */}
                   <SendIcon className={classes.rightIcon}/>
+                </Button>
+                <Button variant="contained" color="primary" className={classes.button} onClick={handleResumeClick}>
+                  Résumé
+                  {/* This Button uses a Font Icon, see the installation instructions in the docs. */}
+                  <PersonIcon className={classes.rightIcon}/>
                 </Button>
               </div>
               <EmailModal open={emailModalOpen} onClose={this.handleCloseEmailModal}/>
@@ -162,6 +168,7 @@ class AboutMe extends React.Component {
   }
 }
 AboutMe.propTypes = {
-  classes: PropTypes.object.isRequired,  	
+  classes: PropTypes.object.isRequired, 
+  handleResumeClick: PropTypes.func.isRequired, 	
 };	
 export default withStyles(styles)(AboutMe);
