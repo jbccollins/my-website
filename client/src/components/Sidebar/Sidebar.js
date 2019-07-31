@@ -10,7 +10,6 @@ import Switch from '@material-ui/core/Switch';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
-import DisplayModeToggleIcon from '@material-ui/icons/InvertColors';
 import {
   isMobile,
 } from "react-device-detect";
@@ -18,7 +17,7 @@ import "./Sidebar.scss";
 
 class Sidebar extends React.Component {
   render() {
-    const { selectedSidebarItem, sidebarItems, onDisplayModeChange, displayMode } = this.props;
+    const { selectedSidebarItem, sidebarItems, onDisplayModeChange, displayMode, handleResumeClick } = this.props;
     const coerceSelectedSidebarItem = selectedSidebarItem !== null;
     return (
       <div className="Sidebar">
@@ -28,7 +27,7 @@ class Sidebar extends React.Component {
               <MyLogo />
             }
             <ProfileAvatar />
-            <SidebarInfo />
+            <SidebarInfo handleResumeClick={handleResumeClick}/>
           </div>
         </ConditionalReveal>
         <div className="sidebar-items">
@@ -68,6 +67,7 @@ Sidebar.propTypes = {
   onNavigationClick: PropTypes.func.isRequired,
   selectedSidebarItem: PropTypes.string,
   sidebarItems: PropTypes.array.isRequired,
+  handleResumeClick: PropTypes.func.isRequired,
   displayMode: PropTypes.oneOf([DARK, LIGHT]).isRequired,
 };
 

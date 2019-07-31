@@ -55,6 +55,8 @@
     "react-device-detect": "^1.6.2",
     "react-dom": "^16.8.6",
     "react-markdown": "^4.0.8",
+    "react-pdf": "^4.1.0",
+    "react-read-pdf": "^2.0.9",
     "react-redux": "^6.0.0",
     "react-reveal": "^1.2.2",
     "react-router": "^5.0.0",

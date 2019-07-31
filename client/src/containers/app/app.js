@@ -7,6 +7,7 @@ import "./app.scss";
 import { portfolioItems } from "data/portfolioItems";
 import { withStyles } from "@material-ui/core/styles";
 import Sidebar from "components/Sidebar";
+import Resume from "components/Resume";
 import SectionHeader from "components/SectionHeader";
 import AboutMe from "components/AboutMe";
 import Skills from "components/Skills";
@@ -71,6 +72,7 @@ class App extends React.Component {
     this.state = {
       currentTheme: theme(props.displayMode),
       navigationClick: false,
+      resumeOpen: false,
       overlayClasses: [],
     }
   }
@@ -79,7 +81,6 @@ class App extends React.Component {
     this.handleScroll();
     this.handleDisplayModeChange();
   }
-
 
   componentDidUpdate(prevProps) {
     if (prevProps.children !== this.props.children) {
@@ -128,8 +129,17 @@ class App extends React.Component {
     }
     this.setState({overlayClasses});
   }
+
+  handleResumeCloseClick = () => {
+    this.setState({resumeOpen: false});
+  }
+
+  handleResumeOpenClick = () => {
+    this.setState({resumeOpen: true});
+  }
+
   render() {
-    const { overlayClasses, currentTheme } = this.state;
+    const { overlayClasses, currentTheme, resumeOpen } = this.state;
     const { selectedSidebarItem, displayMode } = this.props;
     return (
       <MuiThemeProvider theme={currentTheme}>
@@ -137,7 +147,8 @@ class App extends React.Component {
         <div className={`${isMobile ? "mobile" : "desktop"}`}>
           <main id="main" onScroll={this.handleScroll} ref={r => (this.scrollableElement = r)}>
             <div className="sidebar-and-content-wrapper" >
-              <Sidebar onDisplayModeChange={this.handleDisplayModeChange} onNavigationClick={this.handleNavigationClick} sidebarItems={sidebarItems} selectedSidebarItem={selectedSidebarItem}/>
+              <Resume onClose={this.handleResumeCloseClick} open={resumeOpen}/>
+              <Sidebar handleResumeClick={this.handleResumeOpenClick} onDisplayModeChange={this.handleDisplayModeChange} onNavigationClick={this.handleNavigationClick} sidebarItems={sidebarItems} selectedSidebarItem={selectedSidebarItem}/>
               <div className="not-sidebar">
                 <ConditionalReveal right>
                     <div className={`content-wrapper ${overlayClasses.join(' ')}`} ref={r => (this.contentElement = r)}>
