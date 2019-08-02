@@ -9,6 +9,7 @@
         }
     }
 }
+
 .AboutMe {
     .image-wrapper {
         max-height: 300px;
@@ -97,10 +98,11 @@
         margin-top: 20px;
         font-size: 16px;
     }
-    .contact-me-button-wrapper {
+    .about-me-buttons-wrapper {
         margin-top: 20px;
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
     }
 }
 

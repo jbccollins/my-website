@@ -82,7 +82,7 @@ class AboutMe extends React.Component {
               <Typography className="about-me-text" component="p">
                 Have fun exploring my website and feel free to shoot me an email or check out my resume if you are so inclined.
               </Typography>
-              <div className="contact-me-button-wrapper">
+              <div className="about-me-buttons-wrapper">
                 <Button variant="contained" color="primary" className={classes.button} onClick={this.handleOpenEmailModal}>
                   Email Me
                   {/* This Button uses a Font Icon, see the installation instructions in the docs. */}
