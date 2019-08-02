@@ -12,6 +12,7 @@ import { saveAs } from 'file-saver';
 import {
   isMobile,
 } from "react-device-detect";
+import PDFViewer from 'mgr-pdf-viewer-react';
 
 class Resume extends React.Component {
 
@@ -43,12 +44,16 @@ class Resume extends React.Component {
           </div>
         </div>
         <div className="pdf-viewer-container">
-          {isMobile &&
+          <PDFViewer
+            document={{
+              url: "/resume"
+            }}/>
+          {/* {isMobile &&
             <PDFReader width={window.outerWidth} url={"/resume"} />
           }
           {!isMobile &&
             <PDFReader url={"/resume"} />
-          }
+          } */}
         </div>
       </div>
     );
