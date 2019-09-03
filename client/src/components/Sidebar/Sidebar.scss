@@ -3,7 +3,11 @@
     //margin-top: 40px;
     padding-left: 40px;
     height: 100%;
-    .sidebar-items {
+    pointer-events: none;
+    .social img, a {
+        pointer-events: all;
+    }
+    .sidebar-items {    
         display: flex;
         flex-flow: column;
         text-align: left;
