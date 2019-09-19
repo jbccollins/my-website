@@ -70,7 +70,7 @@ class AboutMe extends React.Component {
               </Typography>
               <Typography className="about-me-text" component="p">
                 I am a Full Stack Software Engineer with over {yearsOfExperience} years
-                of experience building web based applications and services.
+                of experience developing web based applications and services.
               </Typography>
               <Typography className="about-me-text" component="p">
                 I nerd out over geospatial data, fun visualizations and slick user interfaces.
