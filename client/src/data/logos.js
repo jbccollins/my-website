@@ -1,6 +1,7 @@
 import react from "assets/logos/react.png";
 import angular from "assets/logos/angular-official.png";
 import babel from "assets/logos/babel.png";
+import bash from "assets/logos/bash.png";
 import atlassian from "assets/logos/atlassian.png";
 import csharp from "assets/logos/csharp-alt.png";
 import d3 from "assets/logos/d3.png";
@@ -37,6 +38,7 @@ const REACT = "React";
 const ANGULAR = "Angular";
 const BABEL = "Babel";
 const CSHARP = "C#";
+const BASH = "Bash";
 const D3 = "d3";
 const DJANGO = "django";
 const DOTNET = ".NET";
@@ -89,6 +91,13 @@ const logos = [
     color: "rgb(247, 216, 101)",
     website: "https://babeljs.io/",
     proficiency: 2,
+  },
+  {
+    name: BASH,
+    image: bash,
+    color: "rgb(53, 177, 83)",
+    website: "https://www.gnu.org/software/bash/",
+    proficiency: 1,
   },
   {
     name: CSHARP,
@@ -287,6 +296,7 @@ export {
   REACT,
   ANGULAR,
   BABEL,
+  BASH,
   CSHARP,
   D3,
   DJANGO,
