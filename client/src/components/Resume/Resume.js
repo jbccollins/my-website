@@ -34,11 +34,11 @@ class Resume extends React.Component {
       <div className="Resume">
         <div className="pdf-controls-header">
           <div className="controls">
-            <Button color="inherit" onClick={this.handleDownloadClick} aria-label="Close">
+            <Button style={{color: 'white'}} color="inherit" onClick={this.handleDownloadClick} aria-label="Close">
               Download PDF
               <SaveIcon style={{marginLeft: '6px'}}/>
             </Button>
-            <IconButton color="inherit" onClick={onClose} aria-label="Close">
+            <IconButton style={{color: 'white'}} color="inherit" onClick={onClose} aria-label="Close">
               <CloseIcon />
             </IconButton>
           </div>
