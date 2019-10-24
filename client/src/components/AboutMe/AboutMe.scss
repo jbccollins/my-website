@@ -7,6 +7,9 @@
         .vertical-timeline-element-icon {
             box-shadow: 0 0 0 2px $color-dark-accent;
         }
+        .fireside-link {
+            color: $color-secondary;
+        }
     }
 }
 
@@ -43,7 +46,7 @@
         // padding: 2px 4px;
         // border-radius: 2px;
         // margin: 0px 4px;
-        color: $color-secondary;
+        color: $color-primary;
         //margin: 0px 5px;
     }
     .timeline-element-wrapper {
