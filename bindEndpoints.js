@@ -67,7 +67,7 @@ const bindEndpoints = app => {
   });
 
   // This does not work locally due to the port redirect. You gotta hit localhost:5001/resume.
-  app.get(RESUME_DOWNLOAD, (req, res) => res.download('./client/src/assets/resume/james_collins_resume_2019_v2.pdf', "James-Collins-Resume.pdf"))
+  app.get(RESUME_DOWNLOAD, (req, res) => res.download('./client/src/assets/resume/james_collins_resume_2020_v1.pdf', "James-Collins-Resume.pdf"))
 };
 
 export default bindEndpoints;
