@@ -15,7 +15,6 @@ import reactGradientScrollBackground from 'assets/portfolio-items/react-gradient
 import thisWebsiteBackground from 'assets/portfolio-items/my-website-background.jpg';
 import reactLeafletExtendableBackground from 'assets/portfolio-items/react-leaflet-extendable-background.png';
 import marylandCensusDataExplorerBackground from 'assets/portfolio-items/maryland-census-data-explorer-background.jpg';
-import React from 'react';
 
 const NPM = {
 	className: 'npm',
@@ -118,7 +117,7 @@ const portfolioItems = [
     description: 'A no frills realtime weather map.',
 		website: {
       text: "Website",
-      url: 'https://us-weather-monitor.herokuapp.com/',
+      url: 'https://weather-monitor-demo.herokuapp.com/',
     },
 	},
 	{

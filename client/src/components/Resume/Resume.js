@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import "./Resume.scss";
-import { PDFReader } from 'react-read-pdf';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import SaveIcon from '@material-ui/icons/Save';
@@ -9,9 +8,6 @@ import fetch from "isomorphic-fetch";
 import Button from '@material-ui/core/Button';
 import { RESUME_DOWNLOAD } from "common/constants/urls";
 import { saveAs } from 'file-saver';
-import {
-  isMobile,
-} from "react-device-detect";
 import PDFViewer from 'mgr-pdf-viewer-react';
 
 class Resume extends React.Component {

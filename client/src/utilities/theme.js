@@ -12,11 +12,6 @@ const generateTheme = type => {
     main: "#7e57c2",
     dark: "#4d2c91",
   };
-  const blue = {
-    light: "#62efff",
-    main: "#00bcd4",
-    dark:"#008ba3",
-  }
   const lightPurple = {
     light: "#e4b5ff",
     main: "#b085f5",

@@ -140,7 +140,7 @@ class App extends React.Component {
 
   render() {
     const { overlayClasses, currentTheme, resumeOpen } = this.state;
-    const { selectedSidebarItem, displayMode } = this.props;
+    const { selectedSidebarItem } = this.props;
     return (
       <MuiThemeProvider theme={currentTheme}>
         <CssBaseline />
