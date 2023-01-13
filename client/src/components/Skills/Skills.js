@@ -39,15 +39,16 @@ import {
   TRAVIS,
   TYPESCRIPT,
   VANILLAWEB,
+  NEXTJS,
   WEBPACK,
   YARN,
 } from "data/logos";
 import "./Skills.scss";
 
-const LANGUAGES = [JAVASCRIPT, PYTHON, CSHARP, JAVA, TYPESCRIPT, MSSQL, R, BASH];
-const FRAMEWORKS_AND_ECOSYSTEMS = [ANGULAR, DOTNET, DJANGO, VANILLAWEB];
-const POPULAR_LIBRARIES = [REDUX, JQUERY, LEAFLET, MATERIALUI,  SASS, D3, WEBPACK, BABEL, ESLINT, JEST];
-const CODE_MANAGEMENT = [GIT, GITHUB, NPM, YARN, TRAVIS, ATLASSIAN, HEROKU];
+const LANGUAGES = [TYPESCRIPT, JAVASCRIPT, PYTHON, CSHARP];
+const FRAMEWORKS_AND_ECOSYSTEMS = [REACT, ANGULAR, DOTNET, DJANGO];
+const POPULAR_LIBRARIES = [NEXTJS, MATERIALUI, LEAFLET, REDUX];
+const CODE_MANAGEMENT = [GIT, ATLASSIAN, /* ARGO, TERRAFORM */];
 
 const FAVORITE_STACK = [REACT, NODE, POSTGRESQL].map(i => logos.find(({name}) => name === i));
 
@@ -64,17 +65,17 @@ const sections = [
     title: "Popular Libraries",
     items: POPULAR_LIBRARIES.map(i => logos.find(({name}) => name === i)),
   },
-  {
-    title: "Code Management",
-    items: CODE_MANAGEMENT.map(i => logos.find(({name}) => name === i))
-  }
+  // {
+  //   title: "Code Management",
+  //   items: CODE_MANAGEMENT.map(i => logos.find(({name}) => name === i))
+  // }
 ];
 
 const styles = theme => ({
   root: {
     ...theme.mixins.gutters(),
     paddingTop: theme.spacing(2),
-    paddingBottom: theme.spacing(2),
+    paddingBottom: theme.spacing(6),
   },
   expand: {
     transform: 'rotate(0deg)',
@@ -116,7 +117,12 @@ class Skills extends React.Component {
             I am a proficient Full Stack Software Engineer with expertise in building
             beautiful and functional user interfaces.
           </Typography>
+
           <Typography component="p" className="section-text">
+            Here a few technologies/services that I have used extensively
+          </Typography>
+
+          {/* <Typography component="p" className="section-text">
             While I am always excited to learn and work with new languages and frameworks,
             my current favorite techology stack for web development is comprised of a React+Redux 
             front-end with a Node+Express server backed by a PostgreSQL database.
@@ -141,7 +147,7 @@ class Skills extends React.Component {
           </div>
           <Typography component="p" className="section-text">
             Here are some other tools and systems that I have worked with:
-          </Typography>
+          </Typography> */}
         </div>
         {sections.map(({title, items}) => {
           const itemsToRender = items;//expanded ? items : items.filter(({proficiency}) => proficiency > 2);

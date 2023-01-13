@@ -50,34 +50,14 @@ class Portfolio extends React.Component {
   render() {
     const { items, classes, displayMode } = this.props;
     const { expanded } = this.state;
-    const firstFourItems = items.slice(0, 4);
-    const otherItems = items.slice(4);
+    const firstFourItems = items.filter(x => !x.disabled).slice(0, 4);
+    const otherItems = items.filter(x => !x.disabled).slice(4);
     const buttonColor = displayMode === DARK ? "secondary" : "primary";
     return (
       <div className="Portfolio">
-        {/* <div className="secondary-section-title"><span>Work Projects</span></div>
-        <Grid container spacing={3}>
-          {firstFourItems.map(({ name, image, id, tags, description, website, sections }) => {
-            return (              
-              <PortfolioCard
-                buttonColor={buttonColor}
-                key={id}
-                website={website}
-                sections={sections}
-                name={name}
-                image={image}
-                id={id}
-                tags={tags}
-                description={description}
-              />
-            );
-          })}
-        </Grid>
-        <div className="secondary-section-title"><span>Personal Projects</span></div>
-        */}
         <Typography component="p" className="section-text">
-          I have worked on a number of personal projects over the past few years and this is a space to showcase a few of them.
-          For more information about projects I have worked on professionally please check out my résumé.
+          Here are a few of the many personal projects I have worked on.
+          For more information about projects I have worked on professionally please check out my resume.
         </Typography>
         <Grid container spacing={3}>
           {firstFourItems.map(({ name, image, id, tags, description, website, sections }) => {
@@ -118,7 +98,7 @@ class Portfolio extends React.Component {
             })}
           </Grid>
         </Collapse>
-        <div className="show-more-button-wrapper">
+        {/* <div className="show-more-button-wrapper">
           <ConditionalReveal component="pulse" delay={1000}>
             <Button color="primary"
               variant="contained"
@@ -134,7 +114,7 @@ class Portfolio extends React.Component {
                           })}/>
             </Button>
           </ConditionalReveal>
-        </div>
+        </div> */}
       </div>
     );
   }

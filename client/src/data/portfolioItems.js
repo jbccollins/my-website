@@ -15,7 +15,7 @@ import reactGradientScrollBackground from 'assets/portfolio-items/react-gradient
 import thisWebsiteBackground from 'assets/portfolio-items/my-website-background.jpg';
 import reactLeafletExtendableBackground from 'assets/portfolio-items/react-leaflet-extendable-background.png';
 import marylandCensusDataExplorerBackground from 'assets/portfolio-items/maryland-census-data-explorer-background.jpg';
-
+import destinyLoadoutBuilderBackground from 'assets/portfolio-items/destiny-loadout-builder-background.png';
 const NPM = {
 	className: 'npm',
 	text: 'NPM'
@@ -82,6 +82,7 @@ const portfolioItems = [
   },
 	{
     name: 'Lapidary',
+    disabled: true,
     image: lapidaryBackground,
 		tags: [TYPESCRIPT],
     id: 'lapidary',
@@ -93,6 +94,7 @@ const portfolioItems = [
   },
 	{
 		name: 'My React Starter Kit',
+    disabled: true,
     image: myPersonalStarterReactSetupBackground,
 		tags: [NPM, TYPESCRIPT],
 		id: 'my-personal-starter-react-setup',
@@ -107,21 +109,33 @@ const portfolioItems = [
     image: spotifyPhilipsHueAlbumSyncBackground,
 		tags: [NPM, TYPESCRIPT],
 		id: 'spotify-philips-hue-album-sync',
-    description: 'Sync your hue lights with your Spotify album art.'
+    description: 'Sync your Phillips Hue smart lights with your Spotify album art.'
   },
 	{
     name: 'US Weather Monitor',
     image: usWeatherMonitorBackground,
 		tags: [NPM, TYPESCRIPT],
 		id: 'weather-monitor',
-    description: 'A no frills realtime weather map.',
+    description: 'A no frills realtime weather radar and forecast.',
 		website: {
       text: "Website",
-      url: 'https://weather-monitor-demo.herokuapp.com/',
+      url: 'https://us-weather-monitor.herokuapp.com',
+    },
+	},
+  {
+    name: 'Destiny Loadout Builder',
+    image: destinyLoadoutBuilderBackground,
+		tags: [NPM, TYPESCRIPT],
+		id: 'destiny-loadout-builder',
+    description: 'A tool to create complex and optimized loadouts for the video game Destiny 2',
+		website: {
+      text: "Website",
+      url: 'https://destinyloadoutbuilder.com',
     },
 	},
 	{
 		name: 'This Website!',
+    disabled: true,
     image: thisWebsiteBackground,
 		tags: [NPM, TYPESCRIPT],
 		id: 'my-website',
@@ -129,6 +143,7 @@ const portfolioItems = [
   },
 	{
     name: 'Maryland Census Data Explorer',
+    disabled: true,
     image: marylandCensusDataExplorerBackground,
 		tags: [REACT],
     id: 'maryland-census-data-explorer',
@@ -140,6 +155,7 @@ const portfolioItems = [
 	},
 	{
     name: 'React Gradient Scroll',
+    disabled: true,
     image: reactGradientScrollBackground,
 		tags: [REACT],
     id: 'react-gradient-scroll-indicator',
@@ -147,6 +163,7 @@ const portfolioItems = [
 	},
 	{
     name: 'React Leaflet Fly-in Marker',
+    disabled: true,
     image: reactLeafletFlyInMarkerBackground,
 		tags: [REACT],
     id: 'react-leaflet-fly-in-marker',
@@ -173,6 +190,7 @@ const portfolioItems = [
 	},
 	{
 		name: 'Postcss Twist URL Assets',
+    disabled: true,
     image: postcssTwistUrlAssetsBackground,
 		tags: [NPM, TYPESCRIPT],
 		id: 'postcss-twist-url-assets',
@@ -181,6 +199,7 @@ const portfolioItems = [
 
 	{
 		name: 'Async Canvas To Blob',
+    disabled: true,
     image: asyncCanvasToBlobBackground,
 		tags: [NPM, TYPESCRIPT],
 		id: 'async-canvas-to-blob',
@@ -188,6 +207,7 @@ const portfolioItems = [
   },
 	{
 		name: 'React Lava Lamp Menu',
+    disabled: true,
     image: reactLavaLampMenuBackground,
 		tags: [NPM, TYPESCRIPT],
 		id: 'react-lava-lamp-menu',
@@ -199,6 +219,7 @@ const portfolioItems = [
   },
 	{
 		name: 'Leaflet Tile Loading Progress',
+    disabled: true,
     image: leafletTileLoadingProgressControl,
 		tags: [NPM, TYPESCRIPT],
 		id: 'leaflet-tile-loading-progress-control',
@@ -206,6 +227,7 @@ const portfolioItems = [
   },
 	{
 		name: 'Destiny Patch Notes Explorer',
+    disabled: true,
     image: destinyPatchNotesExplorerBackground,
 		tags: [NPM, TYPESCRIPT],
 		id: 'destiny-patch-notes-explorer',
@@ -217,6 +239,7 @@ const portfolioItems = [
 	},
 	{
 		name: 'React Leaflet Extendable',
+    disabled: true,
     image: reactLeafletExtendableBackground,
 		tags: [NPM, TYPESCRIPT],
 		id: 'react-leaflet-extendable',

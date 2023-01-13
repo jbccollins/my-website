@@ -33,6 +33,7 @@ import unity from "assets/logos/unity.png";
 import java from "assets/logos/java.png";
 import r from "assets/logos/r.png";
 import vanillaweb from "assets/logos/vanillaweb.png";
+import nextjs from "assets/logos/nextjs.png";
 
 const REACT = "React";
 const ANGULAR = "Angular";
@@ -69,8 +70,16 @@ const JAVA = "Java";
 const R = "R";
 const VANILLAWEB = "Vanilla Web";
 const ATLASSIAN = "Atlassian";
+const NEXTJS = "NEXT.js";
 
 const logos = [
+  {
+    name: NEXTJS,
+    image: nextjs,
+    website: "https://nextjs.org/",
+    color: "#000",
+    proficiency: 3,
+  },
   {
     name: REACT,
     image: react,
@@ -328,4 +337,5 @@ export {
   R,
   VANILLAWEB,
   ATLASSIAN,
+  NEXTJS,
 };

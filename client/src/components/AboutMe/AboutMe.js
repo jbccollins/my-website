@@ -76,9 +76,15 @@ class AboutMe extends React.Component {
                 I nerd out over geospatial data, fun visualizations and slick user interfaces.
               </Typography>
               <Typography className="about-me-text" component="p">
-                I currently work in Washington D.C. for <a className="fireside-link" href="https://www.fireside21.com/" rel="noopener noreferrer" target="_blank">Fireside</a>, building
-                CRM tools used by congressional staffers.
+                I currently work remotely for <a className="fireside-link" href="https://www.caribou.com/" rel="noopener noreferrer" target="_blank">Caribou</a>,
+                integrating Caribou's lending platform with partners like Credit Karma and Uber.
               </Typography>
+              <Typography className="about-me-text" component="p">
+              I have previously worked on cyber threat intelligence tools at <a className="fireside-link" href="https://www.zerofox.com/" rel="noopener noreferrer" target="_blank">ZeroFOX</a>,
+              CRM products used by congressional offices at <a className="fireside-link" href="https://www.fireside.com/" rel="noopener noreferrer" target="_blank">Fireside</a>,
+              and a road network analytics platform used by state departments of transportation at the <a className="fireside-link" href="https://www.cattlab.umd.edu/" rel="noopener noreferrer" target="_blank">CATT Lab</a>.
+              </Typography>
+
               <Typography className="about-me-text" component="p">
                 Have fun exploring my website and feel free to shoot me an email or check out my resume if you are so inclined.
               </Typography>
@@ -89,7 +95,7 @@ class AboutMe extends React.Component {
                   <SendIcon className={classes.rightIcon}/>
                 </Button>
                 <Button variant="contained" color="primary" className={classes.button} onClick={handleResumeClick}>
-                  Résumé
+                  Resume
                   {/* This Button uses a Font Icon, see the installation instructions in the docs. */}
                   <PersonIcon className={classes.rightIcon}/>
                 </Button>
@@ -104,6 +110,40 @@ class AboutMe extends React.Component {
               </ConditionalReveal> */}
               <div className="secondary-section-title"><span>Work and Education</span></div>
               <VerticalTimeline layout='1-column' animate={false}>
+              <ConditionalReveal when={reveal} component="zoom">
+                  <VerticalTimelineElement
+                    className="vertical-timeline-element--work"
+                    iconStyle={{ color: '#fff' }}
+                    icon={<WorkIcon />}
+                  >
+                    <Paper>
+                      <div className="timeline-element-wrapper">
+                        <h3 className="vertical-timeline-element-title">Senior Software Engineer</h3>
+                        <h4 className="vertical-timeline-element-subtitle">
+                          <a href="https://www.caribou.com/" target="_blank" rel="noopener noreferrer">Caribou</a>
+                        </h4>
+                        <p className="vertical-timeline-element-date">August 2022 - present</p>
+                      </div>
+                    </Paper>
+                  </VerticalTimelineElement>
+                </ConditionalReveal>
+              <ConditionalReveal when={reveal} component="zoom">
+                  <VerticalTimelineElement
+                    className="vertical-timeline-element--work"
+                    iconStyle={{ color: '#fff' }}
+                    icon={<WorkIcon />}
+                  >
+                    <Paper>
+                      <div className="timeline-element-wrapper">
+                        <h3 className="vertical-timeline-element-title">Software Engineer</h3>
+                        <h4 className="vertical-timeline-element-subtitle">
+                          <a href="https://www.zerofox.com/" target="_blank" rel="noopener noreferrer">ZeroFOX</a>
+                        </h4>
+                        <p className="vertical-timeline-element-date">June 2021 - August 2022</p>
+                      </div>
+                    </Paper>
+                  </VerticalTimelineElement>
+                </ConditionalReveal>
                 <ConditionalReveal when={reveal} component="zoom">
                   <VerticalTimelineElement
                     className="vertical-timeline-element--work"
@@ -114,9 +154,9 @@ class AboutMe extends React.Component {
                       <div className="timeline-element-wrapper">
                         <h3 className="vertical-timeline-element-title">Software Engineer</h3>
                         <h4 className="vertical-timeline-element-subtitle">
-                          <a href="https://www.fireside21.com/" target="_blank" rel="noopener noreferrer">Fireside</a>
+                          <a href="https://www.fireside21.com/" target="_blank" rel="noopener noreferrer">Fireside</a> (aquired by <a href="https://fiscalnote.com/" target="_blank" rel="noopener noreferrer">FiscalNote</a>)
                         </h4>
-                        <p className="vertical-timeline-element-date">April 2018 - present</p>
+                        <p className="vertical-timeline-element-date">April 2018 - June 2021</p>
                       </div>
                     </Paper>
                   </VerticalTimelineElement>

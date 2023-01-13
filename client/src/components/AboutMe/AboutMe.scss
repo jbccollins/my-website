@@ -10,6 +10,9 @@
         .fireside-link {
             color: $color-secondary;
         }
+        // .vertical-timeline-element-content-arrow {
+        //     border-right-color: #424242;
+        // }
     }
 }
 
@@ -96,6 +99,9 @@
     .vertical-timeline-element-icon {
         box-shadow: 0 0 0 2px $color-light-accent;
         background: $color-primary;
+    }
+    .vertical-timeline-element-content-arrow {
+       display: none;
     }
     .about-me-text {
         margin-top: 20px;
