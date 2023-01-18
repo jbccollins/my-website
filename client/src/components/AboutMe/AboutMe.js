@@ -77,7 +77,7 @@ class AboutMe extends React.Component {
               </Typography>
               <Typography className="about-me-text" component="p">
                 I currently work remotely for <a className="fireside-link" href="https://www.caribou.com/" rel="noopener noreferrer" target="_blank">Caribou</a>,
-                integrating Caribou's lending platform with partners like Credit Karma and Uber.
+                integrating Caribou's auto loan refinancing platform with lending partners like Credit Karma and Uber.
               </Typography>
               <Typography className="about-me-text" component="p">
               I have previously worked on cyber threat intelligence tools at <a className="fireside-link" href="https://www.zerofox.com/" rel="noopener noreferrer" target="_blank">ZeroFOX</a>,

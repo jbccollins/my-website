@@ -18,7 +18,7 @@ class Resume extends React.Component {
     });
     res = await res.blob();
     var fileBlob = new Blob([res], {type: "application/pdf"})
-    saveAs(fileBlob, "James-Collins-Resume.pdf");
+    saveAs(fileBlob, "James_Collins_Resume.pdf");
   }
 
   render() {
